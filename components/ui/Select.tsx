@@ -47,7 +47,7 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>(
           >
             <SelectPrimitive.Value placeholder={placeholder} />
             <SelectPrimitive.Icon>
-              <i className="ri-arrow-down-s-line text-text-muted"></i>
+              <i className="ri-arrow-down-s-line text-text-muted" aria-hidden="true"></i>
             </SelectPrimitive.Icon>
           </SelectPrimitive.Trigger>
           <SelectPrimitive.Portal>
@@ -67,7 +67,7 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>(
                     >
                       <SelectPrimitive.ItemText>{option.label}</SelectPrimitive.ItemText>
                       <SelectPrimitive.ItemIndicator className="absolute right-2">
-                        <i className="ri-check-line text-primary-blue"></i>
+                        <i className="ri-check-line text-primary-blue" aria-hidden="true"></i>
                       </SelectPrimitive.ItemIndicator>
                     </SelectPrimitive.Item>
                   ))}

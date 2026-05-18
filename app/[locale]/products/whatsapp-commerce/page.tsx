@@ -50,7 +50,7 @@ const pricingPlans = [
     price: 'Free',
     period: '',
     features: ['Up to 100 conversations/month', '1 WhatsApp number', 'Product catalog (50 items)', 'Basic chatbot flows', 'Order notifications', 'Email support'],
-    cta: 'Get Started',
+    cta: 'Start a project',
     ctaStyle: 'bg-bg-light text-text-dark hover:bg-gray-200',
     featured: false,
   },
@@ -70,7 +70,7 @@ const pricingPlans = [
     price: 'Custom',
     period: '',
     features: ['Unlimited everything', 'Multiple WhatsApp numbers', 'Custom integrations', 'Dedicated account manager', 'SLA guarantees', 'On-premise deployment', '24/7 phone support'],
-    cta: 'Contact Sales',
+    cta: 'Start a project',
     ctaStyle: 'bg-bg-light text-text-dark hover:bg-gray-200',
     featured: false,
   },
@@ -87,7 +87,7 @@ export default function WhatsAppCommercePage() {
           <Animated animation="fadeInUp">
             <div className="flex items-center gap-4 mb-3">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
-                <i className="ri-shopping-bag-3-line text-3xl text-white" />
+                <i className="ri-shopping-bag-3-line text-3xl text-white" aria-hidden="true" />
               </div>
               <div>
                 <h1 className="mb-1">WhatsApp Commerce</h1>
@@ -114,7 +114,7 @@ export default function WhatsAppCommercePage() {
       {/* Main Content */}
       <main id="main-content" role="main">
         {/* Overview Section */}
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="two-col-section">
               <div className="col-left">
@@ -141,13 +141,13 @@ export default function WhatsAppCommercePage() {
                     <Button variant="cta" asChild style={{ background: 'linear-gradient(135deg, #128C7E 0%, #25d366 100%)' }}>
                       <Link href="/contact">
                         <span>Start Selling Free</span>
-                        <i className="ri-arrow-right-line" />
+                        <i className="ri-arrow-right-line" aria-hidden="true" />
                       </Link>
                     </Button>
                     <Button variant="outline" asChild>
                       <Link href="/contact">
-                        <span>Book Demo</span>
-                        <i className="ri-calendar-line" />
+                        <span>Request a demo</span>
+                        <i className="ri-calendar-line" aria-hidden="true" />
                       </Link>
                     </Button>
                   </div>
@@ -213,7 +213,7 @@ export default function WhatsAppCommercePage() {
         </section>
 
         {/* How It Works Section */}
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="section-header">
               <Animated animation="fadeInUp">
@@ -281,7 +281,7 @@ export default function WhatsAppCommercePage() {
         </section>
 
         {/* Integrations Section */}
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="section-header">
               <Animated animation="fadeInUp">
@@ -299,7 +299,7 @@ export default function WhatsAppCommercePage() {
                 {integrations.map((integration, i) => (
                   <motion.div
                     key={i}
-                    className="bg-white rounded-xl py-4 px-6 shadow-sm flex items-center gap-2.5 font-semibold text-text-dark"
+                    className="bg-bg-white rounded-xl py-4 px-6 shadow-sm flex items-center gap-2.5 font-semibold text-text-dark"
                     whileHover={{ y: -4, boxShadow: '0 8px 30px rgba(0,0,0,0.1)' }}
                     transition={{ type: 'spring', stiffness: 300 }}
                   >
@@ -330,7 +330,7 @@ export default function WhatsAppCommercePage() {
               {pricingPlans.map((plan, i) => (
                 <StaggerItem key={i}>
                   <HoverCard
-                    className={`bg-white rounded-3xl p-8 shadow-card min-w-[280px] max-w-[380px] flex-1 relative ${plan.featured ? 'border-2 border-green-500' : 'border-2 border-transparent'}`}
+                    className={`bg-bg-white rounded-3xl p-8 shadow-card min-w-[280px] max-w-[380px] flex-1 relative ${plan.featured ? 'border-2 border-green-500' : 'border-2 border-transparent'}`}
                     hoverY={-4}
                   >
                     {plan.featured && (
@@ -346,13 +346,13 @@ export default function WhatsAppCommercePage() {
                     <ul className="space-y-3 mb-6">
                       {plan.features.map((feature, j) => (
                         <li key={j} className="flex items-center gap-2.5 text-text-muted text-sm">
-                          <i className="ri-check-line text-green-500 text-lg" />
+                          <i className="ri-check-line text-green-500 text-lg" aria-hidden="true" />
                           {feature}
                         </li>
                       ))}
                     </ul>
                     <Button className={`w-full justify-center ${plan.ctaStyle}`} asChild>
-                      <Link href="/contact">
+                      <Link href={`/contact?product=whatsapp-commerce&plan=${plan.name.toLowerCase()}`}>
                         {plan.cta}
                       </Link>
                     </Button>
@@ -399,13 +399,13 @@ export default function WhatsAppCommercePage() {
                   <Button variant="ctaWhite" asChild>
                     <Link href="/contact">
                       <span>Start Free Trial</span>
-                      <i className="ri-arrow-right-line" />
+                      <i className="ri-arrow-right-line" aria-hidden="true" />
                     </Link>
                   </Button>
                   <Button variant="ghost" asChild>
                     <Link href="/contact">
-                      <span>Schedule Demo</span>
-                      <i className="ri-calendar-line" />
+                      <span>Request a demo</span>
+                      <i className="ri-calendar-line" aria-hidden="true" />
                     </Link>
                   </Button>
                 </motion.div>

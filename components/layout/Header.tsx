@@ -6,12 +6,20 @@ import { useTranslations } from 'next-intl';
 import { useMobileNav } from '@/hooks';
 import { MobileNav } from './MobileNav';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { ThemeToggle } from '../ThemeToggle';
 import { Button } from '@/components/ui';
 import { cn } from '@/lib/cn';
 
 interface HeaderProps {
-  activePage?: 'home' | 'products' | 'solutions' | 'company' | 'contact';
+  activePage?: 'home' | 'products' | 'solutions' | 'resources' | 'company' | 'contact';
 }
+
+const resourceLinks = [
+  { href: '/engineering', icon: 'ri-code-s-slash-line', key: 'engineering' },
+  { href: '/blog', icon: 'ri-article-line', key: 'blog' },
+  { href: '/case-studies', icon: 'ri-award-line', key: 'caseStudies' },
+  { href: '/careers', icon: 'ri-user-star-line', key: 'careers' },
+];
 
 const productKeys = [
   { href: '/products/d23-ai', icon: 'ri-whatsapp-line', key: 'd23ai' },
@@ -36,16 +44,19 @@ export function Header({ activePage }: HeaderProps) {
   const tCommon = useTranslations('common');
   const tProducts = useTranslations('products');
   const tSolutions = useTranslations('solutions');
+  const tResources = useTranslations('resources');
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border shadow-sm">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-bg-white/95 backdrop-blur-md border-b border-border shadow-sm">
         <div className="container flex items-center justify-between h-[72px]">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <img
               src="/assets/images/logo.png"
               alt="Mobirizer Logo"
+              width={40}
+              height={40}
               className="h-10 w-auto transition-transform group-hover:scale-105"
             />
             <div className="hidden sm:flex flex-col">
@@ -80,18 +91,21 @@ export function Header({ activePage }: HeaderProps) {
 
               {/* Products Dropdown */}
               <NavigationMenu.Item>
-                <NavigationMenu.Trigger
-                  className={cn(
-                    'group px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1',
-                    activePage === 'products'
-                      ? 'text-primary-blue bg-primary-blue/5'
-                      : 'text-text-dark hover:text-primary-blue hover:bg-primary-blue/5'
-                  )}
-                >
-                  <Link href="/products">{t('products')}</Link>
-                  <i className="ri-arrow-down-s-line transition-transform duration-200 group-data-[state=open]:rotate-180"></i>
+                <NavigationMenu.Trigger asChild>
+                  <Link
+                    href="/products"
+                    className={cn(
+                      'group px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1',
+                      activePage === 'products'
+                        ? 'text-primary-blue bg-primary-blue/5'
+                        : 'text-text-dark hover:text-primary-blue hover:bg-primary-blue/5'
+                    )}
+                  >
+                    <span>{t('products')}</span>
+                    <i className="ri-arrow-down-s-line transition-transform duration-200 group-data-[state=open]:rotate-180" aria-hidden="true"></i>
+                  </Link>
                 </NavigationMenu.Trigger>
-                <NavigationMenu.Content className="absolute top-full left-0 w-[550px] bg-white rounded-2xl shadow-xl border border-border p-5 animate-fade-in-down">
+                <NavigationMenu.Content className="absolute top-full left-0 w-[550px] bg-bg-white rounded-2xl shadow-xl border border-border p-5 animate-fade-in-down">
                   <div className="grid grid-cols-2 gap-2">
                     {productKeys.map((product) => (
                       <Link
@@ -116,18 +130,21 @@ export function Header({ activePage }: HeaderProps) {
 
               {/* Solutions Dropdown */}
               <NavigationMenu.Item>
-                <NavigationMenu.Trigger
-                  className={cn(
-                    'group px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1',
-                    activePage === 'solutions'
-                      ? 'text-primary-blue bg-primary-blue/5'
-                      : 'text-text-dark hover:text-primary-blue hover:bg-primary-blue/5'
-                  )}
-                >
-                  <Link href="/solutions">{t('solutions')}</Link>
-                  <i className="ri-arrow-down-s-line transition-transform duration-200 group-data-[state=open]:rotate-180"></i>
+                <NavigationMenu.Trigger asChild>
+                  <Link
+                    href="/solutions"
+                    className={cn(
+                      'group px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1',
+                      activePage === 'solutions'
+                        ? 'text-primary-blue bg-primary-blue/5'
+                        : 'text-text-dark hover:text-primary-blue hover:bg-primary-blue/5'
+                    )}
+                  >
+                    <span>{t('solutions')}</span>
+                    <i className="ri-arrow-down-s-line transition-transform duration-200 group-data-[state=open]:rotate-180" aria-hidden="true"></i>
+                  </Link>
                 </NavigationMenu.Trigger>
-                <NavigationMenu.Content className="absolute top-full left-0 w-[420px] bg-white rounded-2xl shadow-xl border border-border p-5 animate-fade-in-down">
+                <NavigationMenu.Content className="absolute top-full left-0 w-[420px] bg-bg-white rounded-2xl shadow-xl border border-border p-5 animate-fade-in-down">
                   <div className="grid grid-cols-2 gap-2">
                     {solutionKeys.map((solution) => (
                       <Link
@@ -143,6 +160,42 @@ export function Header({ activePage }: HeaderProps) {
                             {tSolutions(`${solution.key}.name`)}
                           </h4>
                           <p className="text-xs text-text-muted">{tSolutions(`${solution.key}.tagline`)}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </NavigationMenu.Content>
+              </NavigationMenu.Item>
+
+              {/* Resources Dropdown */}
+              <NavigationMenu.Item>
+                <NavigationMenu.Trigger
+                  className={cn(
+                    'group px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1',
+                    activePage === 'resources'
+                      ? 'text-primary-blue bg-primary-blue/5'
+                      : 'text-text-dark hover:text-primary-blue hover:bg-primary-blue/5'
+                  )}
+                >
+                  <span>{tResources('title')}</span>
+                  <i className="ri-arrow-down-s-line transition-transform duration-200 group-data-[state=open]:rotate-180" aria-hidden="true"></i>
+                </NavigationMenu.Trigger>
+                <NavigationMenu.Content className="absolute top-full left-0 w-[420px] bg-bg-white rounded-2xl shadow-xl border border-border p-5 animate-fade-in-down">
+                  <div className="grid grid-cols-2 gap-2">
+                    {resourceLinks.map((r) => (
+                      <Link
+                        key={r.href}
+                        href={r.href}
+                        className="flex items-center gap-3 p-3 rounded-xl hover:bg-bg-light transition-colors group/item"
+                      >
+                        <div className="w-9 h-9 rounded-lg bg-primary-blue/10 flex items-center justify-center flex-shrink-0">
+                          <i className={cn(r.icon, 'text-primary-blue text-base')} aria-hidden="true"></i>
+                        </div>
+                        <div>
+                          <h4 className="font-medium text-sm text-text-dark group-hover/item:text-primary-blue transition-colors">
+                            {tResources(`${r.key}.title`)}
+                          </h4>
+                          <p className="text-xs text-text-muted">{tResources(`${r.key}.desc`)}</p>
                         </div>
                       </Link>
                     ))}
@@ -168,7 +221,7 @@ export function Header({ activePage }: HeaderProps) {
               </NavigationMenu.Item>
 
               <NavigationMenu.Indicator className="top-full z-10 flex h-2 items-end justify-center overflow-hidden transition-all">
-                <div className="relative top-1 h-2 w-2 rotate-45 bg-white border-l border-t border-border" />
+                <div className="relative top-1 h-2 w-2 rotate-45 bg-bg-white border-l border-t border-border" />
               </NavigationMenu.Indicator>
             </NavigationMenu.List>
 
@@ -177,11 +230,12 @@ export function Header({ activePage }: HeaderProps) {
 
           {/* Actions */}
           <div className="flex items-center gap-3">
+            <ThemeToggle />
             <LanguageSwitcher />
             <Button asChild variant="cta" size="default" className="hidden sm:inline-flex">
               <Link href="/contact">
                 <span>{tCommon('bookDemo')}</span>
-                <i className="ri-arrow-right-line"></i>
+                <i className="ri-arrow-right-line" aria-hidden="true"></i>
               </Link>
             </Button>
             <button
@@ -189,7 +243,7 @@ export function Header({ activePage }: HeaderProps) {
               onClick={openNav}
               aria-label="Open menu"
             >
-              <i className="ri-menu-line text-xl text-text-dark"></i>
+              <i className="ri-menu-line text-xl text-text-dark" aria-hidden="true"></i>
             </button>
           </div>
         </div>

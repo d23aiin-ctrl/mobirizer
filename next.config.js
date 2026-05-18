@@ -4,18 +4,7 @@ const withNextIntl = createNextIntlPlugin('./i18n.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Image optimization for external images
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        pathname: '/**',
-      },
-    ],
-    // Keep images unoptimized to match original behavior
-    unoptimized: false,
-  },
+  // No external images used
   // Preserve trailing slashes for URL compatibility
   trailingSlash: false,
   // Enable React strict mode for better development

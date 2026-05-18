@@ -233,30 +233,35 @@ export function Counter({ from = 0, to, duration = 2, className, suffix = '', pr
   const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
+    if (hasAnimated) return;
+    let controls: ReturnType<typeof animate> | undefined;
+    const node = ref.current;
+    if (!node) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated) {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
             setHasAnimated(true);
-            const controls = animate(from, to, {
+            controls = animate(from, to, {
               duration,
               ease: [0.4, 0, 0.2, 1],
-              onUpdate: (value) => {
-                setCount(Math.round(value));
-              },
+              onUpdate: (value) => setCount(Math.round(value)),
             });
-            return () => controls.stop();
+            observer.disconnect();
+            break;
           }
-        });
+        }
       },
       { threshold: 0.3 }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(node);
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      controls?.stop();
+    };
   }, [from, to, duration, hasAnimated]);
 
   return (

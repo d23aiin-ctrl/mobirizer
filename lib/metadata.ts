@@ -1,11 +1,12 @@
 import { Metadata } from 'next';
+import { locales } from '@/i18n';
 
 export const siteConfig = {
   name: 'Mobirizer',
   tagline: 'AI Development Studio',
   description:
     'AI Development Studio building production-grade solutions for government, education, healthcare, and enterprise clients since 2014.',
-  url: 'https://mobirizer.com',
+  url: 'https://mobirizer.online',
   themeColor: '#6366f1',
   company: {
     name: 'Mobirizer Services Pvt. Ltd.',
@@ -27,7 +28,6 @@ export function createMetadata(options: {
   keywords?: string;
   ogTitle?: string;
   ogDescription?: string;
-  themeColor?: string;
 }): Metadata {
   return {
     title: options.title,
@@ -35,7 +35,6 @@ export function createMetadata(options: {
     keywords: options.keywords,
     authors: [{ name: siteConfig.company.name }],
     robots: 'index, follow',
-    themeColor: options.themeColor || siteConfig.themeColor,
     openGraph: {
       title: options.ogTitle || options.title,
       description: options.ogDescription || options.description,
@@ -49,6 +48,21 @@ export function createMetadata(options: {
     },
     icons: {
       icon: '/assets/images/favicon.png',
+      apple: '/assets/images/apple-icon.png',
     },
+  };
+}
+
+/**
+ * Build canonical + hreflang alternates for a route path (e.g. "/products/d23-ai").
+ * Canonical points at the default-locale URL; languages cover every supported locale.
+ */
+export function pageAlternates(path: string, locale: string = 'en'): NonNullable<Metadata['alternates']> {
+  const trimmed = path.startsWith('/') ? path : `/${path}`;
+  return {
+    canonical: `${siteConfig.url}/${locale}${trimmed}`,
+    languages: Object.fromEntries(
+      locales.map((loc) => [loc, `${siteConfig.url}/${loc}${trimmed}`])
+    ),
   };
 }

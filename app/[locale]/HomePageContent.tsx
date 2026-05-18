@@ -1,116 +1,186 @@
 'use client';
 
 import Link from 'next/link';
-import { StatCard, Button, Badge, Animated, Stagger, StaggerItem, Float, GradientText, HoverCard, motion, Counter } from '@/components';
+import { StatCard, Button, Badge, Animated, Stagger, StaggerItem, Float, GradientText, HoverCard, motion, Counter, HeroSpotlight, FloatingOrbs, LivePulse, TypedTerminalLines, Marquee, Magnetic, AgentGraph, KineticHeadline, LiveMetric, ScrollIndicator } from '@/components';
 
 export function HomePageContent() {
   return (
     <>
       {/* Hero Section */}
       <section className="relative bg-gradient-hero overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-10"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1920&q=80')",
-          }}
-        />
-        <div className="container relative z-10 py-20">
-          <div className="hero-two-col">
+        <FloatingOrbs />
+        <div className="absolute inset-0 grid-pattern opacity-[0.08] pointer-events-none" />
+        <div className="absolute inset-0 noise-texture opacity-[0.04] pointer-events-none mix-blend-overlay" />
+        <HeroSpotlight />
+
+        <div className="container relative z-10 pt-20 pb-10">
+          <div className="hero-two-col items-center">
             <div className="hero-content-col">
               <div className="hero-content">
-                <Animated animation="fadeInUp" delay={0}>
-                  <Badge icon="ri-rocket-2-line" variant="white">
-                    AI Solutions Since 2019
-                  </Badge>
-                </Animated>
-                <Animated animation="fadeInUp" delay={0.1}>
-                  <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mt-6 mb-6">
-                    Transform Your Business with{' '}
-                    <GradientText>Effective AI Solutions</GradientText>
-                  </h1>
-                </Animated>
-                <Animated animation="fadeInUp" delay={0.2}>
-                  <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed">
-                    We deliver tailored AI services from strategy through implementation, designed to
-                    drive efficiency and growth without breaking your budget. Real solutions that
-                    work, backed by a decade of expertise.
-                  </p>
-                </Animated>
-                <Animated animation="fadeInUp" delay={0.3}>
-                  <div className="flex gap-3 flex-wrap mb-8">
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.25em] text-white/60 mb-10"
+                >
+                  <span className="relative inline-flex h-1.5 w-1.5">
+                    <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-70 animate-ping" />
+                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  </span>
+                  Mobirizer // Shipping AI since 2019
+                </motion.div>
+
+                <KineticHeadline
+                  className="text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5rem] font-extrabold text-white leading-[0.98] tracking-tightest mb-8"
+                  words={['Ship', 'AI', 'that', 'actually', 'works', 'in', 'production.']}
+                  highlightFrom={5}
+                />
+
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6, duration: 0.5 }}
+                  className="text-lg md:text-xl text-white/70 mb-10 leading-relaxed max-w-xl"
+                >
+                  Agents, RAG, and fine-tuned models for teams that need them in the wild — not
+                  in a slide deck. Boring-tech discipline, measurable outcomes, a decade of shipping.
+                </motion.p>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8, duration: 0.5 }}
+                  className="flex gap-3 flex-wrap items-center"
+                >
+                  <Magnetic strength={0.3}>
                     <Button variant="ctaWhite" asChild>
                       <Link href="/contact">
-                        <span>Get Free Consultation</span>
-                        <i className="ri-arrow-right-line" />
+                        <span>Start a project</span>
+                        <i className="ri-arrow-right-line" aria-hidden="true" />
                       </Link>
                     </Button>
-                    <Button variant="ghost" asChild>
-                      <Link href="/products">
-                        <span>Explore Products</span>
-                        <i className="ri-arrow-right-line" />
-                      </Link>
-                    </Button>
-                  </div>
-                </Animated>
-                <Animated animation="fadeInUp" delay={0.4}>
-                  {/* Divider */}
-                  <div className="w-full h-px bg-white/20 mb-8" />
-                  <div className="flex gap-12 flex-wrap">
-                    {[
-                      { value: 10, suffix: '+', label: 'Years Experience', gradient: 'from-white to-white/80' },
-                      { value: 100, suffix: '+', label: 'Clients Served', gradient: 'from-white to-white/80' },
-                      { value: 200, suffix: '+', label: 'Projects Delivered', gradient: 'from-white to-white/80' },
-                    ].map((stat, i) => (
-                      <motion.div
-                        key={i}
-                        className="text-center"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.5 + i * 0.15, duration: 0.5 }}
-                        viewport={{ once: true }}
-                      >
-                        <div className={`text-4xl md:text-5xl font-extrabold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent`}>
-                          <Counter from={0} to={stat.value} duration={2} suffix={stat.suffix} />
-                        </div>
-                        <div className="text-sm text-white/70 mt-1">{stat.label}</div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </Animated>
+                  </Magnetic>
+                  <Button variant="ghost" asChild>
+                    <Link href="/engineering">
+                      <span>See how we build</span>
+                      <i className="ri-arrow-right-line" aria-hidden="true" />
+                    </Link>
+                  </Button>
+                </motion.div>
               </div>
             </div>
+
             <div className="hero-image-col">
-              <Animated animation="fadeInRight" delay={0.3}>
-                <Float intensity={15} duration={5}>
-                  <div className="relative p-5">
-                    <img
-                      src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80"
-                      alt="AI Robot Technology"
-                      className="w-full rounded-3xl shadow-2xl"
-                    />
-                    <motion.div
-                      className="absolute bottom-0 left-0 bg-gradient-primary px-6 py-4 rounded-2xl shadow-primary-glow"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.6, type: 'spring' }}
-                      viewport={{ once: true }}
-                    >
-                      <div className="text-2xl font-extrabold text-white">200+</div>
-                      <div className="text-xs text-white/90">Projects Delivered</div>
-                    </motion.div>
+              <Animated animation="fadeInRight" delay={0.4}>
+                <div className="relative rounded-xl border border-white/10 bg-black/40 backdrop-blur-sm font-mono text-[13px] leading-relaxed overflow-hidden shadow-[0_0_80px_-20px_rgba(99,102,241,0.5)]">
+                  {/* Titlebar */}
+                  <div className="flex items-center gap-2 px-4 py-3 border-b border-white/10 text-white/50">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-300/80" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/80" />
+                    <span className="ml-3 text-xs tracking-tight">mobirizer ~ production</span>
+                    <div className="ml-auto"><LivePulse /></div>
                   </div>
-                </Float>
+                  {/* Tabs */}
+                  <div className="flex items-center gap-1 px-4 pt-2 border-b border-white/10 text-[11px] font-mono">
+                    {[
+                      { id: 'logs', label: 'logs', active: true },
+                      { id: 'traces', label: 'traces' },
+                      { id: 'evals', label: 'evals' },
+                    ].map((tab) => (
+                      <span
+                        key={tab.id}
+                        className={`px-3 py-2 ${
+                          tab.active
+                            ? 'text-white border-b-2 border-indigo-400 -mb-px'
+                            : 'text-white/40 border-b-2 border-transparent'
+                        }`}
+                      >
+                        {tab.label}
+                      </span>
+                    ))}
+                  </div>
+                  {/* Body */}
+                  <div className="p-6 text-white/90">
+                    <TypedTerminalLines
+                      lineDelay={0.36}
+                      lines={[
+                        <span key="cmd" className="text-white/50">$ mobirizer deploy agent --production</span>,
+                        <span key="blank">&nbsp;</span>,
+                        <span key="l1"><span className="text-emerald-300">✓</span> evals passed      <span className="text-white/50">(217/217, 99.1% pass rate)</span></span>,
+                        <span key="l2"><span className="text-emerald-300">✓</span> shadow traffic    <span className="text-white/50">(72h, no regressions)</span></span>,
+                        <span key="l3"><span className="text-emerald-300">✓</span> guardrails        <span className="text-white/50">(Llama-Guard + OPA policies)</span></span>,
+                        <span key="l4"><span className="text-emerald-300">✓</span> observability     <span className="text-white/50">(traces → Langfuse)</span></span>,
+                        <span key="blank2">&nbsp;</span>,
+                        <span key="l5"><span className="text-white/50">[21:04:18]</span> <span className="text-indigo-300">agent.v4.2</span> live for user {'{cohort: banking}'}</span>,
+                        <span key="l6"><span className="text-white/50">[21:04:18]</span> resolution-rate: <span className="text-emerald-300">0.94</span>{' · '}p95: <span className="text-emerald-300">1.2s</span></span>,
+                      ]}
+                    />
+                  </div>
+                  {/* Footer with live-updating metrics */}
+                  <div className="flex items-center gap-6 px-4 py-2 border-t border-white/10 bg-white/[0.02]">
+                    <LiveMetric label="p95" values={[1180, 1210, 1190, 1240, 1200]} suffix="ms" />
+                    <LiveMetric label="rps" values={[42, 47, 51, 45, 49]} suffix="" interval={2200} />
+                    <LiveMetric label="err" values={[0.02, 0.01, 0.03, 0.01, 0.02]} suffix="%" interval={2600} />
+                  </div>
+                </div>
               </Animated>
             </div>
           </div>
+
+          {/* Hero bottom band — stats + scroll indicator */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.6 }}
+            className="mt-16 pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-5 gap-6 items-end"
+          >
+            {[
+              { value: 10, suffix: '+', label: 'Years shipping' },
+              { value: 100, suffix: '+', label: 'Clients served' },
+              { value: 200, suffix: '+', label: 'Projects delivered' },
+              { value: 47, suffix: '', label: 'Agents in production' },
+            ].map((stat, i) => (
+              <div key={i} className="text-left">
+                <div className="text-3xl md:text-4xl font-extrabold text-white tracking-tighter tabular-nums">
+                  <Counter from={0} to={stat.value} duration={1.6} suffix={stat.suffix} />
+                </div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50 mt-2">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+            <div className="hidden md:flex justify-end">
+              <ScrollIndicator />
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Main Content */}
       <main id="main-content" role="main">
+        {/* Marquee strip — stack ticker */}
+        <section className="py-6 border-y border-border bg-bg-light">
+          <Marquee speed={48}>
+            {[
+              'CLAUDE 4', 'GPT-4.1', 'GEMINI 2.5', 'LLAMA 3.3', 'MISTRAL LARGE',
+              'LANGGRAPH', 'MCP', 'pgvector', 'WEAVIATE', 'QDRANT',
+              'bge-reranker-v2', 'COHERE RERANK', 'LANGFUSE', 'BRAINTRUST',
+              'LLAMA GUARD 3', 'OPA', 'LoRA', 'DPO', 'AXOLOTL',
+              'POSTGRES', 'REDIS', 'FASTAPI', 'KAFKA', 'H100 / H200',
+            ].map((t) => (
+              <span
+                key={t}
+                className="font-mono text-xs tracking-[0.2em] text-text-muted hover:text-primary-blue transition-colors"
+              >
+                {t}
+              </span>
+            ))}
+          </Marquee>
+        </section>
+
         {/* Philosophy Section */}
-        <section className="py-20 bg-white">
+        <section className="py-24 bg-bg-white border-t border-border">
           <div className="container">
             <div className="two-col-section">
               <div className="col-left">
@@ -158,22 +228,25 @@ export function HomePageContent() {
               </div>
               <div className="col-right">
                 <Animated animation="fadeInRight">
-                  <div className="relative">
-                    <img
-                      src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80"
-                      alt="Team collaboration"
-                      className="rounded-3xl shadow-card-hover"
-                    />
-                    <motion.div
-                      className="absolute -top-4 -right-4 bg-white p-5 rounded-2xl shadow-card z-10"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.4, type: 'spring', stiffness: 200 }}
-                      viewport={{ once: true }}
-                    >
-                      <div className="text-3xl font-extrabold text-primary-blue">98%</div>
-                      <div className="text-sm text-text-muted">Client Satisfaction</div>
-                    </motion.div>
+                  <div className="rounded-xl border border-border bg-bg-white overflow-hidden">
+                    <div className="px-6 py-4 border-b border-border text-xs font-mono uppercase tracking-wider text-text-muted">
+                      What we ship — on a typical quarter
+                    </div>
+                    <div className="divide-y divide-border">
+                      {[
+                        { k: 'Production agents', v: 'LangGraph, typed tool schemas' },
+                        { k: 'RAG pipelines', v: 'hybrid retrieval + re-rank' },
+                        { k: 'Fine-tunes', v: 'LoRA / DPO, on H100' },
+                        { k: 'Eval harnesses', v: 'offline + shadow + live gates' },
+                        { k: 'Observability', v: 'Langfuse traces, SLOs per route' },
+                        { k: 'Guardrails', v: 'Llama Guard + policy as code' },
+                      ].map((item) => (
+                        <div key={item.k} className="grid grid-cols-2 px-6 py-4 text-sm">
+                          <span className="font-semibold text-text-dark">{item.k}</span>
+                          <span className="font-mono text-xs text-text-muted">{item.v}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </Animated>
               </div>
@@ -181,259 +254,160 @@ export function HomePageContent() {
           </div>
         </section>
 
-        {/* Why Choose Us Section */}
+        {/* Three Things We Ship — consolidated */}
         <section className="section">
           <div className="container">
-            <Animated animation="fadeInUp" className="section-header">
-              <Badge icon="ri-award-line">Why Choose Us</Badge>
-              <h2 className="section-title">Our Core Expertise</h2>
-              <p className="section-subtitle">
-                What sets us apart in delivering exceptional AI solutions
-              </p>
+            <Animated animation="fadeInUp">
+              <div className="max-w-3xl mb-16">
+                <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-text-muted mb-6">
+                  <span className="w-6 h-px bg-text-muted" />
+                  What we actually do
+                </div>
+                <h2 className="text-4xl md:text-5xl font-extrabold text-text-dark tracking-tighter leading-[1.05]">
+                  Three kinds of systems.
+                  <br />
+                  <span className="text-primary-blue">Built to survive production.</span>
+                </h2>
+              </div>
             </Animated>
-            <Stagger className="grid-4-col" staggerDelay={0.1}>
-              {[
-                {
-                  icon: 'ri-route-line',
-                  title: 'End-to-End Expertise',
-                  desc: 'Our teams handle both AI strategy design and implementation—from concept to production deployment.',
-                },
-                {
-                  icon: 'ri-user-heart-line',
-                  title: 'Client-Centric Solutions',
-                  desc: 'We focus deeply on understanding your unique needs to deliver solutions perfectly aligned with your goals.',
-                },
-                {
-                  icon: 'ri-scales-3-line',
-                  title: 'Tailored & Scalable',
-                  desc: 'Custom solutions built with reusable components that scale efficiently as your business grows.',
-                },
-                {
-                  icon: 'ri-cpu-line',
-                  title: 'Modern Technologies',
-                  desc: 'We integrate cutting-edge AI including GPT-4, Claude, Gemini, and custom fine-tuned models.',
-                },
-              ].map((item, i) => (
-                <StaggerItem key={i} className="grid-item">
-                  <HoverCard className="service-card text-center py-8 px-6 h-full">
-                    <motion.div
-                      className="w-16 h-16 bg-primary-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-5"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ type: 'spring', stiffness: 300 }}
-                    >
-                      <i className={`${item.icon} text-3xl text-primary-blue`} />
-                    </motion.div>
-                    <h3 className="text-lg font-semibold mb-3 text-text-dark">{item.title}</h3>
-                    <p className="text-text-muted text-sm leading-relaxed">{item.desc}</p>
-                  </HoverCard>
-                </StaggerItem>
-              ))}
-            </Stagger>
-          </div>
-        </section>
 
-        {/* Services Section */}
-        <section className="section bg-white">
-          <div className="container">
-            <Animated animation="fadeInUp" className="section-header">
-              <Badge icon="ri-service-line">Our Services</Badge>
-              <h2 className="section-title">Comprehensive AI Services</h2>
-              <p className="section-subtitle">
-                From strategy to maintenance, we&apos;ve got your AI journey covered
-              </p>
-            </Animated>
-            <Stagger className="grid-2-col" staggerDelay={0.15}>
+            <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
-                  icon: 'ri-compass-3-line',
-                  title: 'AI Strategy',
-                  desc: 'We identify opportunities where AI creates real value aligned with your business goals. Our strategic assessments help you prioritize high-impact initiatives.',
-                  features: ['AI Readiness Assessment', 'Use Case Identification', 'ROI Analysis & Roadmap'],
-                },
-                {
-                  icon: 'ri-team-line',
-                  title: 'Project Management & Adoption',
-                  desc: 'Our managers ensure delivery speed while adoption experts prepare your teams for seamless implementation and organizational change.',
-                  features: ['Agile Project Delivery', 'Team Training & Enablement', 'Change Management'],
-                },
-                {
+                  num: '01',
                   icon: 'ri-robot-2-line',
-                  title: 'AI Solutions Development',
-                  desc: 'Custom AI-driven solutions from intelligent automation to advanced analytics. We build conversational AI, agentic systems, and enterprise integrations.',
-                  features: ['Conversational AI & Chatbots', 'Agentic AI Systems', 'Custom ML Models'],
+                  title: 'Agentic systems',
+                  desc: 'Multi-step agents that reason, call tools, and recover when things go wrong. Deployed with typed tool schemas, idempotent handlers, and explicit escape-hatches.',
+                  tech: ['LangGraph', 'MCP', 'Claude / GPT-4o / Llama'],
+                  link: '/solutions/agentic-ai',
                 },
                 {
-                  icon: 'ri-settings-4-line',
-                  title: 'AI Maintenance & Support',
-                  desc: 'Continuous optimization with proactive monitoring and updates. We ensure your AI solutions stay performant, secure, and aligned with evolving needs.',
-                  features: ['24/7 Monitoring', 'Performance Optimization', 'Model Retraining & Updates'],
+                  num: '02',
+                  icon: 'ri-database-2-line',
+                  title: 'RAG & knowledge',
+                  desc: 'Hybrid retrieval, re-ranked, and evaluated on Recall@k. Structured chunking, citation-grounded outputs, and retrieval quality you can actually measure.',
+                  tech: ['pgvector / Weaviate', 'bge-reranker', 'Hybrid BM25 + dense'],
+                  link: '/solutions/conversational-ai',
                 },
-              ].map((service, i) => (
-                <StaggerItem key={i} className="grid-item">
-                  <HoverCard className="service-card p-8 h-full flex gap-6 items-start">
-                    <motion.div
-                      className="w-14 h-14 min-w-[56px] bg-primary-blue/10 rounded-2xl flex items-center justify-center"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ type: 'spring', stiffness: 300 }}
-                    >
-                      <i className={`${service.icon} text-2xl text-primary-blue`} />
-                    </motion.div>
-                    <div>
-                      <h3 className="text-lg font-semibold mb-3 text-text-dark">{service.title}</h3>
-                      <p className="text-text-muted text-sm leading-relaxed mb-4">{service.desc}</p>
-                      <ul className="space-y-2">
-                        {service.features.map((feature, j) => (
-                          <li key={j} className="text-text-muted text-sm flex items-center gap-2">
-                            <i className="ri-check-line text-primary-blue" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </HoverCard>
-                </StaggerItem>
-              ))}
-            </Stagger>
-          </div>
-        </section>
-
-        {/* AI Capabilities Section */}
-        <section className="section">
-          <div className="container">
-            <Animated animation="fadeInUp" className="section-header">
-              <Badge icon="ri-magic-line">AI Capabilities</Badge>
-              <h2 className="section-title">What Can AI Do For You?</h2>
-              <p className="section-subtitle">
-                Discover the transformative power of AI across your business operations
-              </p>
-            </Animated>
-            <Stagger className="grid-3-col" staggerDelay={0.08}>
-              {[
-                { icon: 'ri-flow-chart', title: 'Workflow Automation', desc: 'Automate repetitive tasks, streamline processes, and reduce manual effort with intelligent automation that learns and improves.', link: '/solutions/ai-integration' },
-                { icon: 'ri-robot-line', title: 'AI Agent Development', desc: 'Build autonomous AI agents that can reason, plan, and execute complex multi-step tasks with minimal human intervention.', link: '/solutions/agentic-ai' },
-                { icon: 'ri-line-chart-line', title: 'Predictive Analytics', desc: 'Leverage machine learning to forecast trends, predict outcomes, and make data-driven decisions with confidence.', link: '/solutions/custom-development' },
-                { icon: 'ri-customer-service-2-line', title: 'Intelligent Customer Service', desc: 'Deploy AI chatbots and voice assistants that handle inquiries 24/7 in multiple languages with human-like understanding.', link: '/solutions/conversational-ai' },
-                { icon: 'ri-file-text-line', title: 'Content Generation', desc: 'Automatically draft reports, emails, contracts, and marketing content with AI that understands your brand voice.', link: '/solutions/custom-development' },
-                { icon: 'ri-eye-line', title: 'Document Intelligence', desc: 'Extract, analyze, and process information from documents, forms, and images with advanced OCR and NLP.', link: '/solutions/ai-integration' },
+                {
+                  num: '03',
+                  icon: 'ri-focus-2-line',
+                  title: 'Fine-tuning & integration',
+                  desc: 'Fine-tune when smaller-plus-yours beats a frontier model on your task. Ship it behind a policy layer that fits the rest of your stack.',
+                  tech: ['LoRA / DPO', 'Axolotl + TRL', 'On-prem H100 / H200'],
+                  link: '/solutions/ai-integration',
+                },
               ].map((item, i) => (
-                <StaggerItem key={i} className="grid-item">
-                  <Link href={item.link}>
-                    <HoverCard className="service-card p-6 h-full cursor-pointer">
-                      <motion.div
-                        className="w-12 h-12 bg-primary-blue/10 rounded-xl flex items-center justify-center mb-4"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ type: 'spring', stiffness: 300 }}
-                      >
-                        <i className={`${item.icon} text-xl text-primary-blue`} />
-                      </motion.div>
-                      <h3 className="text-base font-semibold mb-2 text-text-dark">{item.title}</h3>
-                      <p className="text-text-muted text-sm leading-relaxed">{item.desc}</p>
-                    </HoverCard>
+                <motion.div
+                  key={item.num}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-80px' }}
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                >
+                  <Link href={item.link} className="group block h-full">
+                    <div className="card card-hover h-full p-8 flex flex-col">
+                      <div className="flex items-start justify-between mb-6">
+                        <div className="w-12 h-12 rounded-xl bg-primary-blue/10 flex items-center justify-center">
+                          <i className={`${item.icon} text-2xl text-primary-blue`} />
+                        </div>
+                        <span className="font-mono text-xs text-text-muted">{item.num}</span>
+                      </div>
+                      <h3 className="text-2xl font-bold text-text-dark mb-3 tracking-tight">
+                        {item.title}
+                      </h3>
+                      <p className="text-text-muted leading-relaxed mb-6 flex-1">{item.desc}</p>
+                      <div className="flex flex-wrap gap-2 mb-5">
+                        {item.tech.map((t) => (
+                          <span
+                            key={t}
+                            className="font-mono text-[11px] px-2.5 py-1 rounded-md bg-bg-light text-text-muted border border-border"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                      <span className="text-primary-blue font-semibold text-sm inline-flex items-center gap-2 mt-auto">
+                        Read how we build them
+                        <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                      </span>
+                    </div>
                   </Link>
-                </StaggerItem>
+                </motion.div>
               ))}
-            </Stagger>
+            </div>
           </div>
         </section>
 
-        {/* Success Stories Section */}
-        <section className="section bg-gradient-stats">
-          <div className="container">
-            <Animated animation="fadeInUp" className="section-header">
-              <Badge icon="ri-trophy-line" variant="white">
-                Success Stories
-              </Badge>
-              <h2 className="section-title text-white">Our Impact in Action</h2>
-              <p className="section-subtitle text-white/70">
-                Real solutions delivering real results for our clients
-              </p>
+        {/* Agent network — visual anatomy */}
+        <section className="relative py-24 border-t border-border bg-bg-light overflow-hidden">
+          <div className="absolute inset-0 grid-pattern opacity-[0.05] pointer-events-none" />
+          <div className="container relative z-10">
+            <Animated animation="fadeInUp">
+              <div className="max-w-3xl mb-12">
+                <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-text-muted mb-5">
+                  <span className="w-6 h-px bg-text-muted" />
+                  How an agent runs
+                </div>
+                <h2 className="text-3xl md:text-4xl font-extrabold text-text-dark tracking-tighter leading-[1.1]">
+                  Orchestration you can actually debug.
+                </h2>
+                <p className="text-text-muted leading-relaxed mt-4 max-w-2xl">
+                  Every node is typed, every edge is traced, every call is replayable. If it
+                  breaks at 2am, we know why before the page finishes loading.
+                </p>
+              </div>
             </Animated>
-            <Stagger className="grid-3-col" staggerDelay={0.15}>
+            <Animated animation="fadeInUp" delay={0.1}>
+              <AgentGraph />
+            </Animated>
+          </div>
+        </section>
+
+        {/* Proof strip — dense link-outs */}
+        <section className="border-y border-border bg-bg-light/50 py-12">
+          <div className="container">
+            <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
-                  icon: 'ri-whatsapp-line',
-                  name: 'D23.ai',
-                  type: 'WhatsApp AI Assistant',
-                  desc: 'AI-powered WhatsApp assistant serving 5000+ users with multilingual support, voice processing, and real-time information access across 11+ Indian languages.',
-                  stats: [
-                    { value: '1M+', label: 'Messages Processed' },
-                    { value: '11+', label: 'Languages' },
-                  ],
-                  link: '/products/d23-ai',
+                  eyebrow: 'Case studies',
+                  title: 'What we shipped, with the numbers.',
+                  href: '/case-studies',
                 },
                 {
-                  icon: 'ri-voiceprint-line',
-                  name: 'OHGRT',
-                  type: 'AI Voice Studio',
-                  desc: 'Professional AI voice generation platform enabling content creators and enterprises with text-to-speech, voice cloning, and video dubbing in 10+ languages.',
-                  stats: [
-                    { value: '2M+', label: 'Downloads' },
-                    { value: '4.8★', label: 'User Rating' },
-                  ],
-                  link: '/products/ohgrt',
+                  eyebrow: 'Engineering',
+                  title: 'How we build — evals, LLMOps, guardrails.',
+                  href: '/engineering',
                 },
                 {
-                  icon: 'ri-heart-pulse-line',
-                  name: 'Xappy Healthcare',
-                  type: 'Government Healthcare',
-                  desc: 'AI strategy addressing healthcare access, administrative pressure, and clinician support—deployed for government health departments with ethical standards.',
-                  stats: [
-                    { value: 'Gov', label: 'Grade Security' },
-                    { value: '100K+', label: 'Records Managed' },
-                  ],
-                  link: '/products/xappy',
+                  eyebrow: 'Writing',
+                  title: 'Technical posts on agents and RAG in production.',
+                  href: '/blog',
                 },
-              ].map((story, i) => (
-                <StaggerItem key={i} className="grid-item">
-                  <HoverCard className="glass-card p-6 h-full" hoverScale={1.02} hoverY={-5}>
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
-                        <i className={`${story.icon} text-xl text-white`} />
-                      </div>
-                      <div>
-                        <h4 className="text-white text-base font-semibold">{story.name}</h4>
-                        <span className="text-white/60 text-sm">{story.type}</span>
-                      </div>
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="group flex items-start justify-between gap-4 py-3 border-b border-border md:border-b-0 md:border-r md:last:border-r-0 md:pr-8 last:pr-0"
+                >
+                  <div>
+                    <div className="font-mono text-[11px] uppercase tracking-wider text-text-muted mb-2">
+                      {item.eyebrow}
                     </div>
-                    <p className="text-white/70 text-sm leading-relaxed mb-4">{story.desc}</p>
-                    <div className="flex gap-6 mb-4">
-                      {story.stats.map((stat, j) => (
-                        <div key={j}>
-                          <div className="text-xl font-bold text-white">{stat.value}</div>
-                          <div className="text-xs text-white/50">{stat.label}</div>
-                        </div>
-                      ))}
+                    <div className="text-text-dark font-semibold leading-snug group-hover:text-primary-blue transition-colors">
+                      {item.title}
                     </div>
-                    <Link
-                      href={story.link}
-                      className="inline-flex items-center gap-2 text-white/80 text-sm font-medium hover:text-white transition-colors group"
-                    >
-                      View Case Study <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </HoverCard>
-                </StaggerItem>
-              ))}
-            </Stagger>
-            <Animated animation="fadeInUp" delay={0.4} className="text-center mt-10">
-              <Button variant="ctaWhite" asChild>
-                <Link href="/products">
-                  <span>View All Products</span>
-                  <i className="ri-arrow-right-line" />
+                  </div>
+                  <i className="ri-arrow-right-up-line text-xl text-text-muted group-hover:text-primary-blue group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all mt-1" aria-hidden="true" />
                 </Link>
-              </Button>
-            </Animated>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* Stats Section */}
         <section className="stats-section relative">
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-15"
-            style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80')",
-            }}
-          />
+          <div className="absolute inset-0 grid-pattern opacity-[0.06] pointer-events-none" />
           <div className="container relative z-10">
             <Stagger className="stats-grid" staggerDelay={0.1}>
               {[
@@ -457,102 +431,93 @@ export function HomePageContent() {
           </div>
         </section>
 
-        {/* Industries Section */}
-        <section className="section bg-white">
+        {/* Tech Stack — credibility strip */}
+        <section className="py-20 border-t border-border">
           <div className="container">
-            <Animated animation="fadeInUp" className="section-header">
-              <Badge icon="ri-building-2-line">Industries</Badge>
-              <h2 className="section-title">Industries We Serve</h2>
-              <p className="section-subtitle">
-                Delivering AI solutions across diverse sectors with domain expertise
-              </p>
+            <Animated animation="fadeInUp">
+              <div className="max-w-3xl mb-10">
+                <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-text-muted mb-5">
+                  <span className="w-6 h-px bg-text-muted" />
+                  Stack
+                </div>
+                <h2 className="text-3xl md:text-4xl font-extrabold text-text-dark tracking-tighter leading-[1.1]">
+                  Model-agnostic by design.
+                </h2>
+              </div>
             </Animated>
-            <Stagger className="industries-grid" staggerDelay={0.05}>
-              {[
-                { icon: 'ri-government-line', name: 'Government' },
-                { icon: 'ri-book-open-line', name: 'Education' },
-                { icon: 'ri-heart-pulse-line', name: 'Healthcare' },
-                { icon: 'ri-bank-line', name: 'BFSI' },
-                { icon: 'ri-store-2-line', name: 'Retail' },
-                { icon: 'ri-movie-2-line', name: 'Media' },
-              ].map((industry, i) => (
-                <StaggerItem key={i} className="grid-item">
-                  <HoverCard className="service-card text-center py-5 px-3">
-                    <motion.div
-                      className="w-12 h-12 bg-primary-blue/10 rounded-xl flex items-center justify-center mx-auto mb-3"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ type: 'spring', stiffness: 300 }}
-                    >
-                      <i className={`${industry.icon} text-xl text-primary-blue`} />
-                    </motion.div>
-                    <h4 className="text-sm font-medium text-text-dark">{industry.name}</h4>
-                  </HoverCard>
-                </StaggerItem>
-              ))}
-            </Stagger>
-          </div>
-        </section>
 
-        {/* Tech Stack Section */}
-        <section className="section">
-          <div className="container">
-            <Animated animation="fadeInUp" className="section-header">
-              <Badge icon="ri-stack-line">Technology</Badge>
-              <h2 className="section-title">Powered by Leading AI Technologies</h2>
-              <p className="section-subtitle">
-                We work with the best tools and platforms to deliver exceptional results
-              </p>
-            </Animated>
-            <Stagger className="tech-grid" staggerDelay={0.05}>
+            <div className="grid md:grid-cols-4 gap-6 md:gap-10">
               {[
-                { icon: 'ri-brain-fill', color: 'text-[#10a37f]', name: 'OpenAI' },
-                { icon: 'ri-google-fill', color: 'text-[#4285f4]', name: 'Google AI' },
-                { icon: 'ri-facebook-fill', color: 'text-[#0668e1]', name: 'Meta AI' },
-                { icon: 'ri-amazon-fill', color: 'text-[#ff9900]', name: 'AWS' },
-                { icon: 'ri-terminal-box-fill', color: 'text-[#3776ab]', name: 'Python' },
-                { icon: 'ri-reactjs-line', color: 'text-[#61dafb]', name: 'React' },
-                { icon: 'ri-nodejs-fill', color: 'text-[#339933]', name: 'Node.js' },
-                { icon: 'ri-database-2-line', color: 'text-[#336791]', name: 'PostgreSQL' },
-                { icon: 'ri-sparkling-2-fill', color: 'text-[#d97757]', name: 'Claude' },
-              ].map((tech, i) => (
-                <StaggerItem key={i} className="tech-item">
-                  <motion.div
-                    className="tech-badge"
-                    whileHover={{ scale: 1.05, y: -3 }}
-                    transition={{ type: 'spring', stiffness: 300 }}
-                  >
-                    <i className={`${tech.icon} ${tech.color}`} />
-                    <span>{tech.name}</span>
-                  </motion.div>
-                </StaggerItem>
+                {
+                  label: 'Models',
+                  items: ['Claude 4', 'GPT-4.1 / 4o', 'Gemini 2.5', 'Llama 3.3', 'Mistral'],
+                },
+                {
+                  label: 'Retrieval',
+                  items: ['pgvector', 'Weaviate', 'Qdrant', 'bge-reranker-v2', 'Cohere rerank-3.5'],
+                },
+                {
+                  label: 'Orchestration',
+                  items: ['LangGraph', 'MCP', 'Axolotl + TRL', 'LoRA / DPO', 'FastAPI'],
+                },
+                {
+                  label: 'Ops',
+                  items: ['Langfuse', 'Braintrust', 'OpenTelemetry', 'Llama Guard 3', 'OPA policy'],
+                },
+              ].map((group) => (
+                <div key={group.label}>
+                  <div className="font-mono text-[11px] uppercase tracking-wider text-text-muted mb-4 pb-3 border-b border-border">
+                    {group.label}
+                  </div>
+                  <ul className="space-y-2.5">
+                    {group.items.map((item) => (
+                      <li key={item} className="font-mono text-sm text-text-dark">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </Stagger>
+            </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="cta-section relative overflow-hidden">
-          <div className="container">
-            <Animated animation="scaleIn">
-              <div className="cta-card">
-                <h2>Ready to Transform Your Business with AI?</h2>
-                <p>
-                  Get a free consultation and AI readiness assessment. Let&apos;s discuss how AI can
-                  drive efficiency and growth for your organization.
+        <section className="relative overflow-hidden py-24 border-t border-border">
+          <div className="absolute inset-0 bg-gradient-hero pointer-events-none" />
+          <FloatingOrbs />
+          <div className="absolute inset-0 grid-pattern opacity-[0.05] pointer-events-none" />
+          <div className="container relative z-10">
+            <Animated animation="fadeInUp">
+              <div className="max-w-3xl">
+                <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-white/60 mb-6">
+                  <span className="w-6 h-px bg-white/40" />
+                  Let&apos;s build
+                </div>
+                <h2 className="text-4xl md:text-6xl font-extrabold text-white tracking-tightest leading-[1.05] mb-6">
+                  Have an AI problem
+                  <br />
+                  <GradientText>worth shipping?</GradientText>
+                </h2>
+                <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-10 max-w-2xl">
+                  Tell us what you&apos;re trying to build. If it&apos;s a good fit, you&apos;ll be on a
+                  call with a founder within 48 hours — not a sales rep.
                 </p>
-                <div className="flex gap-3 justify-center flex-wrap">
-                  <Button variant="ctaWhite" asChild>
-                    <Link href="/contact">
-                      <span>Get Free Consultation</span>
-                      <i className="ri-arrow-right-line" />
-                    </Link>
-                  </Button>
-                  <Button variant="ghost" asChild>
-                    <a href="tel:+919810503222">
-                      <i className="ri-phone-line" />
-                      <span>+91 9810503222</span>
-                    </a>
-                  </Button>
+                <div className="flex gap-6 flex-wrap items-center">
+                  <Magnetic strength={0.3}>
+                    <Button variant="ctaWhite" asChild>
+                      <Link href="/contact">
+                        <span>Start a conversation</span>
+                        <i className="ri-arrow-right-line" aria-hidden="true" />
+                      </Link>
+                    </Button>
+                  </Magnetic>
+                  <a
+                    href="mailto:info@mobirizer.com"
+                    className="font-mono text-sm text-white/60 hover:text-white transition-colors border-b border-white/20 hover:border-white/60 pb-0.5"
+                  >
+                    info@mobirizer.com
+                  </a>
                 </div>
               </div>
             </Animated>

@@ -1,16 +1,39 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { BackToTop } from '@/components';
+import { BackToTop, ThemeProvider } from '@/components';
+import { PageTransition } from '@/components/ui';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { generateOrganizationSchema, generateWebsiteSchema } from '@/lib/jsonld';
 import { locales, Locale } from '@/i18n';
+import { siteConfig } from '@/lib/metadata';
 import './globals.css';
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-mono',
+  display: 'swap',
+});
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
+
+export const viewport: Viewport = {
+  themeColor: '#6366f1',
+  width: 'device-width',
+  initialScale: 1,
+};
 
 export async function generateMetadata({
   params: { locale },
@@ -20,6 +43,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: 'metadata' });
 
   return {
+    metadataBase: new URL(siteConfig.url),
     title: {
       default: t('siteTitle'),
       template: `%s | ${t('siteName')}`,
@@ -28,19 +52,15 @@ export async function generateMetadata({
     keywords: t('keywords'),
     authors: [{ name: 'Mobirizer Services Pvt. Ltd.' }],
     robots: 'index, follow',
-    themeColor: '#6366f1',
     icons: {
       icon: '/assets/images/favicon.png',
+      apple: '/assets/images/apple-icon.png',
     },
     alternates: {
-      canonical: `https://mobirizer.com${locale === 'en' ? '' : `/${locale}`}`,
-      languages: {
-        en: 'https://mobirizer.com',
-        hi: 'https://mobirizer.com/hi',
-        ta: 'https://mobirizer.com/ta',
-        te: 'https://mobirizer.com/te',
-        bn: 'https://mobirizer.com/bn',
-      },
+      canonical: `${siteConfig.url}/${locale}`,
+      languages: Object.fromEntries(
+        locales.map((loc) => [loc, `${siteConfig.url}/${loc}`])
+      ),
     },
     openGraph: {
       title: t('siteTitle'),
@@ -74,35 +94,29 @@ export default async function RootLayout({
     notFound();
   }
 
+  setRequestLocale(locale);
   const messages = await getMessages();
 
   return (
-    <html lang={locale} dir="ltr">
+    <html
+      lang={locale}
+      dir="ltr"
+      className={`${inter.variable} ${jetbrainsMono.variable}`}
+      suppressHydrationWarning
+    >
       <head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://images.unsplash.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
-          rel="stylesheet"
-        />
         <JsonLd data={[generateOrganizationSchema(), generateWebsiteSchema(locale)]} />
       </head>
       <body>
-        <NextIntlClientProvider messages={messages}>
-          <a href="#main-content" className="skip-link">
-            Skip to main content
-          </a>
-          {children}
-          <BackToTop />
-        </NextIntlClientProvider>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <a href="#main-content" className="skip-link">
+              Skip to main content
+            </a>
+            <PageTransition>{children}</PageTransition>
+            <BackToTop />
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

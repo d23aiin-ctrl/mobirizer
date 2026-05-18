@@ -1,6 +1,6 @@
 import { Locale } from '@/i18n';
 
-const siteUrl = 'https://mobirizer.com';
+const siteUrl = 'https://mobirizer.online';
 
 // Organization Schema - used on all pages
 export function generateOrganizationSchema() {
@@ -23,10 +23,10 @@ export function generateOrganizationSchema() {
     ],
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Umdesh Bhawan wz-3, Palam Village',
-      addressLocality: 'New Delhi',
-      addressRegion: 'Delhi',
-      postalCode: '110045',
+      streetAddress: 'At- Bihari Gadh, Post- Bithauli, P.S.- Bhagwanpur',
+      addressLocality: 'Hajipur',
+      addressRegion: 'Bihar',
+      postalCode: '844114',
       addressCountry: 'IN',
     },
     contactPoint: {
@@ -109,6 +109,48 @@ export function generateProductSchema(product: {
   };
 }
 
+// Article Schema (for blog posts)
+export function generateArticleSchema({
+  title,
+  description,
+  slug,
+  datePublished,
+  readTime,
+  section = 'Engineering',
+}: {
+  title: string;
+  description: string;
+  slug: string;
+  datePublished: string; // ISO date
+  readTime?: string;
+  section?: string;
+}) {
+  const url = `${siteUrl}/blog/${slug}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'TechArticle',
+    headline: title,
+    description,
+    datePublished,
+    dateModified: datePublished,
+    author: {
+      '@type': 'Organization',
+      name: 'Mobirizer Services Pvt. Ltd.',
+      url: siteUrl,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Mobirizer Services Pvt. Ltd.',
+      logo: { '@type': 'ImageObject', url: `${siteUrl}/assets/images/logo.png` },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    url,
+    image: `${siteUrl}/og/blog/${slug}`,
+    articleSection: section,
+    ...(readTime ? { timeRequired: readTime } : {}),
+  };
+}
+
 // Breadcrumb Schema
 export function generateBreadcrumbSchema(
   items: Array<{ name: string; url: string }>
@@ -153,16 +195,16 @@ export function generateLocalBusinessSchema() {
     email: 'info@mobirizer.com',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Umdesh Bhawan wz-3, Palam Village',
-      addressLocality: 'New Delhi',
-      addressRegion: 'Delhi',
-      postalCode: '110045',
+      streetAddress: 'At- Bihari Gadh, Post- Bithauli, P.S.- Bhagwanpur',
+      addressLocality: 'Hajipur',
+      addressRegion: 'Bihar',
+      postalCode: '844114',
       addressCountry: 'IN',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 28.5813,
-      longitude: 77.0885,
+      latitude: 25.6857,
+      longitude: 85.2143,
     },
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',

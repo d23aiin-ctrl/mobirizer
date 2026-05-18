@@ -21,3 +21,11 @@ export {
   Parallax,
   motion,
 } from './Motion';
+
+// Agent/AI effects
+export { HeroSpotlight, FloatingOrbs, LivePulse, TypedTerminalLines, Marquee, Magnetic, AgentGraph, KineticHeadline, LiveMetric, ScrollIndicator } from './AgentEffects';
+
+// Page-level effects
+export { PageTransition } from './PageTransition';
+export { PageHeroBackground } from './PageHeroBackground';
+export { ReadingProgress } from './ReadingProgress';

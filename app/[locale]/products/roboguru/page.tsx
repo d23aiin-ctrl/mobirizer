@@ -33,7 +33,7 @@ export default function RoboGuruPage() {
           <Animated animation="fadeInUp">
             <div className="flex items-center gap-4 mb-3">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
-                <i className="ri-graduation-cap-line text-3xl text-white" />
+                <i className="ri-graduation-cap-line text-3xl text-white" aria-hidden="true" />
               </div>
               <div>
                 <h1 className="mb-1">RoboGuru</h1>
@@ -60,7 +60,7 @@ export default function RoboGuruPage() {
       {/* Main Content */}
       <main id="main-content" role="main">
         {/* Overview Section */}
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="two-col-section">
               <div className="col-left">
@@ -87,13 +87,13 @@ export default function RoboGuruPage() {
                     <Button variant="cta" asChild style={{ background: 'linear-gradient(135deg, #22c55e 0%, #4ade80 100%)' }}>
                       <a href="https://roboguru.in" target="_blank" rel="noopener noreferrer">
                         <span>Try RoboGuru</span>
-                        <i className="ri-external-link-line" />
+                        <i className="ri-external-link-line" aria-hidden="true" />
                       </a>
                     </Button>
                     <Button variant="outline" asChild>
                       <Link href="/contact">
-                        <span>Enterprise Demo</span>
-                        <i className="ri-arrow-right-line" />
+                        <span>Request a demo</span>
+                        <i className="ri-arrow-right-line" aria-hidden="true" />
                       </Link>
                     </Button>
                   </div>
@@ -165,7 +165,7 @@ export default function RoboGuruPage() {
         </section>
 
         {/* Subjects Section */}
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="section-header">
               <Animated animation="fadeInUp">
@@ -226,8 +226,8 @@ export default function RoboGuruPage() {
                 >
                   <Button variant="ctaWhite" asChild>
                     <Link href="/contact">
-                      <span>Get in Touch</span>
-                      <i className="ri-arrow-right-line" />
+                      <span>Start a project</span>
+                      <i className="ri-arrow-right-line" aria-hidden="true" />
                     </Link>
                   </Button>
                 </motion.div>

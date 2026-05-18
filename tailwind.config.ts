@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -8,7 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Rubik', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['var(--font-sans)', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        mono: ['var(--font-mono)', '"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+      },
+      letterSpacing: {
+        tightest: '-0.04em',
+        tighter: '-0.02em',
       },
       colors: {
         primary: {
@@ -27,33 +33,34 @@ const config: Config = {
           red: '#dc2626',
         },
         text: {
-          dark: '#1a1a2e',
-          muted: '#6c757d',
+          dark: 'rgb(var(--text-dark) / <alpha-value>)',
+          muted: 'rgb(var(--text-muted) / <alpha-value>)',
         },
         bg: {
-          light: '#f8fafc',
-          white: '#ffffff',
+          light: 'rgb(var(--bg-light) / <alpha-value>)',
+          white: 'rgb(var(--bg-surface) / <alpha-value>)',
         },
         border: {
-          DEFAULT: '#e2e8f0',
+          DEFAULT: 'rgb(var(--border) / <alpha-value>)',
         },
       },
       boxShadow: {
-        card: '0 4px 20px rgba(0,0,0,0.06)',
-        'card-hover': '0 12px 40px rgba(0,0,0,0.12)',
-        'primary-glow': '0 4px 14px rgba(99, 102, 241, 0.35)',
-        'primary-glow-hover': '0 6px 20px rgba(99, 102, 241, 0.45)',
-        'green-glow': '0 8px 20px rgba(34, 197, 94, 0.25)',
-        'purple-glow': '0 8px 20px rgba(168, 85, 247, 0.25)',
-        'orange-glow': '0 8px 20px rgba(249, 115, 22, 0.25)',
-        'cyan-glow': '0 8px 20px rgba(8, 145, 178, 0.25)',
-        'pink-glow': '0 8px 20px rgba(236, 72, 153, 0.25)',
-        'blue-glow': '0 8px 20px rgba(59, 130, 246, 0.25)',
+        card: '0 1px 2px rgba(0, 0, 0, 0.04)',
+        'card-hover': '0 2px 8px rgba(0, 0, 0, 0.08)',
+        'primary-glow': '0 0 0 1px rgba(99, 102, 241, 0.4)',
+        'primary-glow-hover': '0 0 0 1px rgba(99, 102, 241, 0.6)',
+        'green-glow': '0 0 0 1px rgba(34, 197, 94, 0.3)',
+        'purple-glow': '0 0 0 1px rgba(168, 85, 247, 0.3)',
+        'orange-glow': '0 0 0 1px rgba(249, 115, 22, 0.3)',
+        'cyan-glow': '0 0 0 1px rgba(8, 145, 178, 0.3)',
+        'pink-glow': '0 0 0 1px rgba(236, 72, 153, 0.3)',
+        'blue-glow': '0 0 0 1px rgba(59, 130, 246, 0.3)',
       },
       borderRadius: {
-        '2xl': '16px',
-        '3xl': '20px',
-        '4xl': '28px',
+        xl: '10px',
+        '2xl': '12px',
+        '3xl': '14px',
+        '4xl': '16px',
       },
       screens: {
         xs: '576px',
@@ -79,6 +86,7 @@ const config: Config = {
         'scale-in': 'scaleIn 0.5s ease-out',
         'accordion-down': 'accordionDown 0.3s ease-out',
         'accordion-up': 'accordionUp 0.3s ease-out',
+        marquee: 'marquee linear infinite',
       },
       keyframes: {
         fadeInUp: {
@@ -126,12 +134,16 @@ const config: Config = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
+        marquee: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-50%)' },
+        },
       },
       backgroundImage: {
-        'gradient-primary': 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
-        'gradient-hero': 'linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%)',
-        'gradient-stats': 'linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)',
-        'gradient-footer': 'linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%)',
+        'gradient-primary': 'linear-gradient(135deg, #4f46e5 0%, #6366f1 100%)',
+        'gradient-hero': 'linear-gradient(180deg, #08080a 0%, #0f0f14 60%, #151523 100%)',
+        'gradient-stats': 'linear-gradient(180deg, #08080a 0%, #0f0f14 100%)',
+        'gradient-footer': 'linear-gradient(180deg, #05050a 0%, #0a0a10 100%)',
         'gradient-green': 'linear-gradient(135deg, #22c55e 0%, #4ade80 100%)',
         'gradient-purple': 'linear-gradient(135deg, #a855f7 0%, #7c3aed 100%)',
         'gradient-orange': 'linear-gradient(135deg, #f97316 0%, #fb923c 100%)',

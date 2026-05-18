@@ -1,13 +1,20 @@
 import { MetadataRoute } from 'next';
-import { locales, defaultLocale } from '@/i18n';
+import { locales } from '@/i18n';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://mobirizer.com';
+  const baseUrl = 'https://mobirizer.online';
 
   const routes = [
     '',
     '/company',
     '/contact',
+    '/careers',
+    '/engineering',
+    '/blog',
+    '/blog/evaluating-llm-agents',
+    '/blog/production-rag-2026',
+    '/case-studies',
+    '/case-studies/regional-bank-kyc-agent',
     '/products',
     '/solutions',
     '/products/d23-ai',
@@ -26,28 +33,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const sitemapEntries: MetadataRoute.Sitemap = [];
 
-  // Generate entries for each route in each locale
   routes.forEach((route) => {
     locales.forEach((locale) => {
-      // For default locale (en), no prefix needed
-      const url =
-        locale === defaultLocale
-          ? `${baseUrl}${route}`
-          : `${baseUrl}/${locale}${route}`;
-
       sitemapEntries.push({
-        url,
+        url: `${baseUrl}/${locale}${route}`,
         lastModified: new Date(),
         changeFrequency: route === '' ? 'weekly' : 'monthly',
         priority: route === '' ? 1 : route.startsWith('/products/') ? 0.7 : 0.8,
         alternates: {
           languages: Object.fromEntries(
-            locales.map((loc) => [
-              loc,
-              loc === defaultLocale
-                ? `${baseUrl}${route}`
-                : `${baseUrl}/${loc}${route}`,
-            ])
+            locales.map((loc) => [loc, `${baseUrl}/${loc}${route}`])
           ),
         },
       });

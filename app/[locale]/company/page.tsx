@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Header, Footer, StatCard, Badge, Button } from '@/components';
-import { Animated, Stagger, StaggerItem, HoverCard, motion } from '@/components/ui';
+import { Animated, Stagger, StaggerItem, HoverCard, motion , PageHeroBackground } from '@/components/ui';
 
 export default function CompanyPage() {
   return (
@@ -10,8 +10,8 @@ export default function CompanyPage() {
       <Header activePage="company" />
 
       {/* Page Header */}
-      <section className="page-header">
-        <div className="container">
+      <section className="page-header"><PageHeroBackground />
+        <div className="container relative z-10">
           <Animated animation="fadeInUp">
             <h1>About Us</h1>
           </Animated>
@@ -40,7 +40,7 @@ export default function CompanyPage() {
       {/* Main Content */}
       <main id="main-content" role="main">
         {/* Story Section */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-bg-white">
           <div className="container">
             <div className="two-col-section">
               <div className="col-left">
@@ -131,7 +131,7 @@ export default function CompanyPage() {
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ type: 'spring', stiffness: 300 }}
                     >
-                      <i className="ri-user-line text-4xl text-white" />
+                      <i className="ri-user-line text-4xl text-white" aria-hidden="true" />
                     </motion.div>
                     <h3 className="text-xl mb-1">{person.name}</h3>
                     <p className={`${person.color} font-semibold mb-3`}>{person.role}</p>
@@ -202,7 +202,7 @@ export default function CompanyPage() {
         </section>
 
         {/* Contact Info */}
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="flex justify-center">
               <div className="max-w-2xl text-center">
@@ -210,26 +210,26 @@ export default function CompanyPage() {
                   <Badge icon="ri-map-pin-line" className="mb-4">Our Office</Badge>
                 </Animated>
                 <Animated animation="fadeInUp" delay={0.1}>
-                  <h2 className="text-3xl font-bold text-text-dark mb-6">Based in New Delhi, India</h2>
+                  <h2 className="text-3xl font-bold text-text-dark mb-6">Based in Vaishali, Bihar, India</h2>
                 </Animated>
                 <Animated animation="scaleIn" delay={0.2}>
                   <HoverCard className="info-card max-w-lg mx-auto text-left">
                     <h4>
-                      <i className="ri-building-line mr-2 text-primary-blue" /> Mobirizer Services Pvt. Ltd.
+                      <i className="ri-building-line mr-2 text-primary-blue" aria-hidden="true" /> Mobirizer Services Pvt. Ltd.
                     </h4>
                     <p className="mb-4">
-                      Umdesh Bhawan wz-3,
+                      At- Bihari Gadh, Post- Bithauli,
                       <br />
-                      Palam Village,
+                      P.S.- Bhagwanpur, Hajipur,
                       <br />
-                      New Delhi 110045, India
+                      Dist.- Vaishali, Bihar 844114, India
                     </p>
                     <p className="mb-2">
-                      <i className="ri-mail-line mr-2 text-primary-blue" />
+                      <i className="ri-mail-line mr-2 text-primary-blue" aria-hidden="true" />
                       <a href="mailto:info@mobirizer.com" className="text-primary-blue hover:text-primary-dark transition-colors">info@mobirizer.com</a>
                     </p>
                     <p className="m-0">
-                      <i className="ri-phone-line mr-2 text-primary-blue" />
+                      <i className="ri-phone-line mr-2 text-primary-blue" aria-hidden="true" />
                       <a href="tel:+919810503222" className="text-primary-blue hover:text-primary-dark transition-colors">+91 9810503222</a>
                     </p>
                   </HoverCard>
@@ -269,8 +269,8 @@ export default function CompanyPage() {
                 >
                   <Button variant="ctaWhite" asChild>
                     <Link href="/contact">
-                      <span>Get in Touch</span>
-                      <i className="ri-arrow-right-line" />
+                      <span>Start a project</span>
+                      <i className="ri-arrow-right-line" aria-hidden="true" />
                     </Link>
                   </Button>
                 </motion.div>

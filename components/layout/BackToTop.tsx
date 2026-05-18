@@ -18,7 +18,7 @@ export function BackToTop() {
       onClick={scrollToTop}
       aria-label="Back to top"
     >
-      <i className="ri-arrow-up-line text-xl"></i>
+      <i className="ri-arrow-up-line text-xl" aria-hidden="true"></i>
     </button>
   );
 }

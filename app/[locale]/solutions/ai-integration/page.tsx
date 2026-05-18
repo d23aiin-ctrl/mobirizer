@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Header, Footer, Badge, Button } from '@/components';
-import { Animated, Stagger, StaggerItem, HoverCard, Counter, motion } from '@/components/ui';
+import { Animated, Stagger, StaggerItem, HoverCard, Counter, motion , PageHeroBackground } from '@/components/ui';
 
 const features = [
   { icon: 'ri-api-fill', title: 'API Development', desc: 'Custom REST and GraphQL APIs that expose AI capabilities to your applications with proper authentication and rate limiting.' },
@@ -35,12 +35,12 @@ export default function AIIntegrationPage() {
       <Header activePage="solutions" />
 
       {/* Page Header */}
-      <section className="page-header" style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%)' }}>
-        <div className="container">
+      <section className="page-header" style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%)' }}><PageHeroBackground />
+        <div className="container relative z-10">
           <Animated animation="fadeInUp">
             <div className="flex items-center gap-4 mb-3">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
-                <i className="ri-plug-line text-3xl text-white" />
+                <i className="ri-plug-line text-3xl text-white" aria-hidden="true" />
               </div>
               <div>
                 <h1 className="mb-1">AI Integration</h1>
@@ -67,7 +67,7 @@ export default function AIIntegrationPage() {
       {/* Main Content */}
       <main id="main-content" role="main">
         {/* Overview Section */}
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="two-col-section">
               <div className="col-left">
@@ -94,13 +94,13 @@ export default function AIIntegrationPage() {
                     <Button variant="cta" asChild style={{ background: 'linear-gradient(135deg, #a855f7 0%, #c084fc 100%)' }}>
                       <Link href="/contact">
                         <span>Discuss Integration</span>
-                        <i className="ri-arrow-right-line" />
+                        <i className="ri-arrow-right-line" aria-hidden="true" />
                       </Link>
                     </Button>
                     <Button variant="outline" asChild>
                       <Link href="/solutions">
                         <span>All Solutions</span>
-                        <i className="ri-arrow-right-line" />
+                        <i className="ri-arrow-right-line" aria-hidden="true" />
                       </Link>
                     </Button>
                   </div>
@@ -170,7 +170,7 @@ export default function AIIntegrationPage() {
         </section>
 
         {/* Popular Integrations */}
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="section-header">
               <Animated animation="fadeInUp">
@@ -262,8 +262,8 @@ export default function AIIntegrationPage() {
                 >
                   <Button variant="ctaWhite" asChild>
                     <Link href="/contact">
-                      <span>Schedule Technical Call</span>
-                      <i className="ri-arrow-right-line" />
+                      <span>Start a project</span>
+                      <i className="ri-arrow-right-line" aria-hidden="true" />
                     </Link>
                   </Button>
                 </motion.div>

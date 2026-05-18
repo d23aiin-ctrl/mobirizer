@@ -75,10 +75,7 @@ export default function ProductsPage() {
 
       {/* Hero Section */}
       <section className="relative bg-gradient-hero py-24">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-10"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80')" }}
-        />
+        <div className="absolute inset-0 grid-pattern opacity-[0.08] pointer-events-none" />
         <div className="container relative z-10">
           <motion.nav
             aria-label="breadcrumb"
@@ -144,7 +141,7 @@ export default function ProductsPage() {
       {/* Main Content */}
       <main id="main-content" role="main">
         {/* Products Philosophy Section */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-bg-white">
           <div className="container">
             <div className="two-col-section">
               <div className="col-left">
@@ -178,7 +175,7 @@ export default function ProductsPage() {
                       transition={{ type: 'spring', stiffness: 300 }}
                     >
                       <div className="w-12 h-12 bg-gradient-green rounded-xl flex items-center justify-center">
-                        <i className="ri-global-line text-white text-2xl" />
+                        <i className="ri-global-line text-white text-2xl" aria-hidden="true" />
                       </div>
                       <div>
                         <div className="font-bold text-text-dark">Production Ready</div>
@@ -191,7 +188,7 @@ export default function ProductsPage() {
                       transition={{ type: 'spring', stiffness: 300 }}
                     >
                       <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center">
-                        <i className="ri-shield-check-line text-white text-2xl" />
+                        <i className="ri-shield-check-line text-white text-2xl" aria-hidden="true" />
                       </div>
                       <div>
                         <div className="font-bold text-text-dark">Enterprise Grade</div>
@@ -203,24 +200,19 @@ export default function ProductsPage() {
               </div>
               <div className="col-right">
                 <Animated animation="fadeInRight" delay={0.2}>
-                  <div className="relative">
-                    <Float intensity={8} duration={5}>
-                      <img
-                        src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80"
-                        alt="Team building products"
-                        className="rounded-3xl shadow-card-hover"
-                      />
-                    </Float>
-                    <motion.div
-                      className="absolute -bottom-4 -left-4 bg-white p-5 rounded-2xl shadow-card z-10"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.5, type: 'spring', stiffness: 200 }}
-                    >
-                      <div className="text-3xl font-extrabold text-primary-blue">4.8★</div>
-                      <div className="text-sm text-text-muted">Average Rating</div>
-                    </motion.div>
+                  <div className="rounded-xl border border-border bg-bg-white divide-y divide-border">
+                    {[
+                      { label: 'Products in production', value: '6' },
+                      { label: 'Active users', value: '5,000+' },
+                      { label: 'Messages processed', value: '1M+' },
+                      { label: 'Average rating', value: '4.8★' },
+                      { label: 'Languages supported', value: '11+' },
+                    ].map((s) => (
+                      <div key={s.label} className="flex items-baseline justify-between px-6 py-4">
+                        <span className="text-sm text-text-muted">{s.label}</span>
+                        <span className="text-2xl font-extrabold text-text-dark font-mono tracking-tight">{s.value}</span>
+                      </div>
+                    ))}
                   </div>
                 </Animated>
               </div>
@@ -250,10 +242,7 @@ export default function ProductsPage() {
                 whileHover={{ scale: 1.01 }}
                 transition={{ type: 'spring', stiffness: 200 }}
               >
-                <div
-                  className="absolute top-0 right-0 w-2/5 h-full bg-cover bg-center opacity-20"
-                  style={{ backgroundImage: "url('https://images.unsplash.com/photo-1611746872915-64382b5c76da?w=600&q=80')" }}
-                />
+                <div className="absolute top-0 right-0 w-2/5 h-full grid-pattern opacity-10 pointer-events-none" />
                 <div className="hero-two-col relative z-10">
                   <div className="hero-content-col">
                     <motion.div
@@ -263,7 +252,7 @@ export default function ProductsPage() {
                       viewport={{ once: true }}
                       transition={{ delay: 0.2 }}
                     >
-                      <i className="ri-whatsapp-line text-white text-lg" />
+                      <i className="ri-whatsapp-line text-white text-lg" aria-hidden="true" />
                       <span className="text-white text-sm font-semibold">WhatsApp Native</span>
                     </motion.div>
                     <motion.h3
@@ -319,7 +308,7 @@ export default function ProductsPage() {
                       <Button variant="ctaWhite" asChild>
                         <Link href="/products/d23-ai">
                           <span>Explore D23.ai</span>
-                          <i className="ri-arrow-right-line" />
+                          <i className="ri-arrow-right-line" aria-hidden="true" />
                         </Link>
                       </Button>
                     </motion.div>
@@ -376,7 +365,7 @@ export default function ProductsPage() {
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
                           >
-                            <i className={`ri-check-double-line ${prod.color}`} /> {f}
+                            <i className={`ri-check-double-line ${prod.color}`} aria-hidden="true" /> {f}
                           </motion.li>
                         ))}
                       </ul>
@@ -388,7 +377,7 @@ export default function ProductsPage() {
                           href={`/products/${prod.slug}`}
                           className={`inline-flex items-center gap-2 ${prod.color} font-semibold hover:opacity-80 transition-opacity`}
                         >
-                          Learn More <i className="ri-arrow-right-line" />
+                          Learn More <i className="ri-arrow-right-line" aria-hidden="true" />
                         </Link>
                       </motion.div>
                     </div>
@@ -400,7 +389,7 @@ export default function ProductsPage() {
         </section>
 
         {/* Use Cases Section */}
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="section-header">
               <Animated animation="fadeInUp">
@@ -435,10 +424,7 @@ export default function ProductsPage() {
 
         {/* Stats Section */}
         <section className="stats-section relative">
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-15"
-            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80')" }}
-          />
+          <div className="absolute inset-0 grid-pattern opacity-[0.06] pointer-events-none" />
           <div className="container relative z-10">
             <Stagger className="stats-grid" staggerDelay={0.1}>
               <StaggerItem>
@@ -489,13 +475,13 @@ export default function ProductsPage() {
                   <Button variant="ctaWhite" asChild>
                     <Link href="/contact">
                       <span>Start a Conversation</span>
-                      <i className="ri-arrow-right-line" />
+                      <i className="ri-arrow-right-line" aria-hidden="true" />
                     </Link>
                   </Button>
                   <Button variant="ghost" asChild>
                     <Link href="/solutions">
                       <span>Explore Solutions</span>
-                      <i className="ri-arrow-right-line" />
+                      <i className="ri-arrow-right-line" aria-hidden="true" />
                     </Link>
                   </Button>
                 </motion.div>

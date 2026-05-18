@@ -42,6 +42,13 @@
     "solutions": "Solutions",
     "company": "Company"
   },
+  "resources": {
+    "title": "Resources",
+    "engineering": { "title": "Engineering", "desc": "How we build AI" },
+    "blog": { "title": "Blog", "desc": "Technical writing" },
+    "caseStudies": { "title": "Case Studies", "desc": "What we've shipped" },
+    "careers": { "title": "Careers", "desc": "We're hiring" }
+  },
   "home": {
     "hero": {
       "badge": "AI Solutions Since 2019",
@@ -461,9 +468,9 @@
     },
     "office": {
       "badge": "Our Office",
-      "title": "Based in New Delhi, India",
+      "title": "Based in Vaishali, Bihar, India",
       "companyName": "Mobirizer Services Pvt. Ltd.",
-      "address": "Umdesh Bhawan wz-3, Palam Village, New Delhi 110045, India",
+      "address": "At- Bihari Gadh, Post- Bithauli, P.S.- Bhagwanpur, Hajipur, Dist.- Vaishali, Bihar 844114, India",
       "email": "info@mobirizer.com",
       "phone": "+91 9810503222"
     },
@@ -492,7 +499,7 @@
       "subjectOptions": {
         "general": "General Inquiry",
         "project": "Start a Project",
-        "product": "Product Information",
+        "products": "Product Information",
         "partnership": "Partnership Opportunity",
         "support": "Technical Support"
       },
@@ -500,7 +507,16 @@
       "messagePlaceholder": "Tell us about your project or question...",
       "submit": "Send Message",
       "submitting": "Sending...",
-      "success": "Thank you for your message! We will get back to you within 24 hours."
+      "success": "Thanks — your message is on its way. We'll be in touch within 24 hours.",
+      "errorFallback": "Something went wrong. Please try again or email info@mobirizer.com directly.",
+      "prefillIntro": "Hi, I'd like to discuss",
+      "errors": {
+        "name": "Please enter a valid name (at least 2 characters)",
+        "email": "Please enter a valid email address",
+        "phone": "Please enter a valid phone number (10-15 digits)",
+        "subject": "Please select a subject",
+        "message": "Please enter a message (at least 10 characters)"
+      }
     },
     "info": {
       "title": "Get in Touch",

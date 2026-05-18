@@ -67,7 +67,7 @@ const pricingPlans = [
     price: 'Custom',
     period: '',
     features: ['White-label solution', 'Custom AI training', 'API access', 'CRM integrations', 'Dedicated support', 'SLA guarantees'],
-    cta: 'Contact Sales',
+    cta: 'Start a project',
     ctaStyle: 'bg-bg-light text-text-dark hover:bg-gray-200',
     featured: false,
   },
@@ -90,7 +90,7 @@ export default function D23AIPage() {
           <Animated animation="fadeInUp">
             <div className="flex items-center gap-4 mb-3">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
-                <i className="ri-whatsapp-line text-3xl text-white" />
+                <i className="ri-whatsapp-line text-3xl text-white" aria-hidden="true" />
               </div>
               <div>
                 <h1 className="mb-1">D23.ai</h1>
@@ -117,7 +117,7 @@ export default function D23AIPage() {
       {/* Main Content */}
       <main id="main-content" role="main">
         {/* Overview Section */}
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="two-col-section">
               <div className="col-left">
@@ -142,7 +142,7 @@ export default function D23AIPage() {
                 <Animated animation="fadeInUp" delay={0.4}>
                   <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-xl p-4 mb-8 border-l-4 border-green-500">
                     <p className="m-0 text-text-dark text-sm">
-                      <i className="ri-time-line mr-2 text-green-600" />
+                      <i className="ri-time-line mr-2 text-green-600" aria-hidden="true" />
                       Average response time: <strong>&lt;2 seconds</strong>
                     </p>
                   </div>
@@ -152,13 +152,13 @@ export default function D23AIPage() {
                     <Button variant="cta" asChild style={{ background: 'linear-gradient(135deg, #128C7E 0%, #25d366 100%)' }}>
                       <a href="https://d23.ai" target="_blank" rel="noopener noreferrer">
                         <span>Start Chatting Free</span>
-                        <i className="ri-whatsapp-line" />
+                        <i className="ri-whatsapp-line" aria-hidden="true" />
                       </a>
                     </Button>
                     <Button variant="outline" asChild>
                       <Link href="/contact">
                         <span>Enterprise API</span>
-                        <i className="ri-arrow-right-line" />
+                        <i className="ri-arrow-right-line" aria-hidden="true" />
                       </Link>
                     </Button>
                   </div>
@@ -224,7 +224,7 @@ export default function D23AIPage() {
         </section>
 
         {/* Use Cases Section */}
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="section-header">
               <Animated animation="fadeInUp">
@@ -269,7 +269,7 @@ export default function D23AIPage() {
             </div>
             <Animated animation="scaleIn" delay={0.3}>
               <div className="overflow-x-auto">
-                <table className="w-full bg-white rounded-2xl overflow-hidden shadow-card">
+                <table className="w-full bg-bg-white rounded-2xl overflow-hidden shadow-card">
                   <thead>
                     <tr style={{ background: 'linear-gradient(135deg, #128C7E 0%, #25d366 100%)' }}>
                       <th className="p-4 text-left text-white font-semibold">Feature</th>
@@ -283,13 +283,13 @@ export default function D23AIPage() {
                       <tr key={i} className="border-b border-gray-100 last:border-0">
                         <td className="p-4 font-medium text-text-dark">{row.feature}</td>
                         <td className="p-4">
-                          {row.d23 ? <i className="ri-check-line text-xl text-green-500" /> : <i className="ri-close-line text-xl text-red-500" />}
+                          {row.d23 ? <i className="ri-check-line text-xl text-green-500" aria-hidden="true" /> : <i className="ri-close-line text-xl text-red-500" aria-hidden="true" />}
                         </td>
                         <td className="p-4">
-                          {row.chatgpt ? <i className="ri-check-line text-xl text-green-500" /> : <i className="ri-close-line text-xl text-red-500" />}
+                          {row.chatgpt ? <i className="ri-check-line text-xl text-green-500" aria-hidden="true" /> : <i className="ri-close-line text-xl text-red-500" aria-hidden="true" />}
                         </td>
                         <td className="p-4">
-                          {row.others ? <i className="ri-check-line text-xl text-green-500" /> : <i className="ri-close-line text-xl text-red-500" />}
+                          {row.others ? <i className="ri-check-line text-xl text-green-500" aria-hidden="true" /> : <i className="ri-close-line text-xl text-red-500" aria-hidden="true" />}
                         </td>
                       </tr>
                     ))}
@@ -301,7 +301,7 @@ export default function D23AIPage() {
         </section>
 
         {/* How It Works Section */}
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="section-header">
               <Animated animation="fadeInUp">
@@ -352,7 +352,7 @@ export default function D23AIPage() {
               {pricingPlans.map((plan, i) => (
                 <StaggerItem key={i}>
                   <HoverCard
-                    className={`bg-white rounded-3xl p-8 shadow-card min-w-[280px] max-w-[380px] flex-1 relative ${plan.featured ? 'border-2 border-green-500' : 'border-2 border-transparent'}`}
+                    className={`bg-bg-white rounded-3xl p-8 shadow-card min-w-[280px] max-w-[380px] flex-1 relative ${plan.featured ? 'border-2 border-green-500' : 'border-2 border-transparent'}`}
                     hoverY={-4}
                   >
                     {plan.featured && (
@@ -368,13 +368,20 @@ export default function D23AIPage() {
                     <ul className="space-y-3 mb-6">
                       {plan.features.map((feature, j) => (
                         <li key={j} className="flex items-center gap-2.5 text-text-muted text-sm">
-                          <i className="ri-check-line text-green-500 text-lg" />
+                          <i className="ri-check-line text-green-500 text-lg" aria-hidden="true" />
                           {feature}
                         </li>
                       ))}
                     </ul>
                     <Button className={`w-full justify-center ${plan.ctaStyle}`} asChild>
-                      <a href={plan.name === 'Enterprise' ? '/contact' : 'https://d23.ai'} target={plan.name !== 'Enterprise' ? '_blank' : undefined}>
+                      <a
+                        href={
+                          plan.name === 'Enterprise'
+                            ? `/contact?product=d23-ai&plan=${plan.name.toLowerCase()}`
+                            : 'https://d23.ai'
+                        }
+                        target={plan.name !== 'Enterprise' ? '_blank' : undefined}
+                      >
                         {plan.cta}
                       </a>
                     </Button>
@@ -386,7 +393,7 @@ export default function D23AIPage() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="section-header">
               <Animated animation="fadeInUp">
@@ -402,7 +409,7 @@ export default function D23AIPage() {
             <Stagger className="grid-3-col" staggerDelay={0.15}>
               {testimonials.map((testimonial, i) => (
                 <StaggerItem key={i} className="grid-item">
-                  <HoverCard className="bg-white rounded-2xl p-8 shadow-card h-full">
+                  <HoverCard className="bg-bg-white rounded-2xl p-8 shadow-card h-full">
                     <p className="text-text-muted leading-relaxed mb-5 italic">&ldquo;{testimonial.quote}&rdquo;</p>
                     <div className="flex items-center gap-3">
                       <div className={`w-12 h-12 ${testimonial.gradient} rounded-full flex items-center justify-center text-white font-bold`}>
@@ -451,13 +458,13 @@ export default function D23AIPage() {
                   <Button variant="ctaWhite" asChild>
                     <a href="https://d23.ai" target="_blank" rel="noopener noreferrer">
                       <span>Start Chatting Free</span>
-                      <i className="ri-whatsapp-line" />
+                      <i className="ri-whatsapp-line" aria-hidden="true" />
                     </a>
                   </Button>
                   <Button variant="ghost" asChild>
                     <Link href="/contact">
                       <span>Enterprise API</span>
-                      <i className="ri-arrow-right-line" />
+                      <i className="ri-arrow-right-line" aria-hidden="true" />
                     </Link>
                   </Button>
                 </motion.div>

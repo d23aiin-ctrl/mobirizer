@@ -102,10 +102,7 @@ export default function SolutionsPage() {
 
       {/* Hero Section */}
       <section className="relative py-24" style={{ background: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%)' }}>
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-10"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1920&q=80')" }}
-        />
+        <div className="absolute inset-0 grid-pattern opacity-[0.08] pointer-events-none" />
         <div className="container relative z-10">
           <motion.nav
             aria-label="breadcrumb"
@@ -162,7 +159,7 @@ export default function SolutionsPage() {
       {/* Main Content */}
       <main id="main-content" role="main">
         {/* Our Approach Section */}
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="two-col-section">
               <div className="col-left">
@@ -188,14 +185,14 @@ export default function SolutionsPage() {
                   <div className="flex flex-wrap gap-4">
                     <div className="flex-1 min-w-[calc(50%-8px)]">
                       <div className="p-5 rounded-2xl" style={{ background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%)' }}>
-                        <i className="ri-focus-3-line text-3xl text-primary-blue block mb-3" />
+                        <i className="ri-focus-3-line text-3xl text-primary-blue block mb-3" aria-hidden="true" />
                         <div className="font-bold text-text-dark mb-1">Results Focused</div>
                         <div className="text-sm text-text-muted">ROI-driven solutions</div>
                       </div>
                     </div>
                     <div className="flex-1 min-w-[calc(50%-8px)]">
                       <div className="p-5 rounded-2xl" style={{ background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(74, 222, 128, 0.1) 100%)' }}>
-                        <i className="ri-loop-left-line text-3xl text-green-500 block mb-3" />
+                        <i className="ri-loop-left-line text-3xl text-green-500 block mb-3" aria-hidden="true" />
                         <div className="font-bold text-text-dark mb-1">Iterative Process</div>
                         <div className="text-sm text-text-muted">Rapid feedback loops</div>
                       </div>
@@ -205,22 +202,20 @@ export default function SolutionsPage() {
               </div>
               <div className="col-right">
                 <Animated animation="fadeInRight" delay={0.2}>
-                  <div className="relative">
-                    <img
-                      src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80"
-                      alt="AI Strategy Session"
-                      className="rounded-3xl shadow-card-hover w-full"
-                    />
-                    <motion.div
-                      className="absolute -top-4 -right-4 bg-white p-5 rounded-2xl shadow-card z-10"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.5, type: 'spring', stiffness: 200 }}
-                    >
-                      <div className="text-3xl font-extrabold text-green-500">10+</div>
-                      <div className="text-sm text-text-muted">Years Experience</div>
-                    </motion.div>
+                  <div className="rounded-xl border border-border bg-bg-white p-8">
+                    <div className="grid grid-cols-2 gap-6">
+                      {[
+                        { label: 'Production agents shipped', value: '40+' },
+                        { label: 'Sectors served', value: '6' },
+                        { label: 'Years shipping AI', value: '10+' },
+                        { label: 'Avg uptime SLO', value: '99.9%' },
+                      ].map((s) => (
+                        <div key={s.label} className="border-l-2 border-primary-blue pl-4">
+                          <div className="text-3xl font-extrabold text-text-dark tracking-tighter">{s.value}</div>
+                          <div className="text-xs text-text-muted mt-1 uppercase tracking-wide">{s.label}</div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </Animated>
               </div>
@@ -274,12 +269,12 @@ export default function SolutionsPage() {
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
                           >
-                            <i className="ri-check-double-line" style={{ color: sol.color }} /> {f}
+                            <i className="ri-check-double-line" style={{ color: sol.color }} aria-hidden="true" /> {f}
                           </motion.li>
                         ))}
                       </ul>
                       <Link href="/contact" className="inline-flex items-center gap-2 font-semibold no-underline" style={{ color: sol.color }}>
-                        Learn More <i className="ri-arrow-right-line" />
+                        Learn More <i className="ri-arrow-right-line" aria-hidden="true" />
                       </Link>
                     </div>
                   </HoverCard>
@@ -329,7 +324,7 @@ export default function SolutionsPage() {
         </section>
 
         {/* Technologies Section */}
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="section-header">
               <Animated animation="fadeInUp">
@@ -358,10 +353,7 @@ export default function SolutionsPage() {
 
         {/* Stats Section */}
         <section className="stats-section relative">
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-15"
-            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80')" }}
-          />
+          <div className="absolute inset-0 grid-pattern opacity-[0.06] pointer-events-none" />
           <div className="container relative z-10">
             <Stagger className="stats-grid" staggerDelay={0.1}>
               <StaggerItem>
@@ -422,15 +414,15 @@ export default function SolutionsPage() {
                 >
                   <Button variant="ctaWhite" asChild>
                     <Link href="/contact">
-                      <span>Get Free Consultation</span>
-                      <i className="ri-arrow-right-line" />
+                      <span>Start a project</span>
+                      <i className="ri-arrow-right-line" aria-hidden="true" />
                     </Link>
                   </Button>
                   <a
                     href="tel:+919810503222"
                     className="inline-flex items-center gap-2 px-6 py-3 bg-white/20 text-white font-semibold rounded-xl no-underline hover:bg-white/30 transition-all"
                   >
-                    <i className="ri-phone-line" />
+                    <i className="ri-phone-line" aria-hidden="true" />
                     <span>+91 9810503222</span>
                   </a>
                 </motion.div>

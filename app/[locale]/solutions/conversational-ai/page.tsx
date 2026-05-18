@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Header, Footer, Badge, Button } from '@/components';
-import { Animated, Stagger, StaggerItem, HoverCard, Counter, motion } from '@/components/ui';
+import { Animated, Stagger, StaggerItem, HoverCard, Counter, motion , PageHeroBackground } from '@/components/ui';
 
 const features = [
   { icon: 'ri-message-3-line', title: 'Natural Language Understanding', desc: 'Advanced NLU that understands intent, context, and nuance in user messages across multiple languages.' },
@@ -35,12 +35,12 @@ export default function ConversationalAIPage() {
       <Header activePage="solutions" />
 
       {/* Page Header */}
-      <section className="page-header" style={{ background: 'linear-gradient(135deg, #16a34a 0%, #22c55e 50%, #4ade80 100%)' }}>
-        <div className="container">
+      <section className="page-header" style={{ background: 'linear-gradient(135deg, #16a34a 0%, #22c55e 50%, #4ade80 100%)' }}><PageHeroBackground />
+        <div className="container relative z-10">
           <Animated animation="fadeInUp">
             <div className="flex items-center gap-4 mb-3">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
-                <i className="ri-chat-voice-line text-3xl text-white" />
+                <i className="ri-chat-voice-line text-3xl text-white" aria-hidden="true" />
               </div>
               <div>
                 <h1 className="mb-1">Conversational AI</h1>
@@ -67,7 +67,7 @@ export default function ConversationalAIPage() {
       {/* Main Content */}
       <main id="main-content" role="main">
         {/* Overview Section */}
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="two-col-section">
               <div className="col-left">
@@ -94,13 +94,13 @@ export default function ConversationalAIPage() {
                     <Button variant="cta" asChild style={{ background: 'linear-gradient(135deg, #22c55e 0%, #4ade80 100%)' }}>
                       <Link href="/contact">
                         <span>Build Your Bot</span>
-                        <i className="ri-arrow-right-line" />
+                        <i className="ri-arrow-right-line" aria-hidden="true" />
                       </Link>
                     </Button>
                     <Button variant="outline" asChild>
                       <Link href="/products/d23-ai">
                         <span>See D23.ai Demo</span>
-                        <i className="ri-arrow-right-line" />
+                        <i className="ri-arrow-right-line" aria-hidden="true" />
                       </Link>
                     </Button>
                   </div>
@@ -170,7 +170,7 @@ export default function ConversationalAIPage() {
         </section>
 
         {/* Features Section */}
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="section-header">
               <Animated animation="fadeInUp">
@@ -267,8 +267,8 @@ export default function ConversationalAIPage() {
                 >
                   <Button variant="ctaWhite" asChild>
                     <Link href="/contact">
-                      <span>Get Started</span>
-                      <i className="ri-arrow-right-line" />
+                      <span>Start a project</span>
+                      <i className="ri-arrow-right-line" aria-hidden="true" />
                     </Link>
                   </Button>
                 </motion.div>

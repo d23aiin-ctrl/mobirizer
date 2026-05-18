@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Header, Footer, Badge, Button } from '@/components';
-import { Animated, Stagger, StaggerItem, HoverCard, Counter, motion } from '@/components/ui';
+import { Animated, Stagger, StaggerItem, HoverCard, Counter, motion , PageHeroBackground } from '@/components/ui';
 
 const features = [
   { icon: 'ri-brain-line', title: 'Multi-Step Reasoning', desc: 'Agents that break down complex problems into logical steps and execute them sequentially with built-in error handling.' },
@@ -33,12 +33,12 @@ export default function AgenticAIPage() {
       <Header activePage="solutions" />
 
       {/* Page Header */}
-      <section className="page-header" style={{ background: 'linear-gradient(135deg, #4f46e5 0%, #6366f1 50%, #818cf8 100%)' }}>
-        <div className="container">
+      <section className="page-header" style={{ background: 'linear-gradient(135deg, #4f46e5 0%, #6366f1 50%, #818cf8 100%)' }}><PageHeroBackground />
+        <div className="container relative z-10">
           <Animated animation="fadeInUp">
             <div className="flex items-center gap-4 mb-3">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
-                <i className="ri-robot-2-line text-3xl text-white" />
+                <i className="ri-robot-2-line text-3xl text-white" aria-hidden="true" />
               </div>
               <div>
                 <h1 className="mb-1">Agentic AI</h1>
@@ -65,7 +65,7 @@ export default function AgenticAIPage() {
       {/* Main Content */}
       <main id="main-content" role="main">
         {/* Overview Section */}
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="two-col-section">
               <div className="col-left">
@@ -92,13 +92,13 @@ export default function AgenticAIPage() {
                     <Button variant="cta" asChild>
                       <Link href="/contact">
                         <span>Start Building</span>
-                        <i className="ri-arrow-right-line" />
+                        <i className="ri-arrow-right-line" aria-hidden="true" />
                       </Link>
                     </Button>
                     <Button variant="outline" asChild>
                       <Link href="/solutions">
                         <span>All Solutions</span>
-                        <i className="ri-arrow-right-line" />
+                        <i className="ri-arrow-right-line" aria-hidden="true" />
                       </Link>
                     </Button>
                   </div>
@@ -168,7 +168,7 @@ export default function AgenticAIPage() {
         </section>
 
         {/* Use Cases Section */}
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="section-header">
               <Animated animation="fadeInUp">
@@ -258,8 +258,8 @@ export default function AgenticAIPage() {
                 >
                   <Button variant="ctaWhite" asChild>
                     <Link href="/contact">
-                      <span>Schedule Consultation</span>
-                      <i className="ri-arrow-right-line" />
+                      <span>Start a project</span>
+                      <i className="ri-arrow-right-line" aria-hidden="true" />
                     </Link>
                   </Button>
                 </motion.div>

@@ -1,16 +1,37 @@
+@import 'remixicon/fonts/remixicon.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Google Fonts - Rubik is loaded via link tag in layout.tsx for better performance */
-
 @layer base {
+  :root {
+    --text-dark: 10 10 12;
+    --text-muted: 82 82 91;
+    --bg-light: 250 250 250;
+    --bg-surface: 255 255 255;
+    --border: 229 229 234;
+    --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --card-shadow-hover: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .dark {
+    --text-dark: 250 250 250;
+    --text-muted: 161 161 170;
+    --bg-light: 8 8 12;
+    --bg-surface: 24 24 32;
+    --border: 55 55 70;
+    --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    --card-shadow-hover: 0 4px 24px rgba(99, 102, 241, 0.15);
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
     @apply font-sans bg-bg-light text-text-dark leading-relaxed overflow-x-hidden antialiased;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
 
   *:focus-visible {
@@ -28,18 +49,32 @@
 }
 
 @layer components {
-  /* Gradient Text */
+  /* Grid Pattern Background (used on hero/stats sections) */
+  .grid-pattern {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.6) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* Fine noise texture for dark surfaces */
+  .noise-texture {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 160px 160px;
+  }
+
+  /* Gradient Text — retained but restrained to monochrome + indigo only */
   .gradient-text {
-    @apply bg-gradient-to-br from-primary-light to-accent-green bg-clip-text text-transparent;
+    @apply bg-gradient-to-br from-primary-light to-white bg-clip-text text-transparent;
   }
 
   .gradient-text-animated {
-    background: linear-gradient(135deg, #818cf8, #22c55e, #6366f1, #818cf8);
-    background-size: 300% 300%;
+    background: linear-gradient(135deg, #ffffff, #a5b4fc, #ffffff);
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: gradientShift 5s ease infinite;
+    animation: gradientShift 6s ease infinite;
   }
 
   /* Glass Morphism */
@@ -92,7 +127,7 @@
 
   /* Breadcrumb */
   .breadcrumb-wrapper {
-    @apply bg-white border-b border-border py-3;
+    @apply bg-bg-white border-b border-border py-3;
   }
 
   .breadcrumb {
@@ -116,9 +151,23 @@
     @apply text-text-muted;
   }
 
+  /* Generic Card */
+  .card {
+    @apply bg-bg-white rounded-2xl shadow-card border border-border;
+  }
+
+  .card-hover {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-hover:hover {
+    @apply shadow-card-hover border-primary-light/30;
+    transform: translateY(-4px);
+  }
+
   /* Service Card */
   .service-card {
-    @apply bg-white rounded-3xl p-8 shadow-card border border-transparent;
+    @apply bg-bg-white rounded-3xl p-8 shadow-card border border-transparent;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -142,7 +191,7 @@
 
   /* Value Card */
   .value-card {
-    @apply bg-white rounded-2xl p-6 shadow-card border border-transparent;
+    @apply bg-bg-white rounded-2xl p-6 shadow-card border border-transparent;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -262,7 +311,7 @@
   }
 
   .footer-grid {
-    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12;
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12;
   }
 
   .footer-section h4 {
@@ -360,7 +409,7 @@
   }
 
   .tech-badge {
-    @apply inline-flex items-center gap-2 bg-white px-4 py-2.5 rounded-xl shadow-card whitespace-nowrap font-semibold text-text-dark border border-border text-sm;
+    @apply inline-flex items-center gap-2 bg-bg-white px-4 py-2.5 rounded-xl shadow-card whitespace-nowrap font-semibold text-text-dark border border-border text-sm;
   }
 
   /* Form Grid */

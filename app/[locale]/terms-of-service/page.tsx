@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Header, Footer } from '@/components';
-import { Animated } from '@/components/ui';
+import { Animated , PageHeroBackground } from '@/components/ui';
 
 export default function TermsOfServicePage() {
   return (
@@ -10,8 +10,8 @@ export default function TermsOfServicePage() {
       <Header />
 
       {/* Page Header */}
-      <section className="page-header">
-        <div className="container">
+      <section className="page-header"><PageHeroBackground />
+        <div className="container relative z-10">
           <Animated animation="fadeInUp">
             <h1>Terms of Service</h1>
           </Animated>
@@ -39,7 +39,7 @@ export default function TermsOfServicePage() {
 
       {/* Main Content */}
       <main id="main-content" role="main">
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="max-w-3xl mx-auto">
               <p className="text-text-muted mb-6">

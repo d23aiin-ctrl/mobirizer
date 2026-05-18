@@ -40,7 +40,7 @@ export default function XappyPage() {
           <Animated animation="fadeInUp">
             <div className="flex items-center gap-4 mb-3">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
-                <i className="ri-heart-pulse-line text-3xl text-white" />
+                <i className="ri-heart-pulse-line text-3xl text-white" aria-hidden="true" />
               </div>
               <div>
                 <h1 className="mb-1">Xappy</h1>
@@ -67,7 +67,7 @@ export default function XappyPage() {
       {/* Main Content */}
       <main id="main-content" role="main">
         {/* Overview Section */}
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="two-col-section">
               <div className="col-left">
@@ -93,8 +93,8 @@ export default function XappyPage() {
                   <div className="flex gap-3 flex-wrap">
                     <Button variant="cta" asChild style={{ background: 'linear-gradient(135deg, #0891b2 0%, #22d3ee 100%)' }}>
                       <Link href="/contact">
-                        <span>Request Demo</span>
-                        <i className="ri-arrow-right-line" />
+                        <span>Request a demo</span>
+                        <i className="ri-arrow-right-line" aria-hidden="true" />
                       </Link>
                     </Button>
                   </div>
@@ -155,7 +155,7 @@ export default function XappyPage() {
         </section>
 
         {/* Use Cases Section */}
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="section-header">
               <Animated animation="fadeInUp">
@@ -204,7 +204,9 @@ export default function XappyPage() {
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Flag_of_Sri_Lanka.svg/320px-Flag_of_Sri_Lanka.svg.png"
                     alt="Sri Lanka Flag"
-                    className="h-16 mx-auto mb-5 rounded shadow-md"
+                    width={320}
+                    height={160}
+                    className="h-16 w-auto mx-auto mb-5 rounded shadow-md"
                   />
                   <h3 className="text-2xl font-bold mb-3">Sri Lanka Healthcare Program</h3>
                   <p className="text-text-muted">
@@ -245,8 +247,8 @@ export default function XappyPage() {
                 >
                   <Button variant="ctaWhite" asChild>
                     <Link href="/contact">
-                      <span>Request Demo</span>
-                      <i className="ri-arrow-right-line" />
+                      <span>Request a demo</span>
+                      <i className="ri-arrow-right-line" aria-hidden="true" />
                     </Link>
                   </Button>
                 </motion.div>

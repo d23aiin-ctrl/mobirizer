@@ -33,7 +33,7 @@ export default function OHGRTPage() {
           <Animated animation="fadeInUp">
             <div className="flex items-center gap-4 mb-3">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
-                <i className="ri-voiceprint-line text-3xl text-white" />
+                <i className="ri-voiceprint-line text-3xl text-white" aria-hidden="true" />
               </div>
               <div>
                 <h1 className="mb-1">OHGRT</h1>
@@ -60,7 +60,7 @@ export default function OHGRTPage() {
       {/* Main Content */}
       <main id="main-content" role="main">
         {/* Overview Section */}
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="two-col-section">
               <div className="col-left">
@@ -87,13 +87,13 @@ export default function OHGRTPage() {
                     <Button variant="cta" asChild style={{ background: 'linear-gradient(135deg, #a855f7 0%, #c084fc 100%)' }}>
                       <a href="https://ohgrt.com" target="_blank" rel="noopener noreferrer">
                         <span>Try OHGRT Free</span>
-                        <i className="ri-play-line" />
+                        <i className="ri-play-line" aria-hidden="true" />
                       </a>
                     </Button>
                     <Button variant="outline" asChild>
                       <Link href="/contact">
-                        <span>Enterprise Demo</span>
-                        <i className="ri-arrow-right-line" />
+                        <span>Request a demo</span>
+                        <i className="ri-arrow-right-line" aria-hidden="true" />
                       </Link>
                     </Button>
                   </div>
@@ -163,7 +163,7 @@ export default function OHGRTPage() {
         </section>
 
         {/* Use Cases Section */}
-        <section className="section bg-white">
+        <section className="section bg-bg-white">
           <div className="container">
             <div className="section-header">
               <Animated animation="fadeInUp">
@@ -223,13 +223,13 @@ export default function OHGRTPage() {
                   <Button variant="ctaWhite" asChild>
                     <a href="https://ohgrt.com" target="_blank" rel="noopener noreferrer">
                       <span>Start Free</span>
-                      <i className="ri-play-line" />
+                      <i className="ri-play-line" aria-hidden="true" />
                     </a>
                   </Button>
                   <Button variant="ghost" asChild>
                     <Link href="/contact">
                       <span>Enterprise Solutions</span>
-                      <i className="ri-arrow-right-line" />
+                      <i className="ri-arrow-right-line" aria-hidden="true" />
                     </Link>
                   </Button>
                 </motion.div>

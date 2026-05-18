@@ -32,7 +32,7 @@ const AccordionTrigger = forwardRef<
       {...props}
     >
       {children}
-      <i className="ri-arrow-down-s-line text-xl text-text-muted transition-transform duration-300 group-data-[state=open]:rotate-180" />
+      <i className="ri-arrow-down-s-line text-xl text-text-muted transition-transform duration-300 group-data-[state=open]:rotate-180" aria-hidden="true" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));
