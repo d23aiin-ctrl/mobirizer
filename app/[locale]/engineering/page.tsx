@@ -1,8 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+import { Suspense } from 'react';
 import { Header, Footer, EnglishOnlyNotice, Badge, Button } from '@/components';
 import { Animated, Stagger, StaggerItem, HoverCard, motion, PageHeroBackground } from '@/components/ui';
+import { HandbookGate } from './HandbookGate';
 
 const HANDBOOK_VERSION = '2026.05';
 const LAST_UPDATED = '2026-05-19';
@@ -79,20 +81,6 @@ const editionHistory = [
   { version: '2025.11', date: '2025-11-08', notes: 'First public edition. Six pillars formalized.' },
 ];
 
-function PrintButton() {
-  return (
-    <button
-      type="button"
-      onClick={() => typeof window !== 'undefined' && window.print()}
-      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-white/30 text-white/90 hover:bg-white/10 hover:border-white/60 text-sm font-mono transition-colors print:hidden"
-      aria-label="Print or save handbook as PDF"
-    >
-      <i className="ri-printer-line" aria-hidden="true" />
-      Print · Save as PDF
-    </button>
-  );
-}
-
 export default function EngineeringPage() {
   return (
     <>
@@ -137,7 +125,13 @@ export default function EngineeringPage() {
           </Animated>
           <Animated animation="fadeInUp" delay={0.3}>
             <div className="mt-8 flex items-center gap-6 flex-wrap text-sm">
-              <PrintButton />
+              <a
+                href="#download"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-white/30 text-white/90 hover:bg-white/10 hover:border-white/60 text-sm font-mono transition-colors print:hidden"
+              >
+                <i className="ri-download-line" aria-hidden="true" />
+                Get the PDF
+              </a>
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-white/50">
                 Last updated · {LAST_UPDATED}
               </span>
@@ -261,6 +255,26 @@ export default function EngineeringPage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Email-gated download */}
+      <section id="download" className="section bg-bg-light print:hidden">
+        <div className="container">
+          <Animated animation="fadeInUp">
+            <div className="text-center mb-10 max-w-2xl mx-auto">
+              <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-text-muted mb-4">
+                <span className="w-6 h-px bg-text-muted" />
+                Download
+              </div>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-text-dark tracking-tighter leading-[1.1]">
+                Take it with you.
+              </h2>
+            </div>
+          </Animated>
+          <Suspense fallback={null}>
+            <HandbookGate />
+          </Suspense>
         </div>
       </section>
 
