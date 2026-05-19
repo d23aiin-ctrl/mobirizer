@@ -7,6 +7,13 @@ import { COMPANY_STATS, HERO_ANCHOR } from '@/lib/companyStats';
 
 export function HomePageContent() {
   const t = useTranslations('home.hero');
+  const tPhilo = useTranslations('home.philosophy');
+  const tSys = useTranslations('home.systems');
+  const tGraph = useTranslations('home.agentGraph');
+  const tProof = useTranslations('home.proof');
+  const tStack = useTranslations('home.techStack');
+  const tCta = useTranslations('home.cta');
+
   const headlineWords = [
     ...t('headlinePrefix').split(' '),
     ...t('headlineAccent').split(' '),
@@ -211,25 +218,21 @@ export function HomePageContent() {
               <div className="col-left">
                 <Animated animation="fadeInLeft">
                   <Badge icon="ri-lightbulb-flash-line" className="mb-5">
-                    Our Philosophy
+                    {tPhilo('eyebrow')}
                   </Badge>
                   <h2 className="text-3xl md:text-4xl font-extrabold text-text-dark mb-6 leading-tight">
-                    Your Ideal Partner in <span className="text-primary-blue">AI Excellence</span>
+                    {tPhilo('titleStart')} <span className="text-primary-blue">{tPhilo('titleAccent')}</span>
                   </h2>
                   <p className="text-lg text-text-muted leading-relaxed mb-6">
-                    We don&apos;t believe in abstract strategies that overpromise and underdeliver. At
-                    Mobirizer, we focus on building real AI solutions backed by clear strategy that
-                    effectively boosts your business.
+                    {tPhilo('body1')}
                   </p>
                   <p className="text-lg text-text-muted leading-relaxed mb-8">
-                    Our approach is simple: understand your unique challenges, design tailored
-                    solutions, and deliver measurable results. No fluff, no buzzwords—just AI that
-                    works.
+                    {tPhilo('body2')}
                   </p>
                   <div className="flex gap-6 flex-wrap">
                     {[
-                      { icon: 'ri-check-double-line', title: 'Proven Track Record', desc: `${COMPANY_STATS.projectsDelivered}+ successful projects` },
-                      { icon: 'ri-shield-check-line', title: 'Enterprise Ready', desc: 'Government & enterprise grade' },
+                      { icon: 'ri-check-double-line', title: tPhilo('feature1Title'), desc: tPhilo('feature1Desc', { count: COMPANY_STATS.projectsDelivered }) },
+                      { icon: 'ri-shield-check-line', title: tPhilo('feature2Title'), desc: tPhilo('feature2Desc') },
                     ].map((item, i) => (
                       <motion.div
                         key={i}
@@ -255,7 +258,7 @@ export function HomePageContent() {
                 <Animated animation="fadeInRight">
                   <div className="rounded-xl border border-border bg-bg-white overflow-hidden">
                     <div className="px-6 py-4 border-b border-border text-xs font-mono uppercase tracking-wider text-text-muted">
-                      What we ship — on a typical quarter
+                      {tPhilo('sidebarTitle')}
                     </div>
                     <div className="divide-y divide-border">
                       {[
@@ -286,12 +289,12 @@ export function HomePageContent() {
               <div className="max-w-3xl mb-16">
                 <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-text-muted mb-6">
                   <span className="w-6 h-px bg-text-muted" />
-                  What we actually do
+                  {tSys('eyebrow')}
                 </div>
                 <h2 className="text-4xl md:text-5xl font-extrabold text-text-dark tracking-tighter leading-[1.05]">
-                  Three kinds of systems.
+                  {tSys('titleStart')}
                   <br />
-                  <span className="text-primary-blue">Built to survive production.</span>
+                  <span className="text-primary-blue">{tSys('titleAccent')}</span>
                 </h2>
               </div>
             </Animated>
@@ -301,24 +304,24 @@ export function HomePageContent() {
                 {
                   num: '01',
                   icon: 'ri-robot-2-line',
-                  title: 'Agentic systems',
-                  desc: 'Multi-step agents that reason, call tools, and recover when things go wrong. Deployed with typed tool schemas, idempotent handlers, and explicit escape-hatches.',
+                  title: tSys('agentic.title'),
+                  desc: tSys('agentic.desc'),
                   tech: ['LangGraph', 'MCP', 'Claude / GPT-4o / Llama'],
                   link: '/solutions/agentic-ai',
                 },
                 {
                   num: '02',
                   icon: 'ri-database-2-line',
-                  title: 'RAG & knowledge',
-                  desc: 'Hybrid retrieval, re-ranked, and evaluated on Recall@k. Structured chunking, citation-grounded outputs, and retrieval quality you can actually measure.',
+                  title: tSys('rag.title'),
+                  desc: tSys('rag.desc'),
                   tech: ['pgvector / Weaviate', 'bge-reranker', 'Hybrid BM25 + dense'],
                   link: '/solutions/conversational-ai',
                 },
                 {
                   num: '03',
                   icon: 'ri-focus-2-line',
-                  title: 'Fine-tuning & integration',
-                  desc: 'Fine-tune when smaller-plus-yours beats a frontier model on your task. Ship it behind a policy layer that fits the rest of your stack.',
+                  title: tSys('finetuning.title'),
+                  desc: tSys('finetuning.desc'),
                   tech: ['LoRA / DPO', 'Axolotl + TRL', 'On-prem H100 / H200'],
                   link: '/solutions/ai-integration',
                 },
@@ -353,7 +356,7 @@ export function HomePageContent() {
                         ))}
                       </div>
                       <span className="text-primary-blue font-semibold text-sm inline-flex items-center gap-2 mt-auto">
-                        Read how we build them
+                        {tSys('readMore')}
                         <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                       </span>
                     </div>
@@ -372,14 +375,13 @@ export function HomePageContent() {
               <div className="max-w-3xl mb-12">
                 <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-text-muted mb-5">
                   <span className="w-6 h-px bg-text-muted" />
-                  How an agent runs
+                  {tGraph('eyebrow')}
                 </div>
                 <h2 className="text-3xl md:text-4xl font-extrabold text-text-dark tracking-tighter leading-[1.1]">
-                  Orchestration you can actually debug.
+                  {tGraph('title')}
                 </h2>
                 <p className="text-text-muted leading-relaxed mt-4 max-w-2xl">
-                  Every node is typed, every edge is traced, every call is replayable. If it
-                  breaks at 2am, we know why before the page finishes loading.
+                  {tGraph('body')}
                 </p>
               </div>
             </Animated>
@@ -395,18 +397,18 @@ export function HomePageContent() {
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
-                  eyebrow: 'Case studies',
-                  title: 'What we shipped, with the numbers.',
+                  eyebrow: tProof('caseStudiesEyebrow'),
+                  title: tProof('caseStudiesTitle'),
                   href: '/case-studies',
                 },
                 {
-                  eyebrow: 'Engineering',
-                  title: 'How we build — evals, LLMOps, guardrails.',
+                  eyebrow: tProof('engineeringEyebrow'),
+                  title: tProof('engineeringTitle'),
                   href: '/engineering',
                 },
                 {
-                  eyebrow: 'Writing',
-                  title: 'Technical posts on agents and RAG in production.',
+                  eyebrow: tProof('writingEyebrow'),
+                  title: tProof('writingTitle'),
                   href: '/blog',
                 },
               ].map((item) => (
@@ -463,10 +465,10 @@ export function HomePageContent() {
               <div className="max-w-3xl mb-10">
                 <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-text-muted mb-5">
                   <span className="w-6 h-px bg-text-muted" />
-                  Stack
+                  {tStack('eyebrow')}
                 </div>
                 <h2 className="text-3xl md:text-4xl font-extrabold text-text-dark tracking-tighter leading-[1.1]">
-                  Model-agnostic by design.
+                  {tStack('title')}
                 </h2>
               </div>
             </Animated>
@@ -517,22 +519,21 @@ export function HomePageContent() {
               <div className="max-w-3xl">
                 <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-white/60 mb-6">
                   <span className="w-6 h-px bg-white/40" />
-                  Let&apos;s build
+                  {tCta('eyebrow')}
                 </div>
                 <h2 className="text-4xl md:text-6xl font-extrabold text-white tracking-tightest leading-[1.05] mb-6">
-                  Have an AI problem
+                  {tCta('titleStart')}
                   <br />
-                  <GradientText>worth shipping?</GradientText>
+                  <GradientText>{tCta('titleAccent')}</GradientText>
                 </h2>
                 <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-10 max-w-2xl">
-                  Tell us what you&apos;re trying to build. If it&apos;s a good fit, you&apos;ll be on a
-                  call with a founder within 48 hours — not a sales rep.
+                  {tCta('body')}
                 </p>
                 <div className="flex gap-6 flex-wrap items-center">
                   <Magnetic strength={0.3}>
                     <Button variant="ctaWhite" asChild>
                       <Link href="/contact">
-                        <span>Start a project</span>
+                        <span>{tCta('primary')}</span>
                         <i className="ri-arrow-right-line" aria-hidden="true" />
                       </Link>
                     </Button>

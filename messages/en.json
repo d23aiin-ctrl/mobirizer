@@ -44,17 +44,41 @@
   },
   "resources": {
     "title": "Resources",
-    "engineering": { "title": "Engineering", "desc": "How we build AI" },
-    "blog": { "title": "Blog", "desc": "Technical writing" },
-    "caseStudies": { "title": "Case Studies", "desc": "What we've shipped" },
-    "careers": { "title": "Careers", "desc": "We're hiring" }
+    "engineering": {
+      "title": "Engineering",
+      "desc": "How we build AI"
+    },
+    "blog": {
+      "title": "Blog",
+      "desc": "Technical writing"
+    },
+    "caseStudies": {
+      "title": "Case Studies",
+      "desc": "What we've shipped"
+    },
+    "careers": {
+      "title": "Careers",
+      "desc": "We're hiring"
+    }
   },
   "industries": {
     "title": "Industries",
-    "government": { "title": "Government", "desc": "Citizen-facing AI" },
-    "bfsi": { "title": "BFSI", "desc": "KYC, onboarding, compliance" },
-    "healthcare": { "title": "Healthcare", "desc": "EHR, ministry platforms" },
-    "education": { "title": "Education", "desc": "Tutoring, adaptive learning" }
+    "government": {
+      "title": "Government",
+      "desc": "Citizen-facing AI"
+    },
+    "bfsi": {
+      "title": "BFSI",
+      "desc": "KYC, onboarding, compliance"
+    },
+    "healthcare": {
+      "title": "Healthcare",
+      "desc": "EHR, ministry platforms"
+    },
+    "education": {
+      "title": "Education",
+      "desc": "Tutoring, adaptive learning"
+    }
   },
   "home": {
     "hero": {
@@ -66,146 +90,59 @@
       "ctaSecondary": "See how we build",
       "anchorMetric": "AI agents shipped to production across BFSI, government, and healthcare since 2019."
     },
-    "stats": {
-      "yearsExperience": "Years Experience",
-      "clientsServed": "Clients Served",
-      "usersImpacted": "Users Impacted",
-      "projectsDelivered": "Projects Delivered"
-    },
     "philosophy": {
-      "badge": "Our Philosophy",
-      "title": "Your Ideal Partner in",
-      "titleHighlight": "AI Excellence",
-      "description": "We don't believe in abstract strategies that overpromise and underdeliver. At Mobirizer, we focus on building real AI solutions backed by clear strategy that effectively boosts your business. Our approach is simple: understand your unique challenges, design tailored solutions, and deliver measurable results. No fluff, no buzzwords—just AI that works.",
-      "provenTrackRecord": "Proven Track Record",
-      "provenTrackRecordDesc": "1000+ successful projects",
-      "enterpriseReady": "Enterprise Ready",
-      "enterpriseReadyDesc": "Government & enterprise grade",
-      "clientSatisfaction": "98% Client Satisfaction"
+      "eyebrow": "Our Philosophy",
+      "titleStart": "Your Ideal Partner in",
+      "titleAccent": "AI Excellence",
+      "body1": "We don't believe in abstract strategies that overpromise and underdeliver. At Mobirizer, we focus on building real AI solutions backed by clear strategy that effectively boosts your business.",
+      "body2": "Our approach is simple: understand your unique challenges, design tailored solutions, and deliver measurable results. No fluff, no buzzwords — just AI that works.",
+      "feature1Title": "Proven Track Record",
+      "feature1Desc": "{count}+ successful projects",
+      "feature2Title": "Enterprise Ready",
+      "feature2Desc": "Government & enterprise grade",
+      "sidebarTitle": "What we ship — on a typical quarter"
     },
-    "whyChooseUs": {
-      "badge": "Why Choose Us",
-      "title": "Our Core Expertise",
-      "subtitle": "What sets us apart in delivering exceptional AI solutions",
-      "endToEnd": {
-        "title": "End-to-End Expertise",
-        "description": "Our teams handle both AI strategy design and implementation—from concept to production deployment."
+    "systems": {
+      "eyebrow": "What we actually do",
+      "titleStart": "Three kinds of systems.",
+      "titleAccent": "Built to survive production.",
+      "readMore": "Read how we build them",
+      "agentic": {
+        "title": "Agentic systems",
+        "desc": "Multi-step agents that reason, call tools, and recover when things go wrong. Deployed with typed tool schemas, idempotent handlers, and explicit escape-hatches."
       },
-      "clientCentric": {
-        "title": "Client-Centric Solutions",
-        "description": "We focus deeply on understanding your unique needs to deliver solutions perfectly aligned with your goals."
+      "rag": {
+        "title": "RAG & knowledge",
+        "desc": "Hybrid retrieval, re-ranked, and evaluated on Recall@k. Structured chunking, citation-grounded outputs, and retrieval quality you can actually measure."
       },
-      "tailoredScalable": {
-        "title": "Tailored & Scalable",
-        "description": "Custom solutions built with reusable components that scale efficiently as your business grows."
-      },
-      "modernTech": {
-        "title": "Modern Technologies",
-        "description": "We integrate cutting-edge AI including GPT-4, Claude, Gemini, and custom fine-tuned models."
+      "finetuning": {
+        "title": "Fine-tuning & integration",
+        "desc": "Fine-tune when smaller-plus-yours beats a frontier model on your task. Ship it behind a policy layer that fits the rest of your stack."
       }
     },
-    "services": {
-      "badge": "Our Services",
-      "title": "Comprehensive AI Services",
-      "subtitle": "From strategy to maintenance, we've got your AI journey covered",
-      "aiStrategy": {
-        "title": "AI Strategy",
-        "description": "We identify opportunities where AI creates real value aligned with your business goals. Our strategic assessments help you prioritize high-impact initiatives.",
-        "features": ["AI Readiness Assessment", "Use Case Identification", "ROI Analysis & Roadmap"]
-      },
-      "projectManagement": {
-        "title": "Project Management & Adoption",
-        "description": "Our managers ensure delivery speed while adoption experts prepare your teams for seamless implementation and organizational change.",
-        "features": ["Agile Project Delivery", "Team Training & Enablement", "Change Management"]
-      },
-      "solutionsDev": {
-        "title": "AI Solutions Development",
-        "description": "Custom AI-driven solutions from intelligent automation to advanced analytics. We build conversational AI, agentic systems, and enterprise integrations.",
-        "features": ["Conversational AI & Chatbots", "Agentic AI Systems", "Custom ML Models"]
-      },
-      "maintenance": {
-        "title": "AI Maintenance & Support",
-        "description": "Continuous optimization with proactive monitoring and updates. We ensure your AI solutions stay performant, secure, and aligned with evolving needs.",
-        "features": ["24/7 Monitoring", "Performance Optimization", "Model Retraining & Updates"]
-      }
+    "agentGraph": {
+      "eyebrow": "How an agent runs",
+      "title": "Orchestration you can actually debug.",
+      "body": "Every node is typed, every edge is traced, every call is replayable. If it breaks at 2am, we know why before the page finishes loading."
     },
-    "capabilities": {
-      "badge": "AI Capabilities",
-      "title": "What Can AI Do For You?",
-      "subtitle": "Discover the transformative power of AI across your business operations",
-      "workflowAutomation": {
-        "title": "Workflow Automation",
-        "description": "Automate repetitive tasks, streamline processes, and reduce manual effort with intelligent automation that learns and improves."
-      },
-      "agentDevelopment": {
-        "title": "AI Agent Development",
-        "description": "Build autonomous AI agents that can reason, plan, and execute complex multi-step tasks with minimal human intervention."
-      },
-      "predictiveAnalytics": {
-        "title": "Predictive Analytics",
-        "description": "Leverage machine learning to forecast trends, predict outcomes, and make data-driven decisions with confidence."
-      },
-      "customerService": {
-        "title": "Intelligent Customer Service",
-        "description": "Deploy AI chatbots and voice assistants that handle inquiries 24/7 in multiple languages with human-like understanding."
-      },
-      "contentGeneration": {
-        "title": "Content Generation",
-        "description": "Automatically draft reports, emails, contracts, and marketing content with AI that understands your brand voice."
-      },
-      "documentIntelligence": {
-        "title": "Document Intelligence",
-        "description": "Extract, analyze, and process information from documents, forms, and images with advanced OCR and NLP."
-      }
+    "proof": {
+      "caseStudiesEyebrow": "Case studies",
+      "caseStudiesTitle": "What we shipped, with the numbers.",
+      "engineeringEyebrow": "Engineering",
+      "engineeringTitle": "How we build — evals, LLMOps, guardrails.",
+      "writingEyebrow": "Writing",
+      "writingTitle": "Technical posts on agents and RAG in production."
     },
-    "successStories": {
-      "badge": "Success Stories",
-      "title": "Our Impact in Action",
-      "subtitle": "Real solutions delivering real results for our clients",
-      "d23ai": {
-        "title": "D23.ai",
-        "description": "India's first WhatsApp-native AI assistant that understands and responds in 11+ Indian languages. Send voice messages, generate images, check train PNR status, search the web—all within WhatsApp.",
-        "stat1": "1M+ Messages Processed",
-        "stat2": "11+ Languages"
-      },
-      "ohgrt": {
-        "title": "OHGRT",
-        "description": "Professional AI voice generation platform enabling content creators and enterprises with text-to-speech, voice cloning, and video dubbing in 10+ languages.",
-        "stat1": "2M+ Downloads",
-        "stat2": "4.8★ User Rating"
-      },
-      "xappy": {
-        "title": "Xappy Healthcare",
-        "description": "AI strategy addressing healthcare access, administrative pressure, and clinician support—deployed for government health departments with ethical standards.",
-        "stat1": "Gov Grade Security",
-        "stat2": "100K+ Records Managed"
-      }
-    },
-    "statsSection": {
-      "founded": "Founded",
-      "clientsWorldwide": "Clients Worldwide",
-      "projectsCompleted": "Projects Completed",
-      "aiTechnologies": "AI Technologies"
-    },
-    "industries": {
-      "badge": "Industries",
-      "title": "Industries We Serve",
-      "subtitle": "Delivering AI solutions across diverse sectors with domain expertise",
-      "government": "Government",
-      "education": "Education",
-      "healthcare": "Healthcare",
-      "bfsi": "BFSI",
-      "retail": "Retail",
-      "media": "Media"
-    },
-    "technology": {
-      "badge": "Technology",
-      "title": "Powered by Leading AI Technologies",
-      "subtitle": "We work with the best tools and platforms to deliver exceptional results"
+    "techStack": {
+      "eyebrow": "Stack",
+      "title": "Model-agnostic by design."
     },
     "cta": {
-      "title": "Ready to Transform Your Business with AI?",
-      "description": "Get a free consultation and AI readiness assessment. Let's discuss how AI can drive efficiency and growth for your organization."
+      "eyebrow": "Let's build",
+      "titleStart": "Have an AI problem",
+      "titleAccent": "worth shipping?",
+      "body": "Tell us what you're trying to build. If it's a good fit, you'll be on a call with a founder within 48 hours — not a sales rep.",
+      "primary": "Start a project"
     }
   },
   "products": {
@@ -243,25 +180,42 @@
       "name": "RoboGuru",
       "tagline": "AI Education Platform",
       "description": "AI-powered educational assistant that helps students solve problems, understand concepts, and learn at their own pace.",
-      "features": ["Photo-to-solution AI", "Adaptive learning", "Math/Science subjects"]
+      "features": [
+        "Photo-to-solution AI",
+        "Adaptive learning",
+        "Math/Science subjects"
+      ]
     },
     "ohgrt": {
       "name": "OHGRT",
       "tagline": "AI Voice Generation",
       "description": "Professional AI voice generation platform enabling content creators and enterprises with text-to-speech, voice cloning, and video dubbing.",
-      "features": ["Text-to-speech", "Voice cloning", "Video dubbing", "10+ languages"]
+      "features": [
+        "Text-to-speech",
+        "Voice cloning",
+        "Video dubbing",
+        "10+ languages"
+      ]
     },
     "xappy": {
       "name": "Xappy",
       "tagline": "Healthcare Platform",
       "description": "Comprehensive healthcare management platform with electronic health records, multi-facility support, and health analytics.",
-      "features": ["Electronic health records", "Multi-facility support", "Health analytics"]
+      "features": [
+        "Electronic health records",
+        "Multi-facility support",
+        "Health analytics"
+      ]
     },
     "janseva": {
       "name": "JanSeva",
       "tagline": "Citizen Engagement",
       "description": "24/7 WhatsApp-based citizen engagement platform for government services with voice support and analytics.",
-      "features": ["24/7 WhatsApp bot", "Voice message support", "Analytics & sentiment tracking"],
+      "features": [
+        "24/7 WhatsApp bot",
+        "Voice message support",
+        "Analytics & sentiment tracking"
+      ],
       "stat1": "95% Resolution Rate",
       "stat2": "6 Languages"
     },
@@ -269,7 +223,12 @@
       "name": "WhatsApp Commerce",
       "tagline": "Sell on WhatsApp",
       "description": "Complete e-commerce solution for WhatsApp with product catalogs, native payments, and automated checkout.",
-      "features": ["Product catalogs", "Native payments", "Automated checkout", "CRM integration"],
+      "features": [
+        "Product catalogs",
+        "Native payments",
+        "Automated checkout",
+        "CRM integration"
+      ],
       "stat1": "98% Open Rate",
       "stat2": "45% Higher Conversion"
     },
@@ -331,25 +290,45 @@
       "name": "Agentic AI",
       "tagline": "Autonomous AI agents",
       "description": "Build autonomous AI agents that can reason, plan, and execute complex multi-step tasks with minimal human intervention.",
-      "features": ["Multi-step task execution", "Reasoning & planning", "Tool integration", "Memory & context"]
+      "features": [
+        "Multi-step task execution",
+        "Reasoning & planning",
+        "Tool integration",
+        "Memory & context"
+      ]
     },
     "conversationalAi": {
       "name": "Conversational AI",
       "tagline": "Chatbots & Voice AI",
       "description": "Deploy intelligent chatbots and voice assistants that understand context, handle complex queries, and deliver human-like interactions.",
-      "features": ["Natural language understanding", "Multi-turn conversations", "Voice integration", "Multi-language support"]
+      "features": [
+        "Natural language understanding",
+        "Multi-turn conversations",
+        "Voice integration",
+        "Multi-language support"
+      ]
     },
     "aiIntegration": {
       "name": "AI Integration",
       "tagline": "Connect to your systems",
       "description": "Seamlessly integrate AI capabilities into your existing infrastructure—CRMs, ERPs, databases, and third-party APIs.",
-      "features": ["CRM/ERP integration", "API development", "Legacy system connection", "Data pipeline setup"]
+      "features": [
+        "CRM/ERP integration",
+        "API development",
+        "Legacy system connection",
+        "Data pipeline setup"
+      ]
     },
     "customDevelopment": {
       "name": "Custom AI Development",
       "tagline": "Tailored AI solutions",
       "description": "End-to-end development of custom AI solutions designed specifically for your unique business requirements.",
-      "features": ["Custom ML models", "Fine-tuned LLMs", "Domain-specific AI", "Full-stack development"]
+      "features": [
+        "Custom ML models",
+        "Fine-tuned LLMs",
+        "Domain-specific AI",
+        "Full-stack development"
+      ]
     },
     "process": {
       "badge": "Our Process",

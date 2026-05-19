@@ -44,17 +44,41 @@
   },
   "resources": {
     "title": "வளங்கள்",
-    "engineering": { "title": "பொறியியல்", "desc": "நாங்கள் AI-ஐ எப்படிக் கட்டுகிறோம்" },
-    "blog": { "title": "வலைப்பதிவு", "desc": "தொழில்நுட்ப எழுத்து" },
-    "caseStudies": { "title": "வழக்கு ஆய்வுகள்", "desc": "நாங்கள் என்ன அனுப்பினோம்" },
-    "careers": { "title": "வேலைவாய்ப்புகள்", "desc": "நாங்கள் ஆட்சேர்ப்பு செய்கிறோம்" }
+    "engineering": {
+      "title": "பொறியியல்",
+      "desc": "நாங்கள் AI-ஐ எப்படிக் கட்டுகிறோம்"
+    },
+    "blog": {
+      "title": "வலைப்பதிவு",
+      "desc": "தொழில்நுட்ப எழுத்து"
+    },
+    "caseStudies": {
+      "title": "வழக்கு ஆய்வுகள்",
+      "desc": "நாங்கள் என்ன அனுப்பினோம்"
+    },
+    "careers": {
+      "title": "வேலைவாய்ப்புகள்",
+      "desc": "நாங்கள் ஆட்சேர்ப்பு செய்கிறோம்"
+    }
   },
   "industries": {
     "title": "தொழில்கள்",
-    "government": { "title": "அரசு", "desc": "குடிமக்கள் சார்ந்த AI" },
-    "bfsi": { "title": "வங்கி & நிதி", "desc": "KYC, ஆன்போர்டிங், இணக்கம்" },
-    "healthcare": { "title": "சுகாதாரம்", "desc": "EHR, அமைச்சக தளங்கள்" },
-    "education": { "title": "கல்வி", "desc": "டியூட்டரிங், ஏற்ற கற்றல்" }
+    "government": {
+      "title": "அரசு",
+      "desc": "குடிமக்கள் சார்ந்த AI"
+    },
+    "bfsi": {
+      "title": "வங்கி & நிதி",
+      "desc": "KYC, ஆன்போர்டிங், இணக்கம்"
+    },
+    "healthcare": {
+      "title": "சுகாதாரம்",
+      "desc": "EHR, அமைச்சக தளங்கள்"
+    },
+    "education": {
+      "title": "கல்வி",
+      "desc": "டியூட்டரிங், ஏற்ற கற்றல்"
+    }
   },
   "home": {
     "hero": {
@@ -66,146 +90,59 @@
       "ctaSecondary": "See how we build",
       "anchorMetric": "AI agents shipped to production across BFSI, government, and healthcare since 2019."
     },
-    "stats": {
-      "yearsExperience": "ஆண்டுகள் அனுபவம்",
-      "clientsServed": "சேவை செய்யப்பட்ட வாடிக்கையாளர்கள்",
-      "usersImpacted": "பாதிக்கப்பட்ட பயனர்கள்",
-      "projectsDelivered": "வழங்கப்பட்ட திட்டங்கள்"
-    },
     "philosophy": {
-      "badge": "எங்கள் தத்துவம்",
-      "title": "உங்கள் சிறந்த கூட்டாளி",
-      "titleHighlight": "AI சிறப்பில்",
-      "description": "அதிகம் வாக்குறுதி அளித்து குறைவாக வழங்கும் சுருக்கமான உத்திகளில் நாங்கள் நம்பிக்கை கொள்வதில்லை. மொபிரைசரில், உங்கள் வணிகத்தை திறம்பட மேம்படுத்தும் தெளிவான உத்தியால் ஆதரிக்கப்பட்ட உண்மையான AI தீர்வுகளை உருவாக்குவதில் கவனம் செலுத்துகிறோம்.",
-      "provenTrackRecord": "நிரூபிக்கப்பட்ட சாதனை",
-      "provenTrackRecordDesc": "1000+ வெற்றிகரமான திட்டங்கள்",
-      "enterpriseReady": "நிறுவனத்திற்கு தயார்",
-      "enterpriseReadyDesc": "அரசு மற்றும் நிறுவன தரம்",
-      "clientSatisfaction": "98% வாடிக்கையாளர் திருப்தி"
+      "eyebrow": "Our Philosophy",
+      "titleStart": "Your Ideal Partner in",
+      "titleAccent": "AI Excellence",
+      "body1": "We don't believe in abstract strategies that overpromise and underdeliver. At Mobirizer, we focus on building real AI solutions backed by clear strategy that effectively boosts your business.",
+      "body2": "Our approach is simple: understand your unique challenges, design tailored solutions, and deliver measurable results. No fluff, no buzzwords — just AI that works.",
+      "feature1Title": "Proven Track Record",
+      "feature1Desc": "{count}+ successful projects",
+      "feature2Title": "Enterprise Ready",
+      "feature2Desc": "Government & enterprise grade",
+      "sidebarTitle": "What we ship — on a typical quarter"
     },
-    "whyChooseUs": {
-      "badge": "எங்களை ஏன் தேர்வு செய்ய வேண்டும்",
-      "title": "எங்கள் முக்கிய நிபுணத்துவம்",
-      "subtitle": "சிறந்த AI தீர்வுகளை வழங்குவதில் எங்களை வேறுபடுத்துவது என்ன",
-      "endToEnd": {
-        "title": "முழுமையான நிபுணத்துவம்",
-        "description": "எங்கள் குழுக்கள் AI உத்தி வடிவமைப்பு மற்றும் செயல்படுத்துதல் இரண்டையும் கையாளுகின்றன—கருத்தாக்கம் முதல் உற்பத்தி வரிசைப்படுத்தல் வரை."
+    "systems": {
+      "eyebrow": "What we actually do",
+      "titleStart": "Three kinds of systems.",
+      "titleAccent": "Built to survive production.",
+      "readMore": "Read how we build them",
+      "agentic": {
+        "title": "Agentic systems",
+        "desc": "Multi-step agents that reason, call tools, and recover when things go wrong. Deployed with typed tool schemas, idempotent handlers, and explicit escape-hatches."
       },
-      "clientCentric": {
-        "title": "வாடிக்கையாளர்-மைய தீர்வுகள்",
-        "description": "உங்கள் இலக்குகளுடன் சரியாக இணைந்த தீர்வுகளை வழங்க உங்கள் தனித்துவமான தேவைகளை ஆழமாக புரிந்துகொள்வதில் கவனம் செலுத்துகிறோம்."
+      "rag": {
+        "title": "RAG & knowledge",
+        "desc": "Hybrid retrieval, re-ranked, and evaluated on Recall@k. Structured chunking, citation-grounded outputs, and retrieval quality you can actually measure."
       },
-      "tailoredScalable": {
-        "title": "தனிப்பயனாக்கப்பட்ட மற்றும் அளவிடக்கூடிய",
-        "description": "உங்கள் வணிகம் வளரும்போது திறமையாக அளவிடக்கூடிய மறுபயன்பாட்டு கூறுகளுடன் கட்டமைக்கப்பட்ட தனிப்பயன் தீர்வுகள்."
-      },
-      "modernTech": {
-        "title": "நவீன தொழில்நுட்பங்கள்",
-        "description": "GPT-4, Claude, Gemini மற்றும் தனிப்பயன் சரிசெய்யப்பட்ட மாடல்கள் உட்பட அதிநவீன AI-ஐ ஒருங்கிணைக்கிறோம்."
+      "finetuning": {
+        "title": "Fine-tuning & integration",
+        "desc": "Fine-tune when smaller-plus-yours beats a frontier model on your task. Ship it behind a policy layer that fits the rest of your stack."
       }
     },
-    "services": {
-      "badge": "எங்கள் சேவைகள்",
-      "title": "விரிவான AI சேவைகள்",
-      "subtitle": "உத்தி முதல் பராமரிப்பு வரை, உங்கள் AI பயணத்தை நாங்கள் ஆதரிக்கிறோம்",
-      "aiStrategy": {
-        "title": "AI உத்தி",
-        "description": "உங்கள் வணிக இலக்குகளுடன் இணைந்த உண்மையான மதிப்பை AI உருவாக்கும் வாய்ப்புகளை அடையாளம் காண்கிறோம்.",
-        "features": ["AI தயார்நிலை மதிப்பீடு", "பயன்பாட்டு வழக்கு அடையாளம்", "ROI பகுப்பாய்வு மற்றும் வழிகாட்டி"]
-      },
-      "projectManagement": {
-        "title": "திட்ட மேலாண்மை",
-        "description": "எங்கள் மேலாளர்கள் வழங்கல் வேகத்தை உறுதி செய்கிறார்கள், ஏற்றுக்கொள்ளும் நிபுணர்கள் உங்கள் குழுக்களை தயார்படுத்துகிறார்கள்.",
-        "features": ["அஜைல் திட்ட வழங்கல்", "குழு பயிற்சி", "மாற்ற மேலாண்மை"]
-      },
-      "solutionsDev": {
-        "title": "AI தீர்வுகள் மேம்பாடு",
-        "description": "நுண்ணறிவு தானியங்கி முதல் மேம்பட்ட பகுப்பாய்வுகள் வரை தனிப்பயன் AI-இயக்கப்படும் தீர்வுகள்.",
-        "features": ["உரையாடல் AI மற்றும் சாட்போட்கள்", "ஏஜென்டிக் AI அமைப்புகள்", "தனிப்பயன் ML மாடல்கள்"]
-      },
-      "maintenance": {
-        "title": "AI பராமரிப்பு மற்றும் ஆதரவு",
-        "description": "செயலூக்கமான கண்காணிப்பு மற்றும் புதுப்பிப்புகளுடன் தொடர்ச்சியான மேம்படுத்தல்.",
-        "features": ["24/7 கண்காணிப்பு", "செயல்திறன் மேம்படுத்தல்", "மாடல் மறுபயிற்சி"]
-      }
+    "agentGraph": {
+      "eyebrow": "How an agent runs",
+      "title": "Orchestration you can actually debug.",
+      "body": "Every node is typed, every edge is traced, every call is replayable. If it breaks at 2am, we know why before the page finishes loading."
     },
-    "capabilities": {
-      "badge": "AI திறன்கள்",
-      "title": "AI உங்களுக்கு என்ன செய்ய முடியும்?",
-      "subtitle": "உங்கள் வணிக செயல்பாடுகளில் AI-இன் மாற்றும் சக்தியை கண்டறியுங்கள்",
-      "workflowAutomation": {
-        "title": "பணிப்பாய்வு தானியங்கி",
-        "description": "மீண்டும் மீண்டும் செய்யும் பணிகளை தானியங்குபடுத்தி, செயல்முறைகளை ஒழுங்குபடுத்தி, நுண்ணறிவு தானியங்கியுடன் கைமுறை முயற்சியைக் குறைக்கவும்."
-      },
-      "agentDevelopment": {
-        "title": "AI ஏஜென்ட் மேம்பாடு",
-        "description": "குறைந்தபட்ச மனித தலையீட்டுடன் சிக்கலான பல-படி பணிகளை நிறைவேற்றக்கூடிய தன்னாட்சி AI ஏஜென்ட்களை உருவாக்குங்கள்."
-      },
-      "predictiveAnalytics": {
-        "title": "முன்கணிப்பு பகுப்பாய்வுகள்",
-        "description": "போக்குகளை முன்கணிக்க மற்றும் நம்பிக்கையுடன் தரவு-இயக்கப்படும் முடிவுகளை எடுக்க இயந்திர கற்றலை பயன்படுத்துங்கள்."
-      },
-      "customerService": {
-        "title": "நுண்ணறிவு வாடிக்கையாளர் சேவை",
-        "description": "பல மொழிகளில் 24/7 விசாரணைகளை கையாளும் AI சாட்போட்கள் மற்றும் குரல் உதவியாளர்களை வரிசைப்படுத்துங்கள்."
-      },
-      "contentGeneration": {
-        "title": "உள்ளடக்க உருவாக்கம்",
-        "description": "உங்கள் பிராண்ட் குரலைப் புரிந்துகொள்ளும் AI-உடன் அறிக்கைகள், மின்னஞ்சல்கள், ஒப்பந்தங்கள் மற்றும் சந்தைப்படுத்தல் உள்ளடக்கத்தை தானாக வரையுங்கள்."
-      },
-      "documentIntelligence": {
-        "title": "ஆவண நுண்ணறிவு",
-        "description": "மேம்பட்ட OCR மற்றும் NLP-உடன் ஆவணங்கள், படிவங்கள் மற்றும் படங்களிலிருந்து தகவல்களை பிரித்தெடுத்து பகுப்பாய்வு செய்யுங்கள்."
-      }
+    "proof": {
+      "caseStudiesEyebrow": "Case studies",
+      "caseStudiesTitle": "What we shipped, with the numbers.",
+      "engineeringEyebrow": "Engineering",
+      "engineeringTitle": "How we build — evals, LLMOps, guardrails.",
+      "writingEyebrow": "Writing",
+      "writingTitle": "Technical posts on agents and RAG in production."
     },
-    "successStories": {
-      "badge": "வெற்றிக் கதைகள்",
-      "title": "செயலில் எங்கள் தாக்கம்",
-      "subtitle": "எங்கள் வாடிக்கையாளர்களுக்கு உண்மையான முடிவுகளை வழங்கும் உண்மையான தீர்வுகள்",
-      "d23ai": {
-        "title": "D23.ai",
-        "description": "11+ இந்திய மொழிகளில் புரிந்துகொண்டு பதிலளிக்கும் இந்தியாவின் முதல் WhatsApp-நேட்டிவ் AI உதவியாளர்.",
-        "stat1": "1M+ செய்திகள் செயலாக்கப்பட்டன",
-        "stat2": "11+ மொழிகள்"
-      },
-      "ohgrt": {
-        "title": "OHGRT",
-        "description": "10+ மொழிகளில் உரை-க்கு-பேச்சு, குரல் குளோனிங் மற்றும் வீடியோ டப்பிங் வழங்கும் தொழில்முறை AI குரல் உருவாக்க தளம்.",
-        "stat1": "2M+ பதிவிறக்கங்கள்",
-        "stat2": "4.8★ பயனர் மதிப்பீடு"
-      },
-      "xappy": {
-        "title": "Xappy சுகாதாரம்",
-        "description": "அரசு சுகாதார துறைகளுக்கு நெறிமுறை தரநிலைகளுடன் பயன்படுத்தப்பட்ட சுகாதார அணுகலை நிவர்த்தி செய்யும் AI உத்தி.",
-        "stat1": "அரசு தர பாதுகாப்பு",
-        "stat2": "100K+ பதிவுகள் நிர்வகிக்கப்படுகின்றன"
-      }
-    },
-    "statsSection": {
-      "founded": "நிறுவப்பட்டது",
-      "clientsWorldwide": "உலகளாவிய வாடிக்கையாளர்கள்",
-      "projectsCompleted": "முடிக்கப்பட்ட திட்டங்கள்",
-      "aiTechnologies": "AI தொழில்நுட்பங்கள்"
-    },
-    "industries": {
-      "badge": "தொழில்கள்",
-      "title": "நாங்கள் சேவை செய்யும் தொழில்கள்",
-      "subtitle": "துறை நிபுணத்துவத்துடன் பல்வேறு துறைகளில் AI தீர்வுகளை வழங்குதல்",
-      "government": "அரசு",
-      "education": "கல்வி",
-      "healthcare": "சுகாதாரம்",
-      "bfsi": "BFSI",
-      "retail": "சில்லறை",
-      "media": "ஊடகம்"
-    },
-    "technology": {
-      "badge": "தொழில்நுட்பம்",
-      "title": "முன்னணி AI தொழில்நுட்பங்களால் இயக்கப்படுகிறது",
-      "subtitle": "சிறந்த முடிவுகளை வழங்க சிறந்த கருவிகள் மற்றும் தளங்களுடன் நாங்கள் வேலை செய்கிறோம்"
+    "techStack": {
+      "eyebrow": "Stack",
+      "title": "Model-agnostic by design."
     },
     "cta": {
-      "title": "AI-உடன் உங்கள் வணிகத்தை மாற்ற தயாரா?",
-      "description": "இலவச ஆலோசனை மற்றும் AI தயார்நிலை மதிப்பீட்டைப் பெறுங்கள். AI உங்கள் நிறுவனத்திற்கு செயல்திறன் மற்றும் வளர்ச்சியை எவ்வாறு இயக்க முடியும் என்று விவாதிப்போம்."
+      "eyebrow": "Let's build",
+      "titleStart": "Have an AI problem",
+      "titleAccent": "worth shipping?",
+      "body": "Tell us what you're trying to build. If it's a good fit, you'll be on a call with a founder within 48 hours — not a sales rep.",
+      "primary": "Start a project"
     }
   },
   "products": {
@@ -243,25 +180,42 @@
       "name": "ரோபோகுரு",
       "tagline": "AI கல்வி தளம்",
       "description": "மாணவர்களுக்கு பிரச்சனைகளைத் தீர்க்கவும், கருத்துக்களைப் புரிந்துகொள்ளவும், தங்கள் வேகத்தில் கற்றுக்கொள்ளவும் உதவும் AI-இயக்கப்படும் கல்வி உதவியாளர்.",
-      "features": ["புகைப்படம்-க்கு-தீர்வு AI", "தகவமைப்பு கற்றல்", "கணிதம்/அறிவியல் பாடங்கள்"]
+      "features": [
+        "புகைப்படம்-க்கு-தீர்வு AI",
+        "தகவமைப்பு கற்றல்",
+        "கணிதம்/அறிவியல் பாடங்கள்"
+      ]
     },
     "ohgrt": {
       "name": "OHGRT",
       "tagline": "AI குரல் உருவாக்கம்",
       "description": "உரை-க்கு-பேச்சு, குரல் குளோனிங் மற்றும் வீடியோ டப்பிங் வழங்கும் தொழில்முறை AI குரல் உருவாக்க தளம்.",
-      "features": ["உரை-க்கு-பேச்சு", "குரல் குளோனிங்", "வீடியோ டப்பிங்", "10+ மொழிகள்"]
+      "features": [
+        "உரை-க்கு-பேச்சு",
+        "குரல் குளோனிங்",
+        "வீடியோ டப்பிங்",
+        "10+ மொழிகள்"
+      ]
     },
     "xappy": {
       "name": "Xappy",
       "tagline": "சுகாதார தளம்",
       "description": "மின்னணு சுகாதார பதிவுகள், பல-வசதி ஆதரவு மற்றும் சுகாதார பகுப்பாய்வுகளுடன் விரிவான சுகாதார மேலாண்மை தளம்.",
-      "features": ["மின்னணு சுகாதார பதிவுகள்", "பல-வசதி ஆதரவு", "சுகாதார பகுப்பாய்வுகள்"]
+      "features": [
+        "மின்னணு சுகாதார பதிவுகள்",
+        "பல-வசதி ஆதரவு",
+        "சுகாதார பகுப்பாய்வுகள்"
+      ]
     },
     "janseva": {
       "name": "ஜன்சேவா",
       "tagline": "குடிமக்கள் ஈடுபாடு",
       "description": "குரல் ஆதரவு மற்றும் பகுப்பாய்வுகளுடன் அரசு சேவைகளுக்கான 24/7 WhatsApp-அடிப்படையிலான குடிமக்கள் ஈடுபாட்டு தளம்.",
-      "features": ["24/7 WhatsApp போட்", "குரல் செய்தி ஆதரவு", "பகுப்பாய்வுகள் மற்றும் உணர்வு கண்காணிப்பு"],
+      "features": [
+        "24/7 WhatsApp போட்",
+        "குரல் செய்தி ஆதரவு",
+        "பகுப்பாய்வுகள் மற்றும் உணர்வு கண்காணிப்பு"
+      ],
       "stat1": "95% தீர்வு விகிதம்",
       "stat2": "6 மொழிகள்"
     },
@@ -269,7 +223,12 @@
       "name": "WhatsApp காமர்ஸ்",
       "tagline": "WhatsApp-இல் விற்கவும்",
       "description": "தயாரிப்பு பட்டியல்கள், நேட்டிவ் கொடுப்பனவுகள் மற்றும் தானியங்கு செக்அவுட் உடன் WhatsApp-க்கான முழுமையான ஈ-காமர்ஸ் தீர்வு.",
-      "features": ["தயாரிப்பு பட்டியல்கள்", "நேட்டிவ் கொடுப்பனவுகள்", "தானியங்கு செக்அவுட்", "CRM ஒருங்கிணைப்பு"],
+      "features": [
+        "தயாரிப்பு பட்டியல்கள்",
+        "நேட்டிவ் கொடுப்பனவுகள்",
+        "தானியங்கு செக்அவுட்",
+        "CRM ஒருங்கிணைப்பு"
+      ],
       "stat1": "98% திறந்த விகிதம்",
       "stat2": "45% அதிக மாற்றம்"
     },
@@ -331,25 +290,45 @@
       "name": "ஏஜென்டிக் AI",
       "tagline": "தன்னாட்சி AI ஏஜென்ட்கள்",
       "description": "குறைந்தபட்ச மனித தலையீட்டுடன் சிக்கலான பல-படி பணிகளை தர்க்கம், திட்டமிடல் மற்றும் நிறைவேற்றக்கூடிய தன்னாட்சி AI ஏஜென்ட்களை உருவாக்குங்கள்.",
-      "features": ["பல-படி பணி நிறைவேற்றம்", "தர்க்கம் மற்றும் திட்டமிடல்", "கருவி ஒருங்கிணைப்பு", "நினைவகம் மற்றும் சூழல்"]
+      "features": [
+        "பல-படி பணி நிறைவேற்றம்",
+        "தர்க்கம் மற்றும் திட்டமிடல்",
+        "கருவி ஒருங்கிணைப்பு",
+        "நினைவகம் மற்றும் சூழல்"
+      ]
     },
     "conversationalAi": {
       "name": "உரையாடல் AI",
       "tagline": "சாட்போட்கள் மற்றும் குரல் AI",
       "description": "சூழலைப் புரிந்துகொண்டு மனித-போன்ற தொடர்புகளை வழங்கும் நுண்ணறிவு சாட்போட்கள் மற்றும் குரல் உதவியாளர்களை வரிசைப்படுத்துங்கள்.",
-      "features": ["இயற்கை மொழி புரிதல்", "பல-திருப்பு உரையாடல்கள்", "குரல் ஒருங்கிணைப்பு", "பல-மொழி ஆதரவு"]
+      "features": [
+        "இயற்கை மொழி புரிதல்",
+        "பல-திருப்பு உரையாடல்கள்",
+        "குரல் ஒருங்கிணைப்பு",
+        "பல-மொழி ஆதரவு"
+      ]
     },
     "aiIntegration": {
       "name": "AI ஒருங்கிணைப்பு",
       "tagline": "உங்கள் அமைப்புகளுடன் இணைக்கவும்",
       "description": "AI திறன்களை உங்கள் ஏற்கனவே உள்ள உள்கட்டமைப்பு—CRM, ERP, தரவுத்தளங்கள் மற்றும் மூன்றாம் தரப்பு API-களில் தடையின்றி ஒருங்கிணைக்கவும்.",
-      "features": ["CRM/ERP ஒருங்கிணைப்பு", "API மேம்பாடு", "பழைய அமைப்பு இணைப்பு", "தரவு குழாய் அமைப்பு"]
+      "features": [
+        "CRM/ERP ஒருங்கிணைப்பு",
+        "API மேம்பாடு",
+        "பழைய அமைப்பு இணைப்பு",
+        "தரவு குழாய் அமைப்பு"
+      ]
     },
     "customDevelopment": {
       "name": "தனிப்பயன் AI மேம்பாடு",
       "tagline": "தனிப்பயனாக்கப்பட்ட AI தீர்வுகள்",
       "description": "உங்கள் தனித்துவமான வணிக தேவைகளுக்கு குறிப்பாக வடிவமைக்கப்பட்ட தனிப்பயன் AI தீர்வுகளின் முழுமையான மேம்பாடு.",
-      "features": ["தனிப்பயன் ML மாடல்கள்", "நுணுக்கமாக சரிசெய்யப்பட்ட LLM-கள்", "துறை-குறிப்பிட்ட AI", "முழு-அடுக்கு மேம்பாடு"]
+      "features": [
+        "தனிப்பயன் ML மாடல்கள்",
+        "நுணுக்கமாக சரிசெய்யப்பட்ட LLM-கள்",
+        "துறை-குறிப்பிட்ட AI",
+        "முழு-அடுக்கு மேம்பாடு"
+      ]
     },
     "process": {
       "badge": "எங்கள் செயல்முறை",

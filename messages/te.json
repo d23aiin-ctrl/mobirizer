@@ -44,17 +44,41 @@
   },
   "resources": {
     "title": "వనరులు",
-    "engineering": { "title": "ఇంజినీరింగ్", "desc": "మేము AI ఎలా నిర్మిస్తాము" },
-    "blog": { "title": "బ్లాగ్", "desc": "సాంకేతిక రచన" },
-    "caseStudies": { "title": "కేస్ స్టడీస్", "desc": "మేము ఏమి షిప్ చేసాము" },
-    "careers": { "title": "కెరీర్‌లు", "desc": "మేము నియామకం చేస్తున్నాము" }
+    "engineering": {
+      "title": "ఇంజినీరింగ్",
+      "desc": "మేము AI ఎలా నిర్మిస్తాము"
+    },
+    "blog": {
+      "title": "బ్లాగ్",
+      "desc": "సాంకేతిక రచన"
+    },
+    "caseStudies": {
+      "title": "కేస్ స్టడీస్",
+      "desc": "మేము ఏమి షిప్ చేసాము"
+    },
+    "careers": {
+      "title": "కెరీర్‌లు",
+      "desc": "మేము నియామకం చేస్తున్నాము"
+    }
   },
   "industries": {
     "title": "పరిశ్రమలు",
-    "government": { "title": "ప్రభుత్వం", "desc": "పౌర-కేంద్రిత AI" },
-    "bfsi": { "title": "BFSI", "desc": "KYC, ఆన్‌బోర్డింగ్, సమ్మతి" },
-    "healthcare": { "title": "ఆరోగ్య సంరక్షణ", "desc": "EHR, మంత్రిత్వ ప్లాట్‌ఫారమ్‌లు" },
-    "education": { "title": "విద్య", "desc": "ట్యూటరింగ్, అనుకూల అభ్యాసం" }
+    "government": {
+      "title": "ప్రభుత్వం",
+      "desc": "పౌర-కేంద్రిత AI"
+    },
+    "bfsi": {
+      "title": "BFSI",
+      "desc": "KYC, ఆన్‌బోర్డింగ్, సమ్మతి"
+    },
+    "healthcare": {
+      "title": "ఆరోగ్య సంరక్షణ",
+      "desc": "EHR, మంత్రిత్వ ప్లాట్‌ఫారమ్‌లు"
+    },
+    "education": {
+      "title": "విద్య",
+      "desc": "ట్యూటరింగ్, అనుకూల అభ్యాసం"
+    }
   },
   "home": {
     "hero": {
@@ -66,146 +90,59 @@
       "ctaSecondary": "See how we build",
       "anchorMetric": "AI agents shipped to production across BFSI, government, and healthcare since 2019."
     },
-    "stats": {
-      "yearsExperience": "సంవత్సరాల అనుభవం",
-      "clientsServed": "సేవించిన క్లయింట్లు",
-      "usersImpacted": "ప్రభావితమైన వినియోగదారులు",
-      "projectsDelivered": "డెలివరీ చేసిన ప్రాజెక్ట్‌లు"
-    },
     "philosophy": {
-      "badge": "మా తత్వశాస్త్రం",
-      "title": "మీ ఆదర్శ భాగస్వామి",
-      "titleHighlight": "AI శ్రేష్ఠతలో",
-      "description": "అధికంగా వాగ్దానం చేసి తక్కువగా అందించే నైరూప్య వ్యూహాలను మేము నమ్మము. మొబిరైజర్‌లో, మీ వ్యాపారాన్ని సమర్థవంతంగా పెంచే స్పష్టమైన వ్యూహంతో మద్దతు ఉన్న నిజమైన AI సొల్యూషన్‌లను నిర్మించడంపై దృష్టి పెడతాము.",
-      "provenTrackRecord": "నిరూపితమైన ట్రాక్ రికార్డ్",
-      "provenTrackRecordDesc": "1000+ విజయవంతమైన ప్రాజెక్ట్‌లు",
-      "enterpriseReady": "ఎంటర్‌ప్రైజ్ రెడీ",
-      "enterpriseReadyDesc": "ప్రభుత్వ & ఎంటర్‌ప్రైజ్ గ్రేడ్",
-      "clientSatisfaction": "98% క్లయింట్ సంతృప్తి"
+      "eyebrow": "Our Philosophy",
+      "titleStart": "Your Ideal Partner in",
+      "titleAccent": "AI Excellence",
+      "body1": "We don't believe in abstract strategies that overpromise and underdeliver. At Mobirizer, we focus on building real AI solutions backed by clear strategy that effectively boosts your business.",
+      "body2": "Our approach is simple: understand your unique challenges, design tailored solutions, and deliver measurable results. No fluff, no buzzwords — just AI that works.",
+      "feature1Title": "Proven Track Record",
+      "feature1Desc": "{count}+ successful projects",
+      "feature2Title": "Enterprise Ready",
+      "feature2Desc": "Government & enterprise grade",
+      "sidebarTitle": "What we ship — on a typical quarter"
     },
-    "whyChooseUs": {
-      "badge": "మమ్మల్ని ఎందుకు ఎంచుకోవాలి",
-      "title": "మా ప్రధాన నైపుణ్యం",
-      "subtitle": "అసాధారణమైన AI సొల్యూషన్‌లను అందించడంలో మమ్మల్ని వేరు చేసేది ఏమిటి",
-      "endToEnd": {
-        "title": "ఎండ్-టు-ఎండ్ నైపుణ్యం",
-        "description": "మా టీమ్‌లు AI వ్యూహ రూపకల్పన మరియు అమలు రెండింటినీ నిర్వహిస్తాయి—కాన్సెప్ట్ నుండి ప్రొడక్షన్ డిప్లాయ్‌మెంట్ వరకు."
+    "systems": {
+      "eyebrow": "What we actually do",
+      "titleStart": "Three kinds of systems.",
+      "titleAccent": "Built to survive production.",
+      "readMore": "Read how we build them",
+      "agentic": {
+        "title": "Agentic systems",
+        "desc": "Multi-step agents that reason, call tools, and recover when things go wrong. Deployed with typed tool schemas, idempotent handlers, and explicit escape-hatches."
       },
-      "clientCentric": {
-        "title": "క్లయింట్-కేంద్రీకృత సొల్యూషన్‌లు",
-        "description": "మీ లక్ష్యాలతో ఖచ్చితంగా సమలేఖనమైన సొల్యూషన్‌లను అందించడానికి మీ ప్రత్యేక అవసరాలను లోతుగా అర్థం చేసుకోవడంపై దృష్టి పెడతాము."
+      "rag": {
+        "title": "RAG & knowledge",
+        "desc": "Hybrid retrieval, re-ranked, and evaluated on Recall@k. Structured chunking, citation-grounded outputs, and retrieval quality you can actually measure."
       },
-      "tailoredScalable": {
-        "title": "టైలర్డ్ & స్కేలబుల్",
-        "description": "మీ వ్యాపారం పెరిగేకొద్దీ సమర్థవంతంగా స్కేల్ అయ్యే పునర్వినియోగ భాగాలతో నిర్మించిన అనుకూల సొల్యూషన్‌లు."
-      },
-      "modernTech": {
-        "title": "ఆధునిక సాంకేతికతలు",
-        "description": "GPT-4, Claude, Gemini మరియు కస్టమ్ ఫైన్-ట్యూన్డ్ మోడల్స్ సహా అత్యాధునిక AI ని మేము ఏకీకృతం చేస్తాము."
+      "finetuning": {
+        "title": "Fine-tuning & integration",
+        "desc": "Fine-tune when smaller-plus-yours beats a frontier model on your task. Ship it behind a policy layer that fits the rest of your stack."
       }
     },
-    "services": {
-      "badge": "మా సేవలు",
-      "title": "సమగ్ర AI సేవలు",
-      "subtitle": "వ్యూహం నుండి నిర్వహణ వరకు, మీ AI ప్రయాణానికి మేము మద్దతు ఇస్తాము",
-      "aiStrategy": {
-        "title": "AI వ్యూహం",
-        "description": "మీ వ్యాపార లక్ష్యాలతో సమలేఖనమైన నిజమైన విలువను AI సృష్టించే అవకాశాలను గుర్తిస్తాము.",
-        "features": ["AI రెడీనెస్ అసెస్‌మెంట్", "యూస్ కేస్ ఐడెంటిఫికేషన్", "ROI అనాలిసిస్ & రోడ్‌మ్యాప్"]
-      },
-      "projectManagement": {
-        "title": "ప్రాజెక్ట్ మేనేజ్‌మెంట్",
-        "description": "మా మేనేజర్లు డెలివరీ వేగాన్ని నిర్ధారిస్తారు, అడాప్షన్ నిపుణులు మీ టీమ్‌లను సిద్ధం చేస్తారు.",
-        "features": ["ఎజైల్ ప్రాజెక్ట్ డెలివరీ", "టీమ్ ట్రైనింగ్", "చేంజ్ మేనేజ్‌మెంట్"]
-      },
-      "solutionsDev": {
-        "title": "AI సొల్యూషన్స్ డెవలప్‌మెంట్",
-        "description": "ఇంటెలిజెంట్ ఆటోమేషన్ నుండి అడ్వాన్స్‌డ్ అనలిటిక్స్ వరకు కస్టమ్ AI-ఆధారిత సొల్యూషన్‌లు.",
-        "features": ["కన్వర్సేషనల్ AI & చాట్‌బాట్స్", "ఏజెంటిక్ AI సిస్టమ్స్", "కస్టమ్ ML మోడల్స్"]
-      },
-      "maintenance": {
-        "title": "AI మెయింటెనెన్స్ & సపోర్ట్",
-        "description": "ప్రోయాక్టివ్ మానిటరింగ్ మరియు అప్‌డేట్‌లతో నిరంతర ఆప్టిమైజేషన్.",
-        "features": ["24/7 మానిటరింగ్", "పెర్ఫార్మెన్స్ ఆప్టిమైజేషన్", "మోడల్ రీట్రైనింగ్"]
-      }
+    "agentGraph": {
+      "eyebrow": "How an agent runs",
+      "title": "Orchestration you can actually debug.",
+      "body": "Every node is typed, every edge is traced, every call is replayable. If it breaks at 2am, we know why before the page finishes loading."
     },
-    "capabilities": {
-      "badge": "AI సామర్థ్యాలు",
-      "title": "AI మీ కోసం ఏమి చేయగలదు?",
-      "subtitle": "మీ వ్యాపార కార్యకలాపాలలో AI యొక్క పరివర్తన శక్తిని కనుగొనండి",
-      "workflowAutomation": {
-        "title": "వర్క్‌ఫ్లో ఆటోమేషన్",
-        "description": "పునరావృత పనులను ఆటోమేట్ చేయండి, ప్రక్రియలను క్రమబద్ధీకరించండి మరియు ఇంటెలిజెంట్ ఆటోమేషన్‌తో మాన్యువల్ ప్రయత్నాన్ని తగ్గించండి."
-      },
-      "agentDevelopment": {
-        "title": "AI ఏజెంట్ డెవలప్‌మెంట్",
-        "description": "కనీస మానవ జోక్యంతో సంక్లిష్టమైన బహుళ-దశల పనులను అమలు చేయగల స్వయంప్రతిపత్త AI ఏజెంట్లను నిర్మించండి."
-      },
-      "predictiveAnalytics": {
-        "title": "ప్రిడిక్టివ్ అనలిటిక్స్",
-        "description": "ట్రెండ్‌లను అంచనా వేయడానికి మరియు నమ్మకంతో డేటా-ఆధారిత నిర్ణయాలు తీసుకోవడానికి మెషిన్ లెర్నింగ్‌ను ఉపయోగించండి."
-      },
-      "customerService": {
-        "title": "ఇంటెలిజెంట్ కస్టమర్ సర్వీస్",
-        "description": "బహుళ భాషల్లో 24/7 విచారణలను నిర్వహించే AI చాట్‌బాట్‌లు మరియు వాయిస్ అసిస్టెంట్‌లను డిప్లాయ్ చేయండి."
-      },
-      "contentGeneration": {
-        "title": "కంటెంట్ జనరేషన్",
-        "description": "మీ బ్రాండ్ వాయిస్‌ను అర్థం చేసుకునే AI తో రిపోర్ట్‌లు, ఇమెయిల్స్, కాంట్రాక్ట్‌లు మరియు మార్కెటింగ్ కంటెంట్‌ను స్వయంచాలకంగా డ్రాఫ్ట్ చేయండి."
-      },
-      "documentIntelligence": {
-        "title": "డాక్యుమెంట్ ఇంటెలిజెన్స్",
-        "description": "అడ్వాన్స్‌డ్ OCR మరియు NLP తో డాక్యుమెంట్‌లు, ఫారమ్‌లు మరియు ఇమేజ్‌ల నుండి సమాచారాన్ని సంగ్రహించి విశ్లేషించండి."
-      }
+    "proof": {
+      "caseStudiesEyebrow": "Case studies",
+      "caseStudiesTitle": "What we shipped, with the numbers.",
+      "engineeringEyebrow": "Engineering",
+      "engineeringTitle": "How we build — evals, LLMOps, guardrails.",
+      "writingEyebrow": "Writing",
+      "writingTitle": "Technical posts on agents and RAG in production."
     },
-    "successStories": {
-      "badge": "విజయ గాథలు",
-      "title": "యాక్షన్‌లో మా ప్రభావం",
-      "subtitle": "మా క్లయింట్‌లకు నిజమైన ఫలితాలను అందించే నిజమైన సొల్యూషన్‌లు",
-      "d23ai": {
-        "title": "D23.ai",
-        "description": "11+ భారతీయ భాషల్లో అర్థం చేసుకుని స్పందించే భారతదేశపు మొదటి WhatsApp-నేటివ్ AI అసిస్టెంట్.",
-        "stat1": "1M+ మెసేజ్‌లు ప్రాసెస్ అయ్యాయి",
-        "stat2": "11+ భాషలు"
-      },
-      "ohgrt": {
-        "title": "OHGRT",
-        "description": "10+ భాషల్లో టెక్స్ట్-టు-స్పీచ్, వాయిస్ క్లోనింగ్ మరియు వీడియో డబ్బింగ్ అందించే ప్రొఫెషనల్ AI వాయిస్ జనరేషన్ ప్లాట్‌ఫార్మ్.",
-        "stat1": "2M+ డౌన్‌లోడ్‌లు",
-        "stat2": "4.8★ యూజర్ రేటింగ్"
-      },
-      "xappy": {
-        "title": "Xappy హెల్త్‌కేర్",
-        "description": "ప్రభుత్వ ఆరోగ్య విభాగాలకు నైతిక ప్రమాణాలతో అమర్చబడిన హెల్త్‌కేర్ యాక్సెస్‌ను పరిష్కరించే AI వ్యూహం.",
-        "stat1": "ప్రభుత్వ గ్రేడ్ సెక్యూరిటీ",
-        "stat2": "100K+ రికార్డ్‌లు మేనేజ్ అయ్యాయి"
-      }
-    },
-    "statsSection": {
-      "founded": "స్థాపించబడింది",
-      "clientsWorldwide": "ప్రపంచవ్యాప్త క్లయింట్‌లు",
-      "projectsCompleted": "పూర్తయిన ప్రాజెక్ట్‌లు",
-      "aiTechnologies": "AI టెక్నాలజీలు"
-    },
-    "industries": {
-      "badge": "పరిశ్రమలు",
-      "title": "మేము సేవ చేసే పరిశ్రమలు",
-      "subtitle": "డొమైన్ నైపుణ్యంతో వివిధ రంగాలలో AI సొల్యూషన్‌లను అందించడం",
-      "government": "ప్రభుత్వం",
-      "education": "విద్య",
-      "healthcare": "ఆరోగ్యం",
-      "bfsi": "BFSI",
-      "retail": "రిటైల్",
-      "media": "మీడియా"
-    },
-    "technology": {
-      "badge": "టెక్నాలజీ",
-      "title": "ముందంజ AI టెక్నాలజీలచే శక్తివంతం",
-      "subtitle": "అసాధారణ ఫలితాలను అందించడానికి ఉత్తమ సాధనాలు మరియు ప్లాట్‌ఫారమ్‌లతో మేము పని చేస్తాము"
+    "techStack": {
+      "eyebrow": "Stack",
+      "title": "Model-agnostic by design."
     },
     "cta": {
-      "title": "AI తో మీ వ్యాపారాన్ని మార్చడానికి సిద్ధంగా ఉన్నారా?",
-      "description": "ఉచిత సంప్రదింపు మరియు AI రెడీనెస్ అసెస్‌మెంట్ పొందండి. AI మీ సంస్థకు సామర్థ్యం మరియు వృద్ధిని ఎలా నడిపించగలదో చర్చిద్దాం."
+      "eyebrow": "Let's build",
+      "titleStart": "Have an AI problem",
+      "titleAccent": "worth shipping?",
+      "body": "Tell us what you're trying to build. If it's a good fit, you'll be on a call with a founder within 48 hours — not a sales rep.",
+      "primary": "Start a project"
     }
   },
   "products": {
@@ -243,25 +180,42 @@
       "name": "రోబోగురు",
       "tagline": "AI ఎడ్యుకేషన్ ప్లాట్‌ఫార్మ్",
       "description": "విద్యార్థులకు సమస్యలను పరిష్కరించడానికి, భావనలను అర్థం చేసుకోవడానికి మరియు వారి స్వంత వేగంతో నేర్చుకోవడానికి సహాయపడే AI-ఆధారిత విద్యా అసిస్టెంట్.",
-      "features": ["ఫోటో-టు-సొల్యూషన్ AI", "అడాప్టివ్ లెర్నింగ్", "మ్యాథ్/సైన్స్ సబ్జెక్ట్‌లు"]
+      "features": [
+        "ఫోటో-టు-సొల్యూషన్ AI",
+        "అడాప్టివ్ లెర్నింగ్",
+        "మ్యాథ్/సైన్స్ సబ్జెక్ట్‌లు"
+      ]
     },
     "ohgrt": {
       "name": "OHGRT",
       "tagline": "AI వాయిస్ జనరేషన్",
       "description": "టెక్స్ట్-టు-స్పీచ్, వాయిస్ క్లోనింగ్ మరియు వీడియో డబ్బింగ్ అందించే ప్రొఫెషనల్ AI వాయిస్ జనరేషన్ ప్లాట్‌ఫార్మ్.",
-      "features": ["టెక్స్ట్-టు-స్పీచ్", "వాయిస్ క్లోనింగ్", "వీడియో డబ్బింగ్", "10+ భాషలు"]
+      "features": [
+        "టెక్స్ట్-టు-స్పీచ్",
+        "వాయిస్ క్లోనింగ్",
+        "వీడియో డబ్బింగ్",
+        "10+ భాషలు"
+      ]
     },
     "xappy": {
       "name": "Xappy",
       "tagline": "హెల్త్‌కేర్ ప్లాట్‌ఫార్మ్",
       "description": "ఎలక్ట్రానిక్ హెల్త్ రికార్డ్‌లు, మల్టీ-ఫెసిలిటీ సపోర్ట్ మరియు హెల్త్ అనలిటిక్స్‌తో సమగ్ర హెల్త్‌కేర్ మేనేజ్‌మెంట్ ప్లాట్‌ఫార్మ్.",
-      "features": ["ఎలక్ట్రానిక్ హెల్త్ రికార్డ్‌లు", "మల్టీ-ఫెసిలిటీ సపోర్ట్", "హెల్త్ అనలిటిక్స్"]
+      "features": [
+        "ఎలక్ట్రానిక్ హెల్త్ రికార్డ్‌లు",
+        "మల్టీ-ఫెసిలిటీ సపోర్ట్",
+        "హెల్త్ అనలిటిక్స్"
+      ]
     },
     "janseva": {
       "name": "జనసేవ",
       "tagline": "సిటిజన్ ఎంగేజ్‌మెంట్",
       "description": "వాయిస్ సపోర్ట్ మరియు అనలిటిక్స్‌తో ప్రభుత్వ సేవల కోసం 24/7 WhatsApp-ఆధారిత సిటిజన్ ఎంగేజ్‌మెంట్ ప్లాట్‌ఫార్మ్.",
-      "features": ["24/7 WhatsApp బాట్", "వాయిస్ మెసేజ్ సపోర్ట్", "అనలిటిక్స్ & సెంటిమెంట్ ట్రాకింగ్"],
+      "features": [
+        "24/7 WhatsApp బాట్",
+        "వాయిస్ మెసేజ్ సపోర్ట్",
+        "అనలిటిక్స్ & సెంటిమెంట్ ట్రాకింగ్"
+      ],
       "stat1": "95% రిజల్యూషన్ రేట్",
       "stat2": "6 భాషలు"
     },
@@ -269,7 +223,12 @@
       "name": "WhatsApp కామర్స్",
       "tagline": "WhatsApp లో అమ్మండి",
       "description": "ప్రొడక్ట్ కేటలాగ్‌లు, నేటివ్ పేమెంట్‌లు మరియు ఆటోమేటెడ్ చెక్‌అవుట్‌తో WhatsApp కోసం పూర్తి ఈ-కామర్స్ సొల్యూషన్.",
-      "features": ["ప్రొడక్ట్ కేటలాగ్‌లు", "నేటివ్ పేమెంట్‌లు", "ఆటోమేటెడ్ చెక్‌అవుట్", "CRM ఇంటిగ్రేషన్"],
+      "features": [
+        "ప్రొడక్ట్ కేటలాగ్‌లు",
+        "నేటివ్ పేమెంట్‌లు",
+        "ఆటోమేటెడ్ చెక్‌అవుట్",
+        "CRM ఇంటిగ్రేషన్"
+      ],
       "stat1": "98% ఓపెన్ రేట్",
       "stat2": "45% ఎక్కువ కన్వర్షన్"
     },
@@ -331,25 +290,45 @@
       "name": "ఏజెంటిక్ AI",
       "tagline": "ఆటానామస్ AI ఏజెంట్‌లు",
       "description": "కనీస మానవ జోక్యంతో సంక్లిష్టమైన బహుళ-దశల పనులను తర్కించగల, ప్లాన్ చేయగల మరియు అమలు చేయగల ఆటానామస్ AI ఏజెంట్‌లను నిర్మించండి.",
-      "features": ["బహుళ-దశల పని అమలు", "తర్కం & ప్లానింగ్", "టూల్ ఇంటిగ్రేషన్", "మెమరీ & కాంటెక్స్ట్"]
+      "features": [
+        "బహుళ-దశల పని అమలు",
+        "తర్కం & ప్లానింగ్",
+        "టూల్ ఇంటిగ్రేషన్",
+        "మెమరీ & కాంటెక్స్ట్"
+      ]
     },
     "conversationalAi": {
       "name": "కన్వర్సేషనల్ AI",
       "tagline": "చాట్‌బాట్స్ & వాయిస్ AI",
       "description": "కాంటెక్స్ట్‌ను అర్థం చేసుకుని మానవ-లాంటి ఇంటరాక్షన్‌లను అందించే ఇంటెలిజెంట్ చాట్‌బాట్‌లు మరియు వాయిస్ అసిస్టెంట్‌లను డిప్లాయ్ చేయండి.",
-      "features": ["నేచురల్ లాంగ్వేజ్ అండర్‌స్టాండింగ్", "మల్టీ-టర్న్ కన్వర్సేషన్స్", "వాయిస్ ఇంటిగ్రేషన్", "మల్టీ-లాంగ్వేజ్ సపోర్ట్"]
+      "features": [
+        "నేచురల్ లాంగ్వేజ్ అండర్‌స్టాండింగ్",
+        "మల్టీ-టర్న్ కన్వర్సేషన్స్",
+        "వాయిస్ ఇంటిగ్రేషన్",
+        "మల్టీ-లాంగ్వేజ్ సపోర్ట్"
+      ]
     },
     "aiIntegration": {
       "name": "AI ఇంటిగ్రేషన్",
       "tagline": "మీ సిస్టమ్‌లకు కనెక్ట్ అవ్వండి",
       "description": "AI సామర్థ్యాలను మీ ఉన్న ఇన్‌ఫ్రాస్ట్రక్చర్—CRM, ERP, డేటాబేస్‌లు మరియు థర్డ్-పార్టీ API లలో అతుకులు లేకుండా ఇంటిగ్రేట్ చేయండి.",
-      "features": ["CRM/ERP ఇంటిగ్రేషన్", "API డెవలప్‌మెంట్", "లెగసీ సిస్టమ్ కనెక్షన్", "డేటా పైప్‌లైన్ సెటప్"]
+      "features": [
+        "CRM/ERP ఇంటిగ్రేషన్",
+        "API డెవలప్‌మెంట్",
+        "లెగసీ సిస్టమ్ కనెక్షన్",
+        "డేటా పైప్‌లైన్ సెటప్"
+      ]
     },
     "customDevelopment": {
       "name": "కస్టమ్ AI డెవలప్‌మెంట్",
       "tagline": "టైలర్డ్ AI సొల్యూషన్‌లు",
       "description": "మీ యూనిక్ బిజినెస్ రిక్వైర్‌మెంట్‌ల కోసం ప్రత్యేకంగా డిజైన్ చేయబడిన కస్టమ్ AI సొల్యూషన్‌ల ఎండ్-టు-ఎండ్ డెవలప్‌మెంట్.",
-      "features": ["కస్టమ్ ML మోడల్స్", "ఫైన్-ట్యూన్డ్ LLMs", "డొమైన్-స్పెసిఫిక్ AI", "ఫుల్-స్టాక్ డెవలప్‌మెంట్"]
+      "features": [
+        "కస్టమ్ ML మోడల్స్",
+        "ఫైన్-ట్యూన్డ్ LLMs",
+        "డొమైన్-స్పెసిఫిక్ AI",
+        "ఫుల్-స్టాక్ డెవలప్‌మెంట్"
+      ]
     },
     "process": {
       "badge": "మా ప్రాసెస్",
