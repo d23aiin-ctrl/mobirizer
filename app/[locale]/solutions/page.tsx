@@ -63,6 +63,7 @@ const technologies = [
 
 export default function SolutionsPage() {
   const t = useTranslations('solutions');
+  const tCommon = useTranslations('common');
   return (
     <>
       <Header activePage="solutions" />
@@ -131,37 +132,32 @@ export default function SolutionsPage() {
             <div className="two-col-section">
               <div className="col-left">
                 <Animated animation="fadeInUp">
-                  <Badge icon="ri-compass-3-line" className="mb-5">Our Approach</Badge>
+                  <Badge icon="ri-compass-3-line" className="mb-5">{t('approach.badge')}</Badge>
                 </Animated>
                 <Animated animation="fadeInUp" delay={0.1}>
                   <h2 className="text-3xl md:text-4xl font-extrabold text-text-dark mb-6 leading-tight">
-                    AI That Actually <span className="text-primary-blue">Works For You</span>
+                    {t('approach.title')} <span className="text-primary-blue">{t('approach.titleHighlight')}</span>
                   </h2>
                 </Animated>
                 <Animated animation="fadeInUp" delay={0.2}>
-                  <p className="text-lg text-text-muted leading-relaxed mb-6">
-                    We don&apos;t just throw AI at problems. We take the time to understand your business, identify where AI can create genuine value, and build solutions that integrate seamlessly into your operations.
-                  </p>
-                </Animated>
-                <Animated animation="fadeInUp" delay={0.3}>
                   <p className="text-lg text-text-muted leading-relaxed mb-8">
-                    Our team combines deep technical expertise with real-world implementation experience. We&apos;ve deployed AI systems for governments, enterprises, and startups—each with unique challenges and requirements.
+                    {t('approach.description')}
                   </p>
                 </Animated>
                 <Animated animation="fadeInUp" delay={0.4}>
                   <div className="flex flex-wrap gap-4">
                     <div className="flex-1 min-w-[calc(50%-8px)]">
-                      <div className="p-5 rounded-2xl" style={{ background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%)' }}>
+                      <div className="p-5 rounded-2xl bg-primary-blue/5 border border-primary-blue/10">
                         <i className="ri-focus-3-line text-3xl text-primary-blue block mb-3" aria-hidden="true" />
-                        <div className="font-bold text-text-dark mb-1">Results Focused</div>
-                        <div className="text-sm text-text-muted">ROI-driven solutions</div>
+                        <div className="font-bold text-text-dark mb-1">{t('approach.resultsFocused')}</div>
+                        <div className="text-sm text-text-muted">{t('approach.resultsFocusedDesc')}</div>
                       </div>
                     </div>
                     <div className="flex-1 min-w-[calc(50%-8px)]">
-                      <div className="p-5 rounded-2xl" style={{ background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(74, 222, 128, 0.1) 100%)' }}>
-                        <i className="ri-loop-left-line text-3xl text-green-500 block mb-3" aria-hidden="true" />
-                        <div className="font-bold text-text-dark mb-1">Iterative Process</div>
-                        <div className="text-sm text-text-muted">Rapid feedback loops</div>
+                      <div className="p-5 rounded-2xl bg-primary-blue/5 border border-primary-blue/10">
+                        <i className="ri-loop-left-line text-3xl text-primary-blue block mb-3" aria-hidden="true" />
+                        <div className="font-bold text-text-dark mb-1">{t('approach.iterativeProcess')}</div>
+                        <div className="text-sm text-text-muted">{t('approach.iterativeProcessDesc')}</div>
                       </div>
                     </div>
                   </div>
@@ -195,47 +191,56 @@ export default function SolutionsPage() {
           <div className="container">
             <div className="section-header">
               <Animated animation="fadeInUp">
-                <Badge icon="ri-lightbulb-line">Core Solutions</Badge>
+                <Badge icon="ri-lightbulb-line">{t('core.badge')}</Badge>
               </Animated>
               <Animated animation="fadeInUp" delay={0.1}>
-                <h2 className="section-title">What We Build</h2>
+                <h2 className="section-title">{t('core.title')}</h2>
               </Animated>
               <Animated animation="fadeInUp" delay={0.2}>
-                <p className="section-subtitle">Specialized AI solutions tailored to your business needs</p>
+                <p className="section-subtitle">{t('core.subtitle')}</p>
               </Animated>
             </div>
             <Stagger className="grid-2-col" staggerDelay={0.15}>
-              {solutions.map((sol) => (
-                <StaggerItem key={sol.id} className="grid-item" id={sol.id}>
-                  <HoverCard className="card card-hover p-8 h-full flex flex-col">
-                    <div className="flex items-start gap-4 mb-5">
-                      <div className="w-14 h-14 rounded-2xl bg-primary-blue/10 flex items-center justify-center flex-shrink-0">
-                        <i className={`${sol.icon} text-2xl text-primary-blue`} aria-hidden="true" />
+              {solutions.map((sol) => {
+                const slugToKey: Record<string, string> = {
+                  agentic: 'agenticAi',
+                  conversational: 'conversationalAi',
+                  integration: 'aiIntegration',
+                  custom: 'customDevelopment',
+                };
+                const k = slugToKey[sol.id] ?? sol.id;
+                const features = t.raw(`${k}.features`) as string[];
+                return (
+                  <StaggerItem key={sol.id} className="grid-item" id={sol.id}>
+                    <HoverCard className="card card-hover p-8 h-full flex flex-col">
+                      <div className="flex items-start gap-4 mb-5">
+                        <div className="w-14 h-14 rounded-2xl bg-primary-blue/10 flex items-center justify-center flex-shrink-0">
+                          <i className={`${sol.icon} text-2xl text-primary-blue`} aria-hidden="true" />
+                        </div>
+                        <div>
+                          <h3 className="text-2xl font-bold text-text-dark leading-tight m-0">{t(`${k}.name`)}</h3>
+                          <span className="text-text-muted text-sm">{t(`${k}.tagline`)}</span>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-text-dark leading-tight m-0">{sol.title}</h3>
-                        <span className="text-text-muted text-sm">{sol.subtitle}</span>
-                      </div>
-                    </div>
-                    <p className="text-text-muted leading-relaxed mb-5">{sol.desc}</p>
-                    <h4 className="text-xs font-mono uppercase tracking-wider text-text-muted mb-3">Key capabilities</h4>
-                    <ul className="space-y-2 mb-6 flex-1">
-                      {sol.features.map((f, i) => (
-                        <li key={i} className="flex items-start gap-2.5 text-text-muted text-sm">
-                          <i className="ri-check-line text-primary-blue mt-0.5 flex-shrink-0" aria-hidden="true" />
-                          <span>{f}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Link
-                      href={`/solutions/${sol.slug}`}
-                      className="inline-flex items-center gap-2 text-primary-blue font-semibold hover:opacity-80 transition-opacity mt-auto"
-                    >
-                      Read more <i className="ri-arrow-right-line" aria-hidden="true" />
-                    </Link>
-                  </HoverCard>
-                </StaggerItem>
-              ))}
+                      <p className="text-text-muted leading-relaxed mb-5">{t(`${k}.description`)}</p>
+                      <ul className="space-y-2 mb-6 flex-1">
+                        {features.map((f, i) => (
+                          <li key={i} className="flex items-start gap-2.5 text-text-muted text-sm">
+                            <i className="ri-check-line text-primary-blue mt-0.5 flex-shrink-0" aria-hidden="true" />
+                            <span>{f}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <Link
+                        href={`/solutions/${sol.slug}`}
+                        className="inline-flex items-center gap-2 text-primary-blue font-semibold hover:opacity-80 transition-opacity mt-auto"
+                      >
+                        {tCommon('readMore')} <i className="ri-arrow-right-line" aria-hidden="true" />
+                      </Link>
+                    </HoverCard>
+                  </StaggerItem>
+                );
+              })}
             </Stagger>
           </div>
         </section>
@@ -245,30 +250,34 @@ export default function SolutionsPage() {
           <div className="container">
             <div className="section-header">
               <Animated animation="fadeInUp">
-                <Badge icon="ri-flow-chart" variant="white">Our Process</Badge>
+                <Badge icon="ri-flow-chart" variant="white">{t('process.badge')}</Badge>
               </Animated>
               <Animated animation="fadeInUp" delay={0.1}>
-                <h2 className="section-title text-white">How We Work</h2>
+                <h2 className="section-title text-white">{t('process.title')}</h2>
               </Animated>
               <Animated animation="fadeInUp" delay={0.2}>
-                <p className="section-subtitle text-white/70">A proven methodology that delivers results</p>
+                <p className="section-subtitle text-white/70">{t('process.subtitle')}</p>
               </Animated>
             </div>
             <Stagger className="grid-4-col" staggerDelay={0.1}>
-              {processSteps.map((step) => (
-                <StaggerItem key={step.num} className="grid-item">
-                  <div className="relative h-full p-8 rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm">
-                    <span className="absolute top-6 right-6 font-mono text-xs text-white/40 tracking-widest">
-                      {step.num}
-                    </span>
-                    <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-5">
-                      <i className={`${step.icon} text-2xl text-indigo-300`} aria-hidden="true" />
+              {processSteps.map((step) => {
+                const stepKeyMap: Record<string, string> = { '01': 'discovery', '02': 'design', '03': 'build', '04': 'deploySupport' };
+                const stepKey = stepKeyMap[step.num];
+                return (
+                  <StaggerItem key={step.num} className="grid-item">
+                    <div className="relative h-full p-8 rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm">
+                      <span className="absolute top-6 right-6 font-mono text-xs text-white/40 tracking-widest">
+                        {step.num}
+                      </span>
+                      <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-5">
+                        <i className={`${step.icon} text-2xl text-indigo-300`} aria-hidden="true" />
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-3">{t(`process.${stepKey}.title`)}</h3>
+                      <p className="text-sm text-white/70 leading-relaxed m-0">{t(`process.${stepKey}.description`)}</p>
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
-                    <p className="text-sm text-white/70 leading-relaxed m-0">{step.desc}</p>
-                  </div>
-                </StaggerItem>
-              ))}
+                  </StaggerItem>
+                );
+              })}
             </Stagger>
           </div>
         </section>
@@ -278,13 +287,13 @@ export default function SolutionsPage() {
           <div className="container">
             <div className="section-header">
               <Animated animation="fadeInUp">
-                <Badge icon="ri-stack-line">Technologies</Badge>
+                <Badge icon="ri-stack-line">{t('technologies.badge')}</Badge>
               </Animated>
               <Animated animation="fadeInUp" delay={0.1}>
-                <h2 className="section-title">Powered by Leading AI</h2>
+                <h2 className="section-title">{t('technologies.title')}</h2>
               </Animated>
               <Animated animation="fadeInUp" delay={0.2}>
-                <p className="section-subtitle">We work with the best tools and platforms to deliver exceptional results</p>
+                <p className="section-subtitle">{t('technologies.subtitle')}</p>
               </Animated>
             </div>
             <Stagger className="industries-grid" staggerDelay={0.08}>
@@ -309,13 +318,13 @@ export default function SolutionsPage() {
               <StaggerItem>
                 <div className="stat-card">
                   <div className="stat-value"><Counter from={0} to={COMPANY_STATS.projectsDelivered} duration={2} suffix="+" /></div>
-                  <div className="stat-label">Projects Delivered</div>
+                  <div className="stat-label">{t('statsSection.projectsDelivered')}</div>
                 </div>
               </StaggerItem>
               <StaggerItem>
                 <div className="stat-card">
                   <div className="stat-value"><Counter from={0} to={COMPANY_STATS.clientsServed} duration={2} suffix="+" /></div>
-                  <div className="stat-label">Clients Served</div>
+                  <div className="stat-label">{t('statsSection.happyClients')}</div>
                 </div>
               </StaggerItem>
               <StaggerItem>
@@ -327,7 +336,7 @@ export default function SolutionsPage() {
               <StaggerItem>
                 <div className="stat-card">
                   <div className="stat-value">24/7</div>
-                  <div className="stat-label">Support Available</div>
+                  <div className="stat-label">{t('statsSection.supportAvailable')}</div>
                 </div>
               </StaggerItem>
             </Stagger>
@@ -345,7 +354,7 @@ export default function SolutionsPage() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
                 >
-                  Ready to Transform Your Business with AI?
+                  {t('cta.title')}
                 </motion.h2>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
@@ -353,7 +362,7 @@ export default function SolutionsPage() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 }}
                 >
-                  Get a free consultation and AI readiness assessment. Let&apos;s discuss how AI can drive efficiency and growth for your organization.
+                  {t('cta.description')}
                 </motion.p>
                 <motion.div
                   className="flex gap-3 justify-center flex-wrap"
@@ -364,7 +373,7 @@ export default function SolutionsPage() {
                 >
                   <Button variant="ctaWhite" asChild>
                     <Link href="/contact">
-                      <span>Start a project</span>
+                      <span>{tCommon('startProject')}</span>
                       <i className="ri-arrow-right-line" aria-hidden="true" />
                     </Link>
                   </Button>

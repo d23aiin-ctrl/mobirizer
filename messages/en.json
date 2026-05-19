@@ -19,7 +19,8 @@
     "viewCaseStudy": "View Case Study",
     "sendMessage": "Send Message",
     "sending": "Sending...",
-    "getInTouch": "Get in Touch"
+    "getInTouch": "Get in Touch",
+    "startProject": "Start a project"
   },
   "navigation": {
     "home": "Home",

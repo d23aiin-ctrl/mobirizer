@@ -54,14 +54,15 @@ const products = [
 ];
 
 const useCases = [
-  { icon: 'ri-government-line', title: 'Government', desc: 'Citizen engagement, grievance management, and healthcare digitization for public sector.', href: '/industries/government' },
-  { icon: 'ri-book-open-line', title: 'Education', desc: 'AI tutoring, homework assistance, and adaptive learning for students of all ages.', href: '/industries/education' },
-  { icon: 'ri-heart-pulse-line', title: 'Healthcare', desc: 'Patient management, EHR systems, and health analytics for hospitals and clinics.', href: '/industries/healthcare' },
-  { icon: 'ri-movie-2-line', title: 'Media & Content', desc: 'Voice generation, video dubbing, and content creation for creators and enterprises.', href: '/products/ohgrt' },
+  { key: 'government', icon: 'ri-government-line', href: '/industries/government' },
+  { key: 'education', icon: 'ri-book-open-line', href: '/industries/education' },
+  { key: 'healthcare', icon: 'ri-heart-pulse-line', href: '/industries/healthcare' },
+  { key: 'media', icon: 'ri-movie-2-line', href: '/products/ohgrt' },
 ];
 
 export default function ProductsPage() {
   const t = useTranslations('products');
+  const tCommon = useTranslations('common');
   return (
     <>
       <Header activePage="products" />
@@ -138,25 +139,16 @@ export default function ProductsPage() {
             <div className="two-col-section">
               <div className="col-left">
                 <Animated animation="fadeInUp">
-                  <Badge icon="ri-lightbulb-line" className="mb-5">Our Approach</Badge>
+                  <Badge icon="ri-lightbulb-line" className="mb-5">{t('approach.badge')}</Badge>
                 </Animated>
                 <Animated animation="fadeInUp" delay={0.1}>
                   <h2 className="text-3xl md:text-4xl font-extrabold text-text-dark mb-6 leading-tight">
-                    Products That <span className="text-primary-blue">Solve Real Problems</span>
+                    {t('approach.title')} <span className="text-primary-blue">{t('approach.titleHighlight')}</span>
                   </h2>
                 </Animated>
                 <Animated animation="fadeInUp" delay={0.2}>
-                  <p className="text-lg text-text-muted leading-relaxed mb-6">
-                    We don&apos;t build products for the sake of technology. Each product in our
-                    portfolio was born from a genuine need—whether it&apos;s making AI accessible via
-                    WhatsApp, revolutionizing education, or digitizing healthcare for governments.
-                  </p>
-                </Animated>
-                <Animated animation="fadeInUp" delay={0.3}>
                   <p className="text-lg text-text-muted leading-relaxed mb-8">
-                    Our products are battle-tested in production environments, serving real users at
-                    scale. They represent our commitment to building AI that works reliably,
-                    ethically, and delivers measurable value.
+                    {t('approach.description')}
                   </p>
                 </Animated>
                 <Animated animation="fadeInUp" delay={0.4}>
@@ -170,8 +162,8 @@ export default function ProductsPage() {
                         <i className="ri-global-line text-primary-blue text-2xl" aria-hidden="true" />
                       </div>
                       <div>
-                        <div className="font-bold text-text-dark">Production Ready</div>
-                        <div className="text-sm text-text-muted">Serving millions daily</div>
+                        <div className="font-bold text-text-dark">{t('approach.productionReady')}</div>
+                        <div className="text-sm text-text-muted">{t('approach.productionReadyDesc')}</div>
                       </div>
                     </motion.div>
                     <motion.div
@@ -183,8 +175,8 @@ export default function ProductsPage() {
                         <i className="ri-shield-check-line text-primary-blue text-2xl" aria-hidden="true" />
                       </div>
                       <div>
-                        <div className="font-bold text-text-dark">Enterprise Grade</div>
-                        <div className="text-sm text-text-muted">Secure & compliant</div>
+                        <div className="font-bold text-text-dark">{t('approach.enterpriseGrade')}</div>
+                        <div className="text-sm text-text-muted">{t('approach.enterpriseGradeDesc')}</div>
                       </div>
                     </motion.div>
                   </div>
@@ -217,13 +209,13 @@ export default function ProductsPage() {
           <div className="container">
             <div className="section-header">
               <Animated animation="fadeInUp">
-                <Badge icon="ri-star-line">Featured</Badge>
+                <Badge icon="ri-star-line">{t('featured.badge')}</Badge>
               </Animated>
               <Animated animation="fadeInUp" delay={0.1}>
-                <h2 className="section-title">Our Product Portfolio</h2>
+                <h2 className="section-title">{t('featured.title')}</h2>
               </Animated>
               <Animated animation="fadeInUp" delay={0.2}>
-                <p className="section-subtitle">AI-powered solutions serving diverse industries</p>
+                <p className="section-subtitle">{t('featured.subtitle')}</p>
               </Animated>
             </div>
 
@@ -234,21 +226,19 @@ export default function ProductsPage() {
                   <div className="flex-1 min-w-[280px]">
                     <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-primary-blue mb-5">
                       <span className="w-6 h-px bg-primary-blue" />
-                      Featured · WhatsApp native
+                      {t('featured.badge')} · {t('d23ai.badge')}
                     </div>
                     <h3 className="text-3xl md:text-4xl font-extrabold text-text-dark tracking-tight mb-4">
-                      D23.ai
+                      {t('d23ai.name')}
                     </h3>
                     <p className="text-text-muted leading-relaxed mb-8 max-w-xl">
-                      India&apos;s first WhatsApp-native AI assistant that understands and responds in
-                      11+ Indian languages. Send voice messages, generate images, check train PNR
-                      status, search the web — all within WhatsApp.
+                      {t('d23ai.description')}
                     </p>
                     <Link
                       href="/products/d23-ai"
                       className="text-primary-blue font-semibold inline-flex items-center gap-2 hover:opacity-80 transition-opacity"
                     >
-                      Explore D23.ai <i className="ri-arrow-right-line" aria-hidden="true" />
+                      {t('d23ai.name')} <i className="ri-arrow-right-line" aria-hidden="true" />
                     </Link>
                   </div>
                   <div className="flex-1 min-w-[260px] grid grid-cols-3 gap-6 pt-2">
@@ -271,48 +261,52 @@ export default function ProductsPage() {
 
             {/* Other Products Grid — monochrome, numbers-led */}
             <Stagger className="grid-2-col" staggerDelay={0.15}>
-              {products.map((prod) => (
-                <StaggerItem key={prod.slug} className="grid-item">
-                  <HoverCard className="card card-hover p-8 h-full flex flex-col">
-                    <div className="flex items-start gap-4 mb-5">
-                      <div className="w-14 h-14 rounded-2xl bg-primary-blue/10 flex items-center justify-center flex-shrink-0">
-                        <i className={`${prod.icon} text-2xl text-primary-blue`} aria-hidden="true" />
+              {products.map((prod) => {
+                const key = prod.slug === 'whatsapp-commerce' ? 'whatsappCommerce' : prod.slug;
+                const features = t.raw(`${key}.features`) as string[];
+                return (
+                  <StaggerItem key={prod.slug} className="grid-item">
+                    <HoverCard className="card card-hover p-8 h-full flex flex-col">
+                      <div className="flex items-start gap-4 mb-5">
+                        <div className="w-14 h-14 rounded-2xl bg-primary-blue/10 flex items-center justify-center flex-shrink-0">
+                          <i className={`${prod.icon} text-2xl text-primary-blue`} aria-hidden="true" />
+                        </div>
+                        <div>
+                          <h3 className="text-2xl font-bold text-text-dark leading-tight m-0">{t(`${key}.name`)}</h3>
+                          <span className="text-text-muted text-sm">{t(`${key}.tagline`)}</span>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-text-dark leading-tight m-0">{prod.title}</h3>
-                        <span className="text-text-muted text-sm">{prod.subtitle}</span>
-                      </div>
-                    </div>
-                    {prod.badges && (
-                      <div className="flex flex-wrap gap-2 mb-5">
-                        {prod.badges.map((badge) => (
-                          <span
-                            key={badge}
-                            className="font-mono text-[11px] px-2.5 py-1 rounded-md bg-bg-light text-text-dark border border-border tabular-nums"
-                          >
-                            {badge}
-                          </span>
+                      {prod.badges && (
+                        <div className="flex flex-wrap gap-2 mb-5">
+                          {prod.badges.map((badge) => (
+                            <span
+                              key={badge}
+                              className="font-mono text-[11px] px-2.5 py-1 rounded-md bg-bg-light text-text-dark border border-border tabular-nums"
+                            >
+                              {badge}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                      <p className="text-text-muted leading-relaxed mb-5">{t(`${key}.description`)}</p>
+                      <ul className="space-y-2 mb-5 flex-1">
+                        {features.map((f, i) => (
+                          <li key={i} className="flex items-start gap-2.5 text-text-muted text-sm">
+                            <i className="ri-check-line text-primary-blue mt-0.5 flex-shrink-0" aria-hidden="true" />
+                            <span>{f}</span>
+                          </li>
                         ))}
-                      </div>
-                    )}
-                    <p className="text-text-muted leading-relaxed mb-5">{prod.desc}</p>
-                    <ul className="space-y-2 mb-5 flex-1">
-                      {prod.features.map((f, i) => (
-                        <li key={i} className="flex items-start gap-2.5 text-text-muted text-sm">
-                          <i className="ri-check-line text-primary-blue mt-0.5 flex-shrink-0" aria-hidden="true" />
-                          <span>{f}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Link
-                      href={`/products/${prod.slug}`}
-                      className="inline-flex items-center gap-2 text-primary-blue font-semibold hover:opacity-80 transition-opacity mt-auto"
-                    >
-                      Read more <i className="ri-arrow-right-line" aria-hidden="true" />
-                    </Link>
-                  </HoverCard>
-                </StaggerItem>
-              ))}
+                      </ul>
+                      <Link
+                        href={`/products/${prod.slug}`}
+                        className="inline-flex items-center gap-2 text-primary-blue font-semibold hover:opacity-80 transition-opacity mt-auto"
+                      >
+                        {tCommon('readMore')} <i className="ri-arrow-right-line" aria-hidden="true" />
+                      </Link>
+                    </HoverCard>
+                  </StaggerItem>
+                );
+              })}
             </Stagger>
           </div>
         </section>
@@ -322,25 +316,25 @@ export default function ProductsPage() {
           <div className="container">
             <div className="section-header">
               <Animated animation="fadeInUp">
-                <Badge icon="ri-building-2-line">Use Cases</Badge>
+                <Badge icon="ri-building-2-line">{t('useCases.badge')}</Badge>
               </Animated>
               <Animated animation="fadeInUp" delay={0.1}>
-                <h2 className="section-title">Built for Diverse Industries</h2>
+                <h2 className="section-title">{t('useCases.title')}</h2>
               </Animated>
               <Animated animation="fadeInUp" delay={0.2}>
-                <p className="section-subtitle">Our products serve organizations across multiple sectors</p>
+                <p className="section-subtitle">{t('useCases.subtitle')}</p>
               </Animated>
             </div>
             <Stagger className="grid-4-col" staggerDelay={0.1}>
               {useCases.map((uc) => (
-                <StaggerItem key={uc.title} className="grid-item">
+                <StaggerItem key={uc.key} className="grid-item">
                   <Link href={uc.href} className="block h-full">
                     <HoverCard className="card card-hover text-center py-8 px-5 h-full">
                       <div className="w-14 h-14 rounded-2xl bg-primary-blue/10 flex items-center justify-center mx-auto mb-5">
                         <i className={`${uc.icon} text-2xl text-primary-blue`} aria-hidden="true" />
                       </div>
-                      <h3 className="text-lg font-bold mb-3 text-text-dark">{uc.title}</h3>
-                      <p className="text-text-muted text-sm leading-relaxed m-0">{uc.desc}</p>
+                      <h3 className="text-lg font-bold mb-3 text-text-dark">{t(`useCases.${uc.key}.title`)}</h3>
+                      <p className="text-text-muted text-sm leading-relaxed m-0">{t(`useCases.${uc.key}.description`)}</p>
                     </HoverCard>
                   </Link>
                 </StaggerItem>
@@ -355,16 +349,16 @@ export default function ProductsPage() {
           <div className="container relative z-10">
             <Stagger className="stats-grid" staggerDelay={0.1}>
               <StaggerItem>
-                <StatCard value="6" label="Live Products" />
+                <StatCard value="6" label={t('statsSection.liveProducts')} />
               </StaggerItem>
               <StaggerItem>
-                <StatCard value="2M+" label="Total Users" />
+                <StatCard value="2M+" label={t('statsSection.totalUsers')} />
               </StaggerItem>
               <StaggerItem>
-                <StatCard value="11+" label="Languages Supported" />
+                <StatCard value="11+" label={t('statsSection.languagesSupported')} />
               </StaggerItem>
               <StaggerItem>
-                <StatCard value="4.8★" label="Average Rating" />
+                <StatCard value="4.8★" label={t('statsSection.avgRating')} />
               </StaggerItem>
             </Stagger>
           </div>
@@ -381,7 +375,7 @@ export default function ProductsPage() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
                 >
-                  Want to Build a Custom Product?
+                  {t('cta.title')}
                 </motion.h2>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
@@ -389,8 +383,7 @@ export default function ProductsPage() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 }}
                 >
-                  We can help you create AI-powered products tailored to your specific needs. From
-                  concept to production, we handle the complete journey.
+                  {t('cta.description')}
                 </motion.p>
                 <motion.div
                   className="flex gap-3 justify-center flex-wrap"
@@ -401,13 +394,13 @@ export default function ProductsPage() {
                 >
                   <Button variant="ctaWhite" asChild>
                     <Link href="/contact">
-                      <span>Start a project</span>
+                      <span>{tCommon('startProject')}</span>
                       <i className="ri-arrow-right-line" aria-hidden="true" />
                     </Link>
                   </Button>
                   <Button variant="ghost" asChild>
                     <Link href="/solutions">
-                      <span>Explore Solutions</span>
+                      <span>{tCommon('exploreSolutions')}</span>
                       <i className="ri-arrow-right-line" aria-hidden="true" />
                     </Link>
                   </Button>
