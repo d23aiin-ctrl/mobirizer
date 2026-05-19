@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { StatCard, Button, Badge, Animated, Stagger, StaggerItem, Float, GradientText, HoverCard, motion, Counter, HeroSpotlight, FloatingOrbs, LivePulse, TypedTerminalLines, Marquee, Magnetic, AgentGraph, KineticHeadline, LiveMetric, ScrollIndicator } from '@/components';
+import { COMPANY_STATS, HERO_ANCHOR } from '@/lib/companyStats';
 
 export function HomePageContent() {
   return (
@@ -50,7 +51,7 @@ export function HomePageContent() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8, duration: 0.5 }}
-                  className="flex gap-3 flex-wrap items-center"
+                  className="flex gap-6 flex-wrap items-center"
                 >
                   <Magnetic strength={0.3}>
                     <Button variant="ctaWhite" asChild>
@@ -60,12 +61,12 @@ export function HomePageContent() {
                       </Link>
                     </Button>
                   </Magnetic>
-                  <Button variant="ghost" asChild>
-                    <Link href="/engineering">
-                      <span>See how we build</span>
-                      <i className="ri-arrow-right-line" aria-hidden="true" />
-                    </Link>
-                  </Button>
+                  <Link
+                    href="/engineering"
+                    className="font-mono text-sm text-white/60 hover:text-white transition-colors border-b border-white/20 hover:border-white/60 pb-0.5"
+                  >
+                    See how we build →
+                  </Link>
                 </motion.div>
               </div>
             </div>
@@ -128,29 +129,20 @@ export function HomePageContent() {
             </div>
           </div>
 
-          {/* Hero bottom band — stats + scroll indicator */}
+          {/* Hero anchor metric — one claim, not four */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.6 }}
-            className="mt-16 pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-5 gap-6 items-end"
+            className="mt-16 pt-8 border-t border-white/10 flex flex-wrap items-end justify-between gap-6"
           >
-            {[
-              { value: 10, suffix: '+', label: 'Years shipping' },
-              { value: 100, suffix: '+', label: 'Clients served' },
-              { value: 200, suffix: '+', label: 'Projects delivered' },
-              { value: 47, suffix: '', label: 'Agents in production' },
-            ].map((stat, i) => (
-              <div key={i} className="text-left">
-                <div className="text-3xl md:text-4xl font-extrabold text-white tracking-tighter tabular-nums">
-                  <Counter from={0} to={stat.value} duration={1.6} suffix={stat.suffix} />
-                </div>
-                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50 mt-2">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-            <div className="hidden md:flex justify-end">
+            <p className="text-lg md:text-xl text-white/80 max-w-3xl leading-snug">
+              <span className="text-3xl md:text-4xl font-extrabold text-white tracking-tighter tabular-nums mr-3 align-baseline">
+                <Counter from={0} to={HERO_ANCHOR.number} duration={1.6} />
+              </span>
+              {HERO_ANCHOR.sentence}
+            </p>
+            <div className="hidden md:flex">
               <ScrollIndicator />
             </div>
           </motion.div>
@@ -203,7 +195,7 @@ export function HomePageContent() {
                   </p>
                   <div className="flex gap-6 flex-wrap">
                     {[
-                      { icon: 'ri-check-double-line', title: 'Proven Track Record', desc: '200+ successful projects' },
+                      { icon: 'ri-check-double-line', title: 'Proven Track Record', desc: `${COMPANY_STATS.projectsDelivered}+ successful projects` },
                       { icon: 'ri-shield-check-line', title: 'Enterprise Ready', desc: 'Government & enterprise grade' },
                     ].map((item, i) => (
                       <motion.div
@@ -411,10 +403,10 @@ export function HomePageContent() {
           <div className="container relative z-10">
             <Stagger className="stats-grid" staggerDelay={0.1}>
               {[
-                { value: '2014', label: 'Founded' },
-                { value: '100+', label: 'Clients Served' },
-                { value: '200+', label: 'Projects Delivered' },
-                { value: '10+', label: 'Years Experience' },
+                { value: String(COMPANY_STATS.foundedYear), label: 'Founded' },
+                { value: `${COMPANY_STATS.clientsServed}+`, label: 'Clients Served' },
+                { value: `${COMPANY_STATS.projectsDelivered}+`, label: 'Projects Delivered' },
+                { value: `${COMPANY_STATS.yearsShipping}+`, label: 'Years Experience' },
               ].map((stat, i) => (
                 <StaggerItem key={i}>
                   <motion.div

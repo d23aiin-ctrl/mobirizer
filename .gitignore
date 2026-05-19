@@ -15,3 +15,8 @@ node_modules/
 
 # Coverage
 coverage/
+
+# Local SSL certificates (private keys, etc.)
+certificates/
+*.pem
+*.key

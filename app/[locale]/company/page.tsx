@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Header, Footer, StatCard, Badge, Button } from '@/components';
 import { Animated, Stagger, StaggerItem, HoverCard, motion , PageHeroBackground } from '@/components/ui';
+import { COMPANY_STATS } from '@/lib/companyStats';
 
 export default function CompanyPage() {
   return (
@@ -82,7 +83,7 @@ export default function CompanyPage() {
                       { year: '2019', title: 'AI Experiments Begin', desc: 'First AI projects launched, exploring conversational interfaces.' },
                       { year: '2021', title: 'D23.ai Launched', desc: 'Government AI platform goes live, serving millions of citizens.' },
                       { year: '2024', title: 'AI-First Pivot', desc: 'Full transition to AI-focused development studio.' },
-                      { year: 'Today', title: '500+ Clients Worldwide', desc: '1000+ projects delivered, 2M+ app downloads across AI products.', last: true },
+                      { year: 'Today', title: `${COMPANY_STATS.clientsServed}+ clients, ${COMPANY_STATS.agentsInProduction} agents in production`, desc: `${COMPANY_STATS.projectsDelivered}+ projects delivered, ${(COMPANY_STATS.usersImpacted / 1_000_000).toFixed(0)}M+ users impacted across AI products.`, last: true },
                     ].map((item, i) => (
                       <motion.div
                         key={i}
@@ -186,16 +187,16 @@ export default function CompanyPage() {
           <div className="container">
             <Stagger className="stats-grid" staggerDelay={0.1}>
               <StaggerItem>
-                <StatCard value="2014" label="Founded" />
+                <StatCard value={String(COMPANY_STATS.foundedYear)} label="Founded" />
               </StaggerItem>
               <StaggerItem>
-                <StatCard value="500+" label="Clients Worldwide" />
+                <StatCard value={`${COMPANY_STATS.clientsServed}+`} label="Clients Served" />
               </StaggerItem>
               <StaggerItem>
-                <StatCard value="1000+" label="Projects Completed" />
+                <StatCard value={`${COMPANY_STATS.projectsDelivered}+`} label="Projects Delivered" />
               </StaggerItem>
               <StaggerItem>
-                <StatCard value="2M+" label="App Downloads" />
+                <StatCard value={`${COMPANY_STATS.agentsInProduction}`} label="Agents in Production" />
               </StaggerItem>
             </Stagger>
           </div>

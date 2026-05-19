@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Header, Footer, Badge, Button } from '@/components';
 import { Animated, Stagger, StaggerItem, HoverCard, Counter, motion } from '@/components/ui';
+import { COMPANY_STATS } from '@/lib/companyStats';
 
 const solutions = [
   {
@@ -205,9 +206,9 @@ export default function SolutionsPage() {
                   <div className="rounded-xl border border-border bg-bg-white p-8">
                     <div className="grid grid-cols-2 gap-6">
                       {[
-                        { label: 'Production agents shipped', value: '40+' },
+                        { label: 'Production agents shipped', value: String(COMPANY_STATS.agentsInProduction) },
                         { label: 'Sectors served', value: '6' },
-                        { label: 'Years shipping AI', value: '10+' },
+                        { label: 'Years shipping AI', value: `${COMPANY_STATS.yearsOnAi}+` },
                         { label: 'Avg uptime SLO', value: '99.9%' },
                       ].map((s) => (
                         <div key={s.label} className="border-l-2 border-primary-blue pl-4">
@@ -358,20 +359,20 @@ export default function SolutionsPage() {
             <Stagger className="stats-grid" staggerDelay={0.1}>
               <StaggerItem>
                 <div className="stat-card">
-                  <div className="stat-value"><Counter from={0} to={1000} duration={2} suffix="+" /></div>
+                  <div className="stat-value"><Counter from={0} to={COMPANY_STATS.projectsDelivered} duration={2} suffix="+" /></div>
                   <div className="stat-label">Projects Delivered</div>
                 </div>
               </StaggerItem>
               <StaggerItem>
                 <div className="stat-card">
-                  <div className="stat-value"><Counter from={0} to={500} duration={2} suffix="+" /></div>
-                  <div className="stat-label">Happy Clients</div>
+                  <div className="stat-value"><Counter from={0} to={COMPANY_STATS.clientsServed} duration={2} suffix="+" /></div>
+                  <div className="stat-label">Clients Served</div>
                 </div>
               </StaggerItem>
               <StaggerItem>
                 <div className="stat-card">
-                  <div className="stat-value"><Counter from={0} to={98} duration={2} suffix="%" /></div>
-                  <div className="stat-label">Client Satisfaction</div>
+                  <div className="stat-value"><Counter from={0} to={COMPANY_STATS.agentsInProduction} duration={2} /></div>
+                  <div className="stat-label">Agents in Production</div>
                 </div>
               </StaggerItem>
               <StaggerItem>
