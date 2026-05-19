@@ -220,7 +220,7 @@ export function Footer({ variant = 'default' }: FooterProps) {
         {/* Footer Bottom */}
         <div className="pt-8 mt-8 border-t border-white/10 flex items-center justify-between gap-4 flex-wrap">
           <p className="text-white/60 text-sm m-0">
-            {t('copyright')}
+            {t('copyright', { year: new Date().getFullYear() })}
           </p>
           <div className="text-white/60 [&_button]:text-white/60 [&_button:hover]:text-white [&_button]:hover:bg-white/10">
             <ThemeToggle />

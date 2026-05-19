@@ -1,8 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { Header, Footer, StatCard, Badge, Button } from '@/components';
 import { Animated, Stagger, StaggerItem, HoverCard, Float, GradientText, motion } from '@/components/ui';
+import { COMPANY_STATS } from '@/lib/companyStats';
 
 const products = [
   {
@@ -59,6 +61,7 @@ const useCases = [
 ];
 
 export default function ProductsPage() {
+  const t = useTranslations('products');
   return (
     <>
       <Header activePage="products" />
@@ -84,17 +87,16 @@ export default function ProductsPage() {
           <div className="hero-two-col">
             <div className="hero-content-col">
               <Animated animation="fadeInUp">
-                <Badge icon="ri-apps-2-line" variant="white" className="mb-5">Our Products</Badge>
+                <Badge icon="ri-apps-2-line" variant="white" className="mb-5">{t('heroBadge')}</Badge>
               </Animated>
               <Animated animation="fadeInUp" delay={0.1}>
                 <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-5 leading-tight">
-                  AI Products Built for <GradientText>Real-World Impact</GradientText>
+                  {t('heroTitleStart')} <GradientText>{t('heroTitleAccent')}</GradientText>
                 </h1>
               </Animated>
               <Animated animation="fadeInUp" delay={0.2}>
                 <p className="text-lg text-white/80 leading-relaxed max-w-xl">
-                  From WhatsApp assistants to healthcare platforms, our products serve millions of
-                  users across government, education, and enterprise sectors.
+                  {t('heroSubhead')}
                 </p>
               </Animated>
             </div>

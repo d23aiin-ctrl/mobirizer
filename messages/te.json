@@ -37,7 +37,7 @@
   },
   "footer": {
     "description": "ప్రభుత్వం, విద్య, ఆరోగ్యం మరియు ఎంటర్‌ప్రైజ్ క్లయింట్‌లకు సాఫ్ట్‌వేర్ మరియు AI సొల్యూషన్‌లను అందించే టెక్నాలజీ కంపెనీ. 2014 నుండి ఆవిష్కరిస్తోంది.",
-    "copyright": "© 2025 మొబిరైజర్ సర్వీసెస్ ప్రైవేట్ లిమిటెడ్. అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి.",
+    "copyright": "© {year} మొబిరైజర్ సర్వీసెస్ ప్రైవేట్ లిమిటెడ్. అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి.",
     "products": "ప్రొడక్ట్‌లు",
     "solutions": "సొల్యూషన్‌లు",
     "company": "కంపెనీ"
@@ -262,7 +262,11 @@
     "cta": {
       "title": "కస్టమ్ ప్రొడక్ట్ నిర్మించాలనుకుంటున్నారా?",
       "description": "మీ నిర్దిష్ట అవసరాలకు అనుగుణంగా AI-ఆధారిత ప్రొడక్ట్‌లను రూపొందించడంలో మేము సహాయపడగలము."
-    }
+    },
+    "heroBadge": "Our Products",
+    "heroTitleStart": "AI Products Built for",
+    "heroTitleAccent": "Real-World Impact",
+    "heroSubhead": "From WhatsApp assistants to healthcare platforms, our products serve millions of users across government, education, and enterprise sectors."
   },
   "solutions": {
     "pageTitle": "ఫలితాలను అందించే ఎండ్-టు-ఎండ్ AI సొల్యూషన్‌లు",
@@ -371,7 +375,11 @@
     "cta": {
       "title": "AI తో మీ వ్యాపారాన్ని మార్చడానికి సిద్ధంగా ఉన్నారా?",
       "description": "ఉచిత సంప్రదింపు మరియు AI రెడీనెస్ అసెస్‌మెంట్ పొందండి."
-    }
+    },
+    "heroBadge": "Our Solutions",
+    "heroTitleStart": "End-to-End AI Solutions",
+    "heroTitleAccent": "That Deliver Results",
+    "heroSubhead": "From concept to production, we build AI systems that deliver real business value. Strategy, development, integration, and ongoing support — all under one roof."
   },
   "company": {
     "pageTitle": "మా గురించి",

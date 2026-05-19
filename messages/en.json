@@ -37,7 +37,7 @@
   },
   "footer": {
     "description": "Technology company delivering tailored software and AI solutions for government, education, healthcare, and enterprise clients. Innovating since 2014.",
-    "copyright": "© 2025 Mobirizer Services Pvt. Ltd. All Rights Reserved.",
+    "copyright": "© {year} Mobirizer Services Pvt. Ltd. All Rights Reserved.",
     "products": "Products",
     "solutions": "Solutions",
     "company": "Company"
@@ -262,7 +262,11 @@
     "cta": {
       "title": "Want to Build a Custom Product?",
       "description": "We can help you create AI-powered products tailored to your specific needs. From concept to production, we handle the complete journey."
-    }
+    },
+    "heroBadge": "Our Products",
+    "heroTitleStart": "AI Products Built for",
+    "heroTitleAccent": "Real-World Impact",
+    "heroSubhead": "From WhatsApp assistants to healthcare platforms, our products serve millions of users across government, education, and enterprise sectors."
   },
   "solutions": {
     "pageTitle": "End-to-End AI Solutions That Deliver Results",
@@ -371,7 +375,11 @@
     "cta": {
       "title": "Ready to Transform Your Business with AI?",
       "description": "Get a free consultation and AI readiness assessment. Let's discuss how AI can drive efficiency and growth for your organization."
-    }
+    },
+    "heroBadge": "Our Solutions",
+    "heroTitleStart": "End-to-End AI Solutions",
+    "heroTitleAccent": "That Deliver Results",
+    "heroSubhead": "From concept to production, we build AI systems that deliver real business value. Strategy, development, integration, and ongoing support — all under one roof."
   },
   "company": {
     "pageTitle": "About Us",

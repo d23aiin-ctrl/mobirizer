@@ -37,7 +37,7 @@
   },
   "footer": {
     "description": "அரசு, கல்வி, சுகாதாரம் மற்றும் நிறுவன வாடிக்கையாளர்களுக்கு மென்பொருள் மற்றும் AI தீர்வுகளை வழங்கும் தொழில்நுட்ப நிறுவனம். 2014 முதல் நவீனத்துடன்.",
-    "copyright": "© 2025 மொபிரைசர் சர்வீசஸ் பிரைவேட் லிமிடெட். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
+    "copyright": "© {year} மொபிரைசர் சர்வீசஸ் பிரைவேட் லிமிடெட். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
     "products": "தயாரிப்புகள்",
     "solutions": "தீர்வுகள்",
     "company": "நிறுவனம்"
@@ -262,7 +262,11 @@
     "cta": {
       "title": "தனிப்பயன் தயாரிப்பை உருவாக்க விரும்புகிறீர்களா?",
       "description": "உங்கள் குறிப்பிட்ட தேவைகளுக்கு ஏற்ப AI-இயக்கப்படும் தயாரிப்புகளை உருவாக்க நாங்கள் உதவ முடியும்."
-    }
+    },
+    "heroBadge": "Our Products",
+    "heroTitleStart": "AI Products Built for",
+    "heroTitleAccent": "Real-World Impact",
+    "heroSubhead": "From WhatsApp assistants to healthcare platforms, our products serve millions of users across government, education, and enterprise sectors."
   },
   "solutions": {
     "pageTitle": "முடிவுகளை வழங்கும் முழுமையான AI தீர்வுகள்",
@@ -371,7 +375,11 @@
     "cta": {
       "title": "AI-உடன் உங்கள் வணிகத்தை மாற்ற தயாரா?",
       "description": "இலவச ஆலோசனை மற்றும் AI தயார்நிலை மதிப்பீட்டைப் பெறுங்கள்."
-    }
+    },
+    "heroBadge": "Our Solutions",
+    "heroTitleStart": "End-to-End AI Solutions",
+    "heroTitleAccent": "That Deliver Results",
+    "heroSubhead": "From concept to production, we build AI systems that deliver real business value. Strategy, development, integration, and ongoing support — all under one roof."
   },
   "company": {
     "pageTitle": "எங்களைப் பற்றி",

@@ -37,7 +37,7 @@
   },
   "footer": {
     "description": "সরকার, শিক্ষা, স্বাস্থ্যসেবা এবং এন্টারপ্রাইজ ক্লায়েন্টদের জন্য সফটওয়্যার এবং AI সমাধান প্রদানকারী প্রযুক্তি কোম্পানি। ২০১৪ সাল থেকে উদ্ভাবন করছি।",
-    "copyright": "© ২০২৫ মবিরাইজার সার্ভিসেস প্রাইভেট লিমিটেড। সমস্ত অধিকার সংরক্ষিত।",
+    "copyright": "© {year} মবিরাইজার সার্ভিসেস প্রাইভেট লিমিটেড। সমস্ত অধিকার সংরক্ষিত।",
     "products": "পণ্য",
     "solutions": "সমাধান",
     "company": "কোম্পানি"
@@ -262,7 +262,11 @@
     "cta": {
       "title": "কাস্টম পণ্য তৈরি করতে চান?",
       "description": "আপনার নির্দিষ্ট প্রয়োজনের জন্য AI-চালিত পণ্য তৈরি করতে আমরা সাহায্য করতে পারি।"
-    }
+    },
+    "heroBadge": "Our Products",
+    "heroTitleStart": "AI Products Built for",
+    "heroTitleAccent": "Real-World Impact",
+    "heroSubhead": "From WhatsApp assistants to healthcare platforms, our products serve millions of users across government, education, and enterprise sectors."
   },
   "solutions": {
     "pageTitle": "ফলাফল প্রদানকারী এন্ড-টু-এন্ড AI সমাধান",
@@ -371,7 +375,11 @@
     "cta": {
       "title": "AI দিয়ে আপনার ব্যবসা রূপান্তর করতে প্রস্তুত?",
       "description": "বিনামূল্যে পরামর্শ এবং AI রেডিনেস অ্যাসেসমেন্ট পান।"
-    }
+    },
+    "heroBadge": "Our Solutions",
+    "heroTitleStart": "End-to-End AI Solutions",
+    "heroTitleAccent": "That Deliver Results",
+    "heroSubhead": "From concept to production, we build AI systems that deliver real business value. Strategy, development, integration, and ongoing support — all under one roof."
   },
   "company": {
     "pageTitle": "আমাদের সম্পর্কে",

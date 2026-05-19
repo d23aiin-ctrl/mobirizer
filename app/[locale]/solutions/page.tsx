@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { Header, Footer, Badge, Button } from '@/components';
 import { Animated, Stagger, StaggerItem, HoverCard, Counter, motion } from '@/components/ui';
 import { COMPANY_STATS } from '@/lib/companyStats';
@@ -61,6 +62,7 @@ const technologies = [
 ];
 
 export default function SolutionsPage() {
+  const t = useTranslations('solutions');
   return (
     <>
       <Header activePage="solutions" />
@@ -86,16 +88,16 @@ export default function SolutionsPage() {
           <div className="flex flex-wrap items-center gap-10">
             <div className="flex-1 min-w-[300px]">
               <Animated animation="fadeInUp">
-                <Badge icon="ri-service-line" variant="white" className="mb-5">Our Solutions</Badge>
+                <Badge icon="ri-service-line" variant="white" className="mb-5">{t('heroBadge')}</Badge>
               </Animated>
               <Animated animation="fadeInUp" delay={0.1}>
                 <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-5 leading-tight">
-                  End-to-End AI Solutions <span className="gradient-text gradient-text-animated">That Deliver Results</span>
+                  {t('heroTitleStart')} <span className="gradient-text gradient-text-animated">{t('heroTitleAccent')}</span>
                 </h1>
               </Animated>
               <Animated animation="fadeInUp" delay={0.2}>
                 <p className="text-lg text-white/80 leading-relaxed max-w-[600px]">
-                  From concept to production, we build AI systems that deliver real business value. Strategy, development, integration, and ongoing support—all under one roof.
+                  {t('heroSubhead')}
                 </p>
               </Animated>
             </div>
@@ -103,7 +105,7 @@ export default function SolutionsPage() {
               <Animated animation="fadeInRight" delay={0.3}>
                 <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl text-center border border-white/10">
                   <div className="text-3xl font-extrabold text-white">
-                    <Counter from={0} to={1000} duration={2} suffix="+" />
+                    <Counter from={0} to={COMPANY_STATS.projectsDelivered} duration={2} suffix="+" />
                   </div>
                   <div className="text-sm text-white/70">Projects Delivered</div>
                 </div>
@@ -111,9 +113,9 @@ export default function SolutionsPage() {
               <Animated animation="fadeInRight" delay={0.4}>
                 <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl text-center border border-white/10">
                   <div className="text-3xl font-extrabold text-white">
-                    <Counter from={0} to={98} duration={2} suffix="%" />
+                    <Counter from={0} to={COMPANY_STATS.agentsInProduction} duration={2} />
                   </div>
-                  <div className="text-sm text-white/70">Client Satisfaction</div>
+                  <div className="text-sm text-white/70">Agents in Production</div>
                 </div>
               </Animated>
             </div>
