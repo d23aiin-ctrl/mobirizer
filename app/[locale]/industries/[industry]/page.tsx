@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { Header, Footer, Badge, Button } from '@/components';
 import { Animated, Stagger, StaggerItem, HoverCard, PageHeroBackground, Magnetic } from '@/components/ui';
@@ -9,6 +10,10 @@ import { industries, type IndustrySlug } from '@/lib/industries';
 export default function IndustryPage({ params }: { params: { industry: string } }) {
   const data = industries[params.industry as IndustrySlug];
   if (!data) notFound();
+  const t = useTranslations('industries');
+  const tBreadcrumb = useTranslations('breadcrumb');
+  const localizedName = t(`${params.industry}.title`);
+  const lower = localizedName.toLowerCase();
 
   return (
     <>
@@ -20,7 +25,7 @@ export default function IndustryPage({ params }: { params: { industry: string } 
         <div className="container relative z-10">
           <Animated animation="fadeInUp">
             <Badge icon={data.icon} variant="white">
-              {data.name}
+              {localizedName}
             </Badge>
           </Animated>
           <Animated animation="fadeInUp" delay={0.1}>
@@ -47,9 +52,9 @@ export default function IndustryPage({ params }: { params: { industry: string } 
         <div className="container">
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
-              <li className="breadcrumb-item"><Link href="/">Home</Link></li>
-              <li className="breadcrumb-item"><Link href="/industries">Industries</Link></li>
-              <li className="breadcrumb-item active" aria-current="page">{data.name}</li>
+              <li className="breadcrumb-item"><Link href="/">{tBreadcrumb('home')}</Link></li>
+              <li className="breadcrumb-item"><Link href="/industries">{t('breadcrumb')}</Link></li>
+              <li className="breadcrumb-item active" aria-current="page">{localizedName}</li>
             </ol>
           </nav>
         </div>
@@ -63,10 +68,10 @@ export default function IndustryPage({ params }: { params: { industry: string } 
               <div className="max-w-2xl mb-12">
                 <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-text-muted mb-4">
                   <span className="w-6 h-px bg-text-muted" />
-                  Production proof
+                  {t('proofEyebrow')}
                 </div>
                 <h2 className="text-3xl md:text-4xl font-extrabold text-text-dark tracking-tighter leading-[1.1]">
-                  What we&apos;ve shipped in {data.name.toLowerCase()}.
+                  {t('proofHeaderPrefix')} {lower}.
                 </h2>
               </div>
             </Animated>
@@ -92,7 +97,7 @@ export default function IndustryPage({ params }: { params: { industry: string } 
                           ))}
                         </div>
                         <span className="text-primary-blue font-medium inline-flex items-center gap-2">
-                          Read more <i className="ri-arrow-right-line" aria-hidden="true" />
+                          {t('readMore')} <i className="ri-arrow-right-line" aria-hidden="true" />
                         </span>
                       </article>
                     </Link>
@@ -110,10 +115,10 @@ export default function IndustryPage({ params }: { params: { industry: string } 
               <div className="max-w-2xl mb-12">
                 <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-text-muted mb-4">
                   <span className="w-6 h-px bg-text-muted" />
-                  How we deliver
+                  {t('capabilitiesEyebrow')}
                 </div>
                 <h2 className="text-3xl md:text-4xl font-extrabold text-text-dark tracking-tighter leading-[1.1]">
-                  Capabilities we bring to {data.name.toLowerCase()} clients.
+                  {t('capabilitiesHeaderPrefix')} {lower} {t('capabilitiesHeaderSuffix')}
                 </h2>
               </div>
             </Animated>
@@ -126,7 +131,7 @@ export default function IndustryPage({ params }: { params: { industry: string } 
                       <h3 className="text-lg font-bold text-text-dark mb-2">{cap.title}</h3>
                       <p className="text-text-muted text-sm leading-relaxed mb-4">{cap.description}</p>
                       <span className="text-primary-blue text-sm font-medium inline-flex items-center gap-2">
-                        Read more <i className="ri-arrow-right-line" aria-hidden="true" />
+                        {t('readMore')} <i className="ri-arrow-right-line" aria-hidden="true" />
                       </span>
                     </article>
                   </Link>
@@ -145,19 +150,18 @@ export default function IndustryPage({ params }: { params: { industry: string } 
               <div className="max-w-3xl">
                 <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-white/60 mb-6">
                   <span className="w-6 h-px bg-white/40" />
-                  Let&apos;s build
+                  {t('ctaEyebrow')}
                 </div>
                 <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tighter leading-[1.05] mb-6">
-                  Have a {data.name.toLowerCase()} problem worth shipping?
+                  {t('ctaHeadlinePrefix')} {lower} {t('ctaHeadlineSuffix')}
                 </h2>
                 <p className="text-lg text-white/70 leading-relaxed mb-10 max-w-2xl">
-                  Tell us what you&apos;re trying to build. If it&apos;s a good fit, you&apos;ll be on a call with a
-                  founder within 48 hours.
+                  {t('ctaBody')}
                 </p>
                 <Magnetic strength={0.3}>
                   <Button variant="ctaWhite" asChild>
                     <Link href="/contact">
-                      <span>Start a project</span>
+                      <span>{t('ctaPrimary')}</span>
                       <i className="ri-arrow-right-line" aria-hidden="true" />
                     </Link>
                   </Button>

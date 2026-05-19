@@ -78,7 +78,23 @@
     "education": {
       "title": "शिक्षा",
       "desc": "ट्यूटरिंग, अनुकूली शिक्षा"
-    }
+    },
+    "indexHeadline": "उस सेक्टर के लिए AI जिसमें आप वास्तव में काम करते हैं।",
+    "indexSubhead": "सरकार, BFSI, स्वास्थ्य सेवा, शिक्षा — बाधाएं, ऑडिट और खरीद की वास्तविकताएं अलग हैं। हमने हर एक में शिप किया है।",
+    "proofEyebrow": "प्रोडक्शन प्रूफ",
+    "proofHeaderPrefix": "हमने क्या शिप किया है —",
+    "capabilitiesEyebrow": "हम कैसे डिलीवर करते हैं",
+    "capabilitiesHeaderPrefix": "क्षमताएं जो हम लाते हैं",
+    "capabilitiesHeaderSuffix": "ग्राहकों के लिए।",
+    "ctaEyebrow": "चलिए बनाते हैं",
+    "ctaHeadlinePrefix": "क्या आपकी",
+    "ctaHeadlineSuffix": "समस्या शिप करने योग्य है?",
+    "ctaBody": "हमें बताएं कि आप क्या बनाने की कोशिश कर रहे हैं। अगर यह एक अच्छा फिट है, तो आप 48 घंटों के भीतर एक founder के साथ कॉल पर होंगे।",
+    "ctaPrimary": "प्रोजेक्ट शुरू करें",
+    "breadcrumb": "उद्योग",
+    "readMore": "और पढ़ें",
+    "exploreLinkPrefix": "देखें —",
+    "exploreLinkSuffix": "कार्य"
   },
   "home": {
     "hero": {

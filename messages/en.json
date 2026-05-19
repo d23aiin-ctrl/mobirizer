@@ -78,7 +78,23 @@
     "education": {
       "title": "Education",
       "desc": "Tutoring, adaptive learning"
-    }
+    },
+    "indexHeadline": "AI for the sector you actually work in.",
+    "indexSubhead": "Government, BFSI, healthcare, education — the constraints, audits, and procurement realities are different. We've shipped in each.",
+    "proofEyebrow": "Production proof",
+    "proofHeaderPrefix": "What we've shipped in",
+    "capabilitiesEyebrow": "How we deliver",
+    "capabilitiesHeaderPrefix": "Capabilities we bring to",
+    "capabilitiesHeaderSuffix": "clients.",
+    "ctaEyebrow": "Let's build",
+    "ctaHeadlinePrefix": "Have a",
+    "ctaHeadlineSuffix": "problem worth shipping?",
+    "ctaBody": "Tell us what you're trying to build. If it's a good fit, you'll be on a call with a founder within 48 hours.",
+    "ctaPrimary": "Start a project",
+    "breadcrumb": "Industries",
+    "readMore": "Read more",
+    "exploreLinkPrefix": "Explore",
+    "exploreLinkSuffix": "work"
   },
   "home": {
     "hero": {

@@ -1,11 +1,14 @@
 'use client';
 
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { Header, Footer, Badge } from '@/components';
 import { Animated, Stagger, StaggerItem, HoverCard, PageHeroBackground } from '@/components/ui';
 import { industries, industrySlugs } from '@/lib/industries';
 
 export default function IndustriesIndex() {
+  const t = useTranslations('industries');
+  const tBreadcrumb = useTranslations('breadcrumb');
   return (
     <>
       <Header />
@@ -15,17 +18,14 @@ export default function IndustriesIndex() {
         <div className="container relative z-10">
           <Animated animation="fadeInUp">
             <Badge icon="ri-building-line" variant="white">
-              Industries
+              {t('title')}
             </Badge>
           </Animated>
           <Animated animation="fadeInUp" delay={0.1}>
-            <h1>AI for the sector you actually work in.</h1>
+            <h1>{t('indexHeadline')}</h1>
           </Animated>
           <Animated animation="fadeInUp" delay={0.2}>
-            <p>
-              Government, BFSI, healthcare, education — the constraints, audits, and procurement
-              realities are different. We&apos;ve shipped in each.
-            </p>
+            <p>{t('indexSubhead')}</p>
           </Animated>
         </div>
       </section>
@@ -34,8 +34,8 @@ export default function IndustriesIndex() {
         <div className="container">
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
-              <li className="breadcrumb-item"><Link href="/">Home</Link></li>
-              <li className="breadcrumb-item active" aria-current="page">Industries</li>
+              <li className="breadcrumb-item"><Link href="/">{tBreadcrumb('home')}</Link></li>
+              <li className="breadcrumb-item active" aria-current="page">{t('breadcrumb')}</li>
             </ol>
           </nav>
         </div>
@@ -70,7 +70,7 @@ export default function IndustriesIndex() {
                           </div>
                           <p className="text-text-muted leading-relaxed mb-5">{industry.subhead}</p>
                           <span className="text-primary-blue font-medium inline-flex items-center gap-2">
-                            Explore {industry.name.toLowerCase()} work <i className="ri-arrow-right-line" aria-hidden="true" />
+                            {t('exploreLinkPrefix')} {t(`${slug}.title`).toLowerCase()} {t('exploreLinkSuffix')} <i className="ri-arrow-right-line" aria-hidden="true" />
                           </span>
                         </article>
                       </Link>

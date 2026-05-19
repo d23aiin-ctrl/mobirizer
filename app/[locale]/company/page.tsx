@@ -1,11 +1,14 @@
 'use client';
 
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { Header, Footer, StatCard, Badge, Button } from '@/components';
 import { Animated, Stagger, StaggerItem, HoverCard, motion , PageHeroBackground } from '@/components/ui';
 import { COMPANY_STATS } from '@/lib/companyStats';
 
 export default function CompanyPage() {
+  const t = useTranslations('company');
+  const tBreadcrumb = useTranslations('breadcrumb');
   return (
     <>
       <Header activePage="company" />
@@ -14,10 +17,10 @@ export default function CompanyPage() {
       <section className="page-header"><PageHeroBackground />
         <div className="container relative z-10">
           <Animated animation="fadeInUp">
-            <h1>About Us</h1>
+            <h1>{t('pageTitle')}</h1>
           </Animated>
           <Animated animation="fadeInUp" delay={0.1}>
-            <p>From mobile apps to AI-first company - our journey of building technology that matters.</p>
+            <p>{t('pageSubtitle')}</p>
           </Animated>
         </div>
       </section>
@@ -28,10 +31,10 @@ export default function CompanyPage() {
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
               <li className="breadcrumb-item">
-                <Link href="/">Home</Link>
+                <Link href="/">{tBreadcrumb('home')}</Link>
               </li>
               <li className="breadcrumb-item active" aria-current="page">
-                Company
+                {tBreadcrumb('company')}
               </li>
             </ol>
           </nav>
