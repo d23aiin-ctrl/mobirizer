@@ -437,6 +437,37 @@
   }
 }
 
+/* Print-specific overrides (used by the Engineering Handbook) */
+@media print {
+  @page {
+    size: A4;
+    margin: 1.5cm 1.6cm;
+  }
+  html, body {
+    background: white !important;
+    color: #111 !important;
+    font-size: 11pt;
+  }
+  /* Reduce expensive paint work the printer doesn't need */
+  *, *::before, *::after {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    color-adjust: exact;
+  }
+  a {
+    color: #111 !important;
+    text-decoration: none;
+  }
+  h1, h2, h3, h4 {
+    color: #111 !important;
+    page-break-after: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+}
+
 /* Animations */
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
