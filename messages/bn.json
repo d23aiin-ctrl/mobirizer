@@ -49,6 +49,13 @@
     "caseStudies": { "title": "কেস স্টাডি", "desc": "আমরা কী শিপ করেছি" },
     "careers": { "title": "ক্যারিয়ার", "desc": "আমরা নিয়োগ করছি" }
   },
+  "industries": {
+    "title": "ইন্ডাস্ট্রি",
+    "government": { "title": "সরকার", "desc": "নাগরিক-কেন্দ্রিক AI" },
+    "bfsi": { "title": "BFSI", "desc": "KYC, অনবোর্ডিং, কমপ্লায়েন্স" },
+    "healthcare": { "title": "স্বাস্থ্যসেবা", "desc": "EHR, মন্ত্রণালয় প্ল্যাটফর্ম" },
+    "education": { "title": "শিক্ষা", "desc": "টিউটরিং, অভিযোজিত শিক্ষা" }
+  },
   "home": {
     "hero": {
       "badge": "২০১৯ সাল থেকে AI সমাধান",

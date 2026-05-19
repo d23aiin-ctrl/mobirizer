@@ -20,6 +20,7 @@ open-weight models (Llama, Mistral).
 
 ## Core pages
 - [Home](${base}/en): Hero, products, capabilities overview
+- [Industries](${base}/en/industries): AI by sector — Government, BFSI, Healthcare, Education
 - [Products](${base}/en/products): Live AI products — D23.ai, RoboGuru, OHGRT, Xappy, JanSeva, WhatsApp Commerce
 - [Solutions](${base}/en/solutions): Agentic AI, Conversational AI, AI Integration, Custom Development
 - [Engineering](${base}/en/engineering): How we build — evals, LLMOps, guardrails, fine-tuning, MCP, retrieval
@@ -41,6 +42,12 @@ open-weight models (Llama, Mistral).
 - [Conversational AI](${base}/en/solutions/conversational-ai): Chatbots and voice assistants with multi-turn context
 - [AI Integration](${base}/en/solutions/ai-integration): Connect AI to CRMs, ERPs, legacy systems
 - [Custom AI Development](${base}/en/solutions/custom-development): Tailored AI for specific business requirements
+
+## Industries
+- [Government](${base}/en/industries/government): Citizen-facing AI, multilingual engagement, ministry-grade platforms
+- [BFSI](${base}/en/industries/bfsi): KYC pipelines, sanctions screening, conversational commerce
+- [Healthcare](${base}/en/industries/healthcare): EHR, multi-facility patient management, ministry deployments
+- [Education](${base}/en/industries/education): Adaptive learning, photo-to-solution tutoring
 
 ## Technical writing
 - [Evaluating LLM agents in production](${base}/en/blog/evaluating-llm-agents): Eval stack, shadow traffic, regression gates

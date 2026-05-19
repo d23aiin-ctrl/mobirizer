@@ -8,20 +8,16 @@ const products = [
   {
     slug: 'roboguru',
     icon: 'ri-graduation-cap-line',
-    gradient: 'bg-gradient-green',
     title: 'RoboGuru',
     subtitle: 'AI-Powered Education',
-    color: 'text-accent-green',
     desc: 'Intelligent tutoring system using computer vision and AI to help students learn. Take a photo of any problem and get step-by-step solutions instantly.',
     features: ['Photo-to-solution AI technology', 'Adaptive learning paths', 'Math, Science & more subjects'],
   },
   {
     slug: 'ohgrt',
     icon: 'ri-voiceprint-line',
-    gradient: 'bg-gradient-purple',
     title: 'OHGRT',
     subtitle: 'AI Voice Generation Studio',
-    color: 'text-accent-purple',
     desc: 'Professional AI voice generation platform for content creators and enterprises. Create natural-sounding voices with voice cloning and video dubbing.',
     features: ['Text-to-speech generation', 'AI video dubbing', 'Voice cloning technology'],
     badges: ['4.8★ Rating', '2M+ Downloads'],
@@ -29,10 +25,8 @@ const products = [
   {
     slug: 'xappy',
     icon: 'ri-heart-pulse-line',
-    gradient: 'bg-gradient-cyan',
     title: 'Xappy',
     subtitle: 'Healthcare Management Platform',
-    color: 'text-cyan-600',
     desc: 'Comprehensive healthcare management for government health departments. Digitize patient records and streamline health services delivery at scale.',
     features: ['Electronic health records (EHR)', 'Multi-facility support', 'Health analytics dashboard'],
     badges: ['Gov Grade', 'Deployed in Sri Lanka'],
@@ -40,10 +34,8 @@ const products = [
   {
     slug: 'janseva',
     icon: 'ri-government-line',
-    gradient: 'bg-gradient-red',
     title: 'JanSeva',
     subtitle: 'AI Citizen Engagement Platform',
-    color: 'text-red-600',
     desc: 'AI-powered engagement platform for elected representatives. Connect with constituents via WhatsApp, manage grievances, and build digital presence—all automated.',
     features: ['24/7 WhatsApp bot automation', 'Voice message support', 'Analytics & sentiment tracking'],
     badges: ['95% Resolution Rate', '6 Languages'],
@@ -51,10 +43,8 @@ const products = [
   {
     slug: 'whatsapp-commerce',
     icon: 'ri-shopping-bag-3-line',
-    gradient: 'bg-gradient-whatsapp',
     title: 'WhatsApp Commerce',
     subtitle: 'Sell on WhatsApp',
-    color: 'text-green-600',
     desc: 'Turn WhatsApp into your storefront. Product catalogs, native payments, automated checkout, and CRM integrations - sell where 500M+ Indians already are.',
     features: ['Product catalogs in WhatsApp', 'Native payment integrations', 'Automated checkout flows'],
     badges: ['98% Open Rate', '45% Higher Conv.'],
@@ -62,10 +52,10 @@ const products = [
 ];
 
 const useCases = [
-  { icon: 'ri-government-line', gradient: 'bg-gradient-blue', title: 'Government', desc: 'Citizen engagement, grievance management, and healthcare digitization for public sector.' },
-  { icon: 'ri-book-open-line', gradient: 'bg-gradient-green', title: 'Education', desc: 'AI tutoring, homework assistance, and adaptive learning for students of all ages.' },
-  { icon: 'ri-heart-pulse-line', gradient: 'bg-gradient-pink', title: 'Healthcare', desc: 'Patient management, EHR systems, and health analytics for hospitals and clinics.' },
-  { icon: 'ri-movie-2-line', gradient: 'bg-gradient-purple', title: 'Media & Content', desc: 'Voice generation, video dubbing, and content creation for creators and enterprises.' },
+  { icon: 'ri-government-line', title: 'Government', desc: 'Citizen engagement, grievance management, and healthcare digitization for public sector.', href: '/industries/government' },
+  { icon: 'ri-book-open-line', title: 'Education', desc: 'AI tutoring, homework assistance, and adaptive learning for students of all ages.', href: '/industries/education' },
+  { icon: 'ri-heart-pulse-line', title: 'Healthcare', desc: 'Patient management, EHR systems, and health analytics for hospitals and clinics.', href: '/industries/healthcare' },
+  { icon: 'ri-movie-2-line', title: 'Media & Content', desc: 'Voice generation, video dubbing, and content creation for creators and enterprises.', href: '/products/ohgrt' },
 ];
 
 export default function ProductsPage() {
@@ -174,8 +164,8 @@ export default function ProductsPage() {
                       whileHover={{ scale: 1.05 }}
                       transition={{ type: 'spring', stiffness: 300 }}
                     >
-                      <div className="w-12 h-12 bg-gradient-green rounded-xl flex items-center justify-center">
-                        <i className="ri-global-line text-white text-2xl" aria-hidden="true" />
+                      <div className="w-12 h-12 rounded-xl bg-primary-blue/10 flex items-center justify-center">
+                        <i className="ri-global-line text-primary-blue text-2xl" aria-hidden="true" />
                       </div>
                       <div>
                         <div className="font-bold text-text-dark">Production Ready</div>
@@ -187,8 +177,8 @@ export default function ProductsPage() {
                       whileHover={{ scale: 1.05 }}
                       transition={{ type: 'spring', stiffness: 300 }}
                     >
-                      <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center">
-                        <i className="ri-shield-check-line text-white text-2xl" aria-hidden="true" />
+                      <div className="w-12 h-12 rounded-xl bg-primary-blue/10 flex items-center justify-center">
+                        <i className="ri-shield-check-line text-primary-blue text-2xl" aria-hidden="true" />
                       </div>
                       <div>
                         <div className="font-bold text-text-dark">Enterprise Grade</div>
@@ -235,152 +225,89 @@ export default function ProductsPage() {
               </Animated>
             </div>
 
-            {/* D23.ai - Featured Product */}
-            <Animated animation="scaleIn" delay={0.1}>
-              <motion.div
-                className="bg-gradient-whatsapp rounded-3xl p-12 mb-8 relative overflow-hidden"
-                whileHover={{ scale: 1.01 }}
-                transition={{ type: 'spring', stiffness: 200 }}
-              >
-                <div className="absolute top-0 right-0 w-2/5 h-full grid-pattern opacity-10 pointer-events-none" />
-                <div className="hero-two-col relative z-10">
-                  <div className="hero-content-col">
-                    <motion.div
-                      className="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full mb-5"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.2 }}
-                    >
-                      <i className="ri-whatsapp-line text-white text-lg" aria-hidden="true" />
-                      <span className="text-white text-sm font-semibold">WhatsApp Native</span>
-                    </motion.div>
-                    <motion.h3
-                      className="text-4xl font-extrabold text-white mb-4"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.3 }}
-                    >
+            {/* D23.ai — featured: indigo monochrome, numbers-led */}
+            <Animated animation="fadeInUp" delay={0.1}>
+              <article className="card card-hover p-10 md:p-12 mb-8">
+                <div className="flex flex-wrap items-start gap-10">
+                  <div className="flex-1 min-w-[280px]">
+                    <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-primary-blue mb-5">
+                      <span className="w-6 h-px bg-primary-blue" />
+                      Featured · WhatsApp native
+                    </div>
+                    <h3 className="text-3xl md:text-4xl font-extrabold text-text-dark tracking-tight mb-4">
                       D23.ai
-                    </motion.h3>
-                    <motion.p
-                      className="text-lg text-white/90 leading-relaxed mb-6 max-w-xl"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.4 }}
-                    >
+                    </h3>
+                    <p className="text-text-muted leading-relaxed mb-8 max-w-xl">
                       India&apos;s first WhatsApp-native AI assistant that understands and responds in
                       11+ Indian languages. Send voice messages, generate images, check train PNR
-                      status, search the web—all within WhatsApp.
-                    </motion.p>
-                    <motion.div
-                      className="flex gap-8 flex-wrap mb-6"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.5 }}
+                      status, search the web — all within WhatsApp.
+                    </p>
+                    <Link
+                      href="/products/d23-ai"
+                      className="text-primary-blue font-semibold inline-flex items-center gap-2 hover:opacity-80 transition-opacity"
                     >
-                      {[
-                        { value: '5000+', label: 'Active Users' },
-                        { value: '1M+', label: 'Messages Processed' },
-                        { value: '11+', label: 'Languages' },
-                      ].map((stat, i) => (
-                        <motion.div
-                          key={stat.label}
-                          initial={{ opacity: 0, y: 20 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: 0.5 + i * 0.1 }}
-                        >
-                          <div className="text-3xl font-extrabold text-white">{stat.value}</div>
-                          <div className="text-sm text-white/80">{stat.label}</div>
-                        </motion.div>
-                      ))}
-                    </motion.div>
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.8 }}
-                    >
-                      <Button variant="ctaWhite" asChild>
-                        <Link href="/products/d23-ai">
-                          <span>Explore D23.ai</span>
-                          <i className="ri-arrow-right-line" aria-hidden="true" />
-                        </Link>
-                      </Button>
-                    </motion.div>
+                      Explore D23.ai <i className="ri-arrow-right-line" aria-hidden="true" />
+                    </Link>
+                  </div>
+                  <div className="flex-1 min-w-[260px] grid grid-cols-3 gap-6 pt-2">
+                    {[
+                      { value: '5,000+', label: 'Active users' },
+                      { value: '1M+', label: 'Messages processed' },
+                      { value: '11+', label: 'Languages' },
+                    ].map((stat) => (
+                      <div key={stat.label} className="border-l-2 border-primary-blue pl-4">
+                        <div className="text-3xl md:text-4xl font-extrabold text-text-dark tabular-nums tracking-tighter">
+                          {stat.value}
+                        </div>
+                        <div className="text-xs text-text-muted mt-1 uppercase tracking-wide">{stat.label}</div>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </motion.div>
+              </article>
             </Animated>
 
-            {/* Other Products Grid */}
+            {/* Other Products Grid — monochrome, numbers-led */}
             <Stagger className="grid-2-col" staggerDelay={0.15}>
               {products.map((prod) => (
                 <StaggerItem key={prod.slug} className="grid-item">
-                  <HoverCard className="service-card hover-lift p-0 h-full overflow-hidden">
-                    <div className={`${prod.gradient} p-8`}>
-                      <div className="flex items-center gap-4 mb-4">
-                        <motion.div
-                          className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center"
-                          whileHover={{ scale: 1.1, rotate: 5 }}
-                          transition={{ type: 'spring', stiffness: 300 }}
-                        >
-                          <i className={`${prod.icon} text-3xl text-white`} />
-                        </motion.div>
-                        <div>
-                          <h3 className="text-2xl font-bold text-white m-0">{prod.title}</h3>
-                          <span className="text-white/90 text-sm">{prod.subtitle}</span>
-                        </div>
+                  <HoverCard className="card card-hover p-8 h-full flex flex-col">
+                    <div className="flex items-start gap-4 mb-5">
+                      <div className="w-14 h-14 rounded-2xl bg-primary-blue/10 flex items-center justify-center flex-shrink-0">
+                        <i className={`${prod.icon} text-2xl text-primary-blue`} aria-hidden="true" />
                       </div>
-                      {prod.badges && (
-                        <div className="flex gap-4">
-                          {prod.badges.map((badge, i) => (
-                            <motion.div
-                              key={i}
-                              className="bg-white/20 px-4 py-2 rounded-lg"
-                              initial={{ opacity: 0, scale: 0.8 }}
-                              whileInView={{ opacity: 1, scale: 1 }}
-                              viewport={{ once: true }}
-                              transition={{ delay: i * 0.1 }}
-                            >
-                              <span className="text-white text-sm font-semibold">{badge}</span>
-                            </motion.div>
-                          ))}
-                        </div>
-                      )}
+                      <div>
+                        <h3 className="text-2xl font-bold text-text-dark leading-tight m-0">{prod.title}</h3>
+                        <span className="text-text-muted text-sm">{prod.subtitle}</span>
+                      </div>
                     </div>
-                    <div className="p-8">
-                      <p className="text-text-muted leading-relaxed mb-5">{prod.desc}</p>
-                      <ul className="space-y-2 mb-5">
-                        {prod.features.map((f, i) => (
-                          <motion.li
-                            key={i}
-                            className="flex items-center gap-2.5 text-text-muted py-2"
-                            initial={{ opacity: 0, x: -10 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.1 }}
+                    {prod.badges && (
+                      <div className="flex flex-wrap gap-2 mb-5">
+                        {prod.badges.map((badge) => (
+                          <span
+                            key={badge}
+                            className="font-mono text-[11px] px-2.5 py-1 rounded-md bg-bg-light text-text-dark border border-border tabular-nums"
                           >
-                            <i className={`ri-check-double-line ${prod.color}`} aria-hidden="true" /> {f}
-                          </motion.li>
+                            {badge}
+                          </span>
                         ))}
-                      </ul>
-                      <motion.div
-                        whileHover={{ x: 5 }}
-                        transition={{ type: 'spring', stiffness: 300 }}
-                      >
-                        <Link
-                          href={`/products/${prod.slug}`}
-                          className={`inline-flex items-center gap-2 ${prod.color} font-semibold hover:opacity-80 transition-opacity`}
-                        >
-                          Learn More <i className="ri-arrow-right-line" aria-hidden="true" />
-                        </Link>
-                      </motion.div>
-                    </div>
+                      </div>
+                    )}
+                    <p className="text-text-muted leading-relaxed mb-5">{prod.desc}</p>
+                    <ul className="space-y-2 mb-5 flex-1">
+                      {prod.features.map((f, i) => (
+                        <li key={i} className="flex items-start gap-2.5 text-text-muted text-sm">
+                          <i className="ri-check-line text-primary-blue mt-0.5 flex-shrink-0" aria-hidden="true" />
+                          <span>{f}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Link
+                      href={`/products/${prod.slug}`}
+                      className="inline-flex items-center gap-2 text-primary-blue font-semibold hover:opacity-80 transition-opacity mt-auto"
+                    >
+                      Read more <i className="ri-arrow-right-line" aria-hidden="true" />
+                    </Link>
                   </HoverCard>
                 </StaggerItem>
               ))}
@@ -403,19 +330,17 @@ export default function ProductsPage() {
               </Animated>
             </div>
             <Stagger className="grid-4-col" staggerDelay={0.1}>
-              {useCases.map((uc, i) => (
-                <StaggerItem key={i} className="grid-item">
-                  <HoverCard className="service-card hover-lift text-center py-8 px-5 h-full">
-                    <motion.div
-                      className={`w-16 h-16 ${uc.gradient} rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-card`}
-                      whileHover={{ scale: 1.15, rotate: 10 }}
-                      transition={{ type: 'spring', stiffness: 300 }}
-                    >
-                      <i className={`${uc.icon} text-3xl text-white`} />
-                    </motion.div>
-                    <h3 className="text-lg font-bold mb-3">{uc.title}</h3>
-                    <p className="text-text-muted text-sm leading-relaxed m-0">{uc.desc}</p>
-                  </HoverCard>
+              {useCases.map((uc) => (
+                <StaggerItem key={uc.title} className="grid-item">
+                  <Link href={uc.href} className="block h-full">
+                    <HoverCard className="card card-hover text-center py-8 px-5 h-full">
+                      <div className="w-14 h-14 rounded-2xl bg-primary-blue/10 flex items-center justify-center mx-auto mb-5">
+                        <i className={`${uc.icon} text-2xl text-primary-blue`} aria-hidden="true" />
+                      </div>
+                      <h3 className="text-lg font-bold mb-3 text-text-dark">{uc.title}</h3>
+                      <p className="text-text-muted text-sm leading-relaxed m-0">{uc.desc}</p>
+                    </HoverCard>
+                  </Link>
                 </StaggerItem>
               ))}
             </Stagger>

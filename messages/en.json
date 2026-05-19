@@ -49,6 +49,13 @@
     "caseStudies": { "title": "Case Studies", "desc": "What we've shipped" },
     "careers": { "title": "Careers", "desc": "We're hiring" }
   },
+  "industries": {
+    "title": "Industries",
+    "government": { "title": "Government", "desc": "Citizen-facing AI" },
+    "bfsi": { "title": "BFSI", "desc": "KYC, onboarding, compliance" },
+    "healthcare": { "title": "Healthcare", "desc": "EHR, ministry platforms" },
+    "education": { "title": "Education", "desc": "Tutoring, adaptive learning" }
+  },
   "home": {
     "hero": {
       "badge": "AI Solutions Since 2019",

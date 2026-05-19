@@ -11,8 +11,15 @@ import { Button } from '@/components/ui';
 import { cn } from '@/lib/cn';
 
 interface HeaderProps {
-  activePage?: 'home' | 'products' | 'solutions' | 'resources' | 'company' | 'contact';
+  activePage?: 'home' | 'products' | 'solutions' | 'industries' | 'resources' | 'company' | 'contact';
 }
+
+const industryKeys = [
+  { href: '/industries/government', icon: 'ri-government-line', key: 'government' },
+  { href: '/industries/bfsi', icon: 'ri-bank-line', key: 'bfsi' },
+  { href: '/industries/healthcare', icon: 'ri-heart-pulse-line', key: 'healthcare' },
+  { href: '/industries/education', icon: 'ri-graduation-cap-line', key: 'education' },
+];
 
 const resourceLinks = [
   { href: '/engineering', icon: 'ri-code-s-slash-line', key: 'engineering' },
@@ -45,6 +52,7 @@ export function Header({ activePage }: HeaderProps) {
   const tProducts = useTranslations('products');
   const tSolutions = useTranslations('solutions');
   const tResources = useTranslations('resources');
+  const tIndustries = useTranslations('industries');
 
   return (
     <>
@@ -160,6 +168,45 @@ export function Header({ activePage }: HeaderProps) {
                             {tSolutions(`${solution.key}.name`)}
                           </h4>
                           <p className="text-xs text-text-muted">{tSolutions(`${solution.key}.tagline`)}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </NavigationMenu.Content>
+              </NavigationMenu.Item>
+
+              {/* Industries Dropdown */}
+              <NavigationMenu.Item>
+                <NavigationMenu.Trigger asChild>
+                  <Link
+                    href="/industries"
+                    className={cn(
+                      'group px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1',
+                      activePage === 'industries'
+                        ? 'text-primary-blue bg-primary-blue/5'
+                        : 'text-text-dark hover:text-primary-blue hover:bg-primary-blue/5'
+                    )}
+                  >
+                    <span>{tIndustries('title')}</span>
+                    <i className="ri-arrow-down-s-line transition-transform duration-200 group-data-[state=open]:rotate-180" aria-hidden="true"></i>
+                  </Link>
+                </NavigationMenu.Trigger>
+                <NavigationMenu.Content className="absolute top-full left-0 w-[420px] bg-bg-white rounded-2xl shadow-xl border border-border p-5 animate-fade-in-down">
+                  <div className="grid grid-cols-2 gap-2">
+                    {industryKeys.map((industry) => (
+                      <Link
+                        key={industry.href}
+                        href={industry.href}
+                        className="flex items-center gap-3 p-3 rounded-xl hover:bg-bg-light transition-colors group/item"
+                      >
+                        <div className="w-9 h-9 rounded-lg bg-primary-blue/10 flex items-center justify-center flex-shrink-0">
+                          <i className={cn(industry.icon, 'text-primary-blue text-base')} aria-hidden="true"></i>
+                        </div>
+                        <div>
+                          <h4 className="font-medium text-sm text-text-dark group-hover/item:text-primary-blue transition-colors">
+                            {tIndustries(`${industry.key}.title`)}
+                          </h4>
+                          <p className="text-xs text-text-muted">{tIndustries(`${industry.key}.desc`)}</p>
                         </div>
                       </Link>
                     ))}

@@ -61,6 +61,13 @@ const resourceLinkKeys = [
   { href: '/careers', key: 'careers' },
 ];
 
+const industryLinkKeys = [
+  { href: '/industries/government', key: 'government' },
+  { href: '/industries/bfsi', key: 'bfsi' },
+  { href: '/industries/healthcare', key: 'healthcare' },
+  { href: '/industries/education', key: 'education' },
+];
+
 export function Footer({ variant = 'default' }: FooterProps) {
   const isSimple = variant === 'simple';
   const t = useTranslations('footer');
@@ -68,6 +75,7 @@ export function Footer({ variant = 'default' }: FooterProps) {
   const tProducts = useTranslations('products');
   const tSolutions = useTranslations('solutions');
   const tResources = useTranslations('resources');
+  const tIndustries = useTranslations('industries');
 
   return (
     <footer className="main-footer" role="contentinfo">
@@ -153,6 +161,23 @@ export function Footer({ variant = 'default' }: FooterProps) {
                     </Link>
                   </li>
                 ))}
+            </ul>
+          </div>
+
+          {/* Industries */}
+          <div className="footer-section">
+            <h4>{tIndustries('title')}</h4>
+            <ul className="space-y-3">
+              {industryLinkKeys.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-white/70 hover:text-white transition-colors"
+                  >
+                    {tIndustries(`${link.key}.title`)}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

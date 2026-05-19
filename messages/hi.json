@@ -49,6 +49,13 @@
     "caseStudies": { "title": "केस स्टडीज़", "desc": "हमने क्या शिप किया है" },
     "careers": { "title": "करियर", "desc": "हम भर्ती कर रहे हैं" }
   },
+  "industries": {
+    "title": "उद्योग",
+    "government": { "title": "सरकार", "desc": "नागरिक-केंद्रित AI" },
+    "bfsi": { "title": "BFSI", "desc": "KYC, ऑनबोर्डिंग, अनुपालन" },
+    "healthcare": { "title": "स्वास्थ्य सेवा", "desc": "EHR, मंत्रालय प्लेटफ़ॉर्म" },
+    "education": { "title": "शिक्षा", "desc": "ट्यूटरिंग, अनुकूली शिक्षा" }
+  },
   "home": {
     "hero": {
       "badge": "2019 से AI समाधान",

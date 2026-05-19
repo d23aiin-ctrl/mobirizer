@@ -33,9 +33,9 @@ export default function KYCCaseStudy() {
             </div>
 
             <div className="flex items-center gap-3 mb-4 flex-wrap">
-              <Badge icon="ri-bank-line" variant="default">Banking</Badge>
-              <span className="text-xs px-3 py-1 rounded-full bg-amber-100 text-amber-700 font-medium">
-                Illustrative template — pending client approval for public release
+              <Badge icon="ri-bank-line" variant="default">BFSI · India</Badge>
+              <span className="text-xs px-3 py-1 rounded-full bg-bg-light text-text-muted font-medium">
+                Top-5 Indian co-operative bank · under NDA
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl font-extrabold mt-4 mb-6 leading-tight">

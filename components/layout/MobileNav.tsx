@@ -23,6 +23,11 @@ const navLinkKeys = [
   { href: '/products/xappy', icon: 'ri-heart-pulse-line', labelKey: 'xappy', page: null, indent: true, type: 'product' },
   { href: '/products/janseva', icon: 'ri-government-line', labelKey: 'janseva', page: null, indent: true, type: 'product' },
   { href: '/solutions', icon: 'ri-lightbulb-line', labelKey: 'solutions', page: 'solutions', type: 'nav' },
+  { href: '/industries', icon: 'ri-building-line', labelKey: 'title', page: 'industries', type: 'industry' },
+  { href: '/industries/government', icon: 'ri-government-line', labelKey: 'government', page: null, indent: true, type: 'industry' },
+  { href: '/industries/bfsi', icon: 'ri-bank-line', labelKey: 'bfsi', page: null, indent: true, type: 'industry' },
+  { href: '/industries/healthcare', icon: 'ri-heart-pulse-line', labelKey: 'healthcare', page: null, indent: true, type: 'industry' },
+  { href: '/industries/education', icon: 'ri-graduation-cap-line', labelKey: 'education', page: null, indent: true, type: 'industry' },
   { href: '/solutions/agentic-ai', icon: 'ri-robot-line', labelKey: 'agenticAi', page: null, indent: true, type: 'solution' },
   { href: '/solutions/conversational-ai', icon: 'ri-chat-voice-line', labelKey: 'conversationalAi', page: null, indent: true, type: 'solution' },
   { href: '/solutions/ai-integration', icon: 'ri-plug-line', labelKey: 'aiIntegration', page: null, indent: true, type: 'solution' },
@@ -39,6 +44,7 @@ export function MobileNav({ isOpen, onClose, activePage }: MobileNavProps) {
   const tNav = useTranslations('navigation');
   const tProducts = useTranslations('products');
   const tSolutions = useTranslations('solutions');
+  const tIndustries = useTranslations('industries');
   const tCommon = useTranslations('common');
   const tHeader = useTranslations('header');
 
@@ -46,6 +52,7 @@ export function MobileNav({ isOpen, onClose, activePage }: MobileNavProps) {
     if (link.type === 'nav') return tNav(link.labelKey);
     if (link.type === 'product') return tProducts(`${link.labelKey}.name`);
     if (link.type === 'solution') return tSolutions(`${link.labelKey}.name`);
+    if (link.type === 'industry') return tIndustries(link.labelKey === 'title' ? 'title' : `${link.labelKey}.title`);
     if (link.type === 'literal') return link.labelKey;
     return link.labelKey;
   };

@@ -27,6 +27,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/solutions/conversational-ai',
     '/solutions/ai-integration',
     '/solutions/custom-development',
+    '/industries',
+    '/industries/government',
+    '/industries/bfsi',
+    '/industries/healthcare',
+    '/industries/education',
     '/privacy-policy',
     '/terms-of-service',
   ];
