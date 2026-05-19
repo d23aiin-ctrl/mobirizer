@@ -58,12 +58,13 @@
   },
   "home": {
     "hero": {
-      "badge": "২০১৯ সাল থেকে AI সমাধান",
-      "title": "আপনার ব্যবসা রূপান্তর করুন",
-      "titleHighlight": "কার্যকর AI সমাধান দিয়ে",
-      "description": "আমরা কৌশল থেকে বাস্তবায়ন পর্যন্ত কাস্টমাইজড AI সেবা প্রদান করি, যা আপনার বাজেট প্রভাবিত না করে দক্ষতা এবং বৃদ্ধি বাড়াতে ডিজাইন করা হয়েছে।",
-      "cta": "বিনামূল্যে পরামর্শ নিন",
-      "ctaSecondary": "পণ্য দেখুন"
+      "status": "Mobirizer // Shipping AI since 2019",
+      "headlinePrefix": "Ship AI that actually works",
+      "headlineAccent": "in production.",
+      "subhead": "Agents, RAG, and fine-tuned models for teams that need them in the wild — not in a slide deck. Boring-tech discipline, measurable outcomes, a decade of shipping.",
+      "ctaPrimary": "Start a project",
+      "ctaSecondary": "See how we build",
+      "anchorMetric": "AI agents shipped to production across BFSI, government, and healthcare since 2019."
     },
     "stats": {
       "yearsExperience": "বছরের অভিজ্ঞতা",

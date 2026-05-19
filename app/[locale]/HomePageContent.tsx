@@ -1,10 +1,18 @@
 'use client';
 
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { StatCard, Button, Badge, Animated, Stagger, StaggerItem, Float, GradientText, HoverCard, motion, Counter, HeroSpotlight, FloatingOrbs, LivePulse, TypedTerminalLines, Marquee, Magnetic, AgentGraph, KineticHeadline, LiveMetric, ScrollIndicator } from '@/components';
 import { COMPANY_STATS, HERO_ANCHOR } from '@/lib/companyStats';
 
 export function HomePageContent() {
+  const t = useTranslations('home.hero');
+  const headlineWords = [
+    ...t('headlinePrefix').split(' '),
+    ...t('headlineAccent').split(' '),
+  ];
+  const highlightFrom = t('headlinePrefix').split(' ').length;
+
   return (
     <>
       {/* Hero Section */}
@@ -28,13 +36,13 @@ export function HomePageContent() {
                     <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-70 animate-ping" />
                     <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
                   </span>
-                  Mobirizer // Shipping AI since 2019
+                  {t('status')}
                 </motion.div>
 
                 <KineticHeadline
                   className="text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5rem] font-extrabold text-white leading-[0.98] tracking-tightest mb-8"
-                  words={['Ship', 'AI', 'that', 'actually', 'works', 'in', 'production.']}
-                  highlightFrom={5}
+                  words={headlineWords}
+                  highlightFrom={highlightFrom}
                 />
 
                 <motion.p
@@ -43,8 +51,7 @@ export function HomePageContent() {
                   transition={{ delay: 0.6, duration: 0.5 }}
                   className="text-lg md:text-xl text-white/70 mb-10 leading-relaxed max-w-xl"
                 >
-                  Agents, RAG, and fine-tuned models for teams that need them in the wild — not
-                  in a slide deck. Boring-tech discipline, measurable outcomes, a decade of shipping.
+                  {t('subhead')}
                 </motion.p>
 
                 <motion.div
@@ -56,7 +63,7 @@ export function HomePageContent() {
                   <Magnetic strength={0.3}>
                     <Button variant="ctaWhite" asChild>
                       <Link href="/contact">
-                        <span>Start a project</span>
+                        <span>{t('ctaPrimary')}</span>
                         <i className="ri-arrow-right-line" aria-hidden="true" />
                       </Link>
                     </Button>
@@ -65,7 +72,7 @@ export function HomePageContent() {
                     href="/engineering"
                     className="font-mono text-sm text-white/60 hover:text-white transition-colors border-b border-white/20 hover:border-white/60 pb-0.5"
                   >
-                    See how we build →
+                    {t('ctaSecondary')} →
                   </Link>
                 </motion.div>
               </div>
@@ -140,7 +147,7 @@ export function HomePageContent() {
               <span className="text-3xl md:text-4xl font-extrabold text-white tracking-tighter tabular-nums mr-3 align-baseline">
                 <Counter from={0} to={HERO_ANCHOR.number} duration={1.6} />
               </span>
-              {HERO_ANCHOR.sentence}
+              {t('anchorMetric')}
             </p>
             <div className="hidden md:flex">
               <ScrollIndicator />

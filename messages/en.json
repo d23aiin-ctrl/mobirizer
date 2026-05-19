@@ -58,12 +58,13 @@
   },
   "home": {
     "hero": {
-      "badge": "AI Solutions Since 2019",
-      "title": "Transform Your Business with",
-      "titleHighlight": "Effective AI Solutions",
-      "description": "We deliver tailored AI services from strategy through implementation, designed to drive efficiency and growth without breaking your budget. Real solutions that work, backed by a decade of expertise.",
-      "cta": "Get Free Consultation",
-      "ctaSecondary": "Explore Products"
+      "status": "Mobirizer // Shipping AI since 2019",
+      "headlinePrefix": "Ship AI that actually works",
+      "headlineAccent": "in production.",
+      "subhead": "Agents, RAG, and fine-tuned models for teams that need them in the wild — not in a slide deck. Boring-tech discipline, measurable outcomes, a decade of shipping.",
+      "ctaPrimary": "Start a project",
+      "ctaSecondary": "See how we build",
+      "anchorMetric": "AI agents shipped to production across BFSI, government, and healthcare since 2019."
     },
     "stats": {
       "yearsExperience": "Years Experience",

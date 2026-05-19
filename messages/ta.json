@@ -58,12 +58,13 @@
   },
   "home": {
     "hero": {
-      "badge": "2019 முதல் AI தீர்வுகள்",
-      "title": "உங்கள் வணிகத்தை மாற்றுங்கள்",
-      "titleHighlight": "திறமையான AI தீர்வுகளுடன்",
-      "description": "உங்கள் பட்ஜெட்டை பாதிக்காமல் செயல்திறன் மற்றும் வளர்ச்சியை ஊக்குவிக்க வடிவமைக்கப்பட்ட, உத்தி முதல் செயல்படுத்தல் வரை தனிப்பயனாக்கப்பட்ட AI சேவைகளை நாங்கள் வழங்குகிறோம்.",
-      "cta": "இலவச ஆலோசனை பெறுங்கள்",
-      "ctaSecondary": "தயாரிப்புகளை ஆராயுங்கள்"
+      "status": "Mobirizer // Shipping AI since 2019",
+      "headlinePrefix": "Ship AI that actually works",
+      "headlineAccent": "in production.",
+      "subhead": "Agents, RAG, and fine-tuned models for teams that need them in the wild — not in a slide deck. Boring-tech discipline, measurable outcomes, a decade of shipping.",
+      "ctaPrimary": "Start a project",
+      "ctaSecondary": "See how we build",
+      "anchorMetric": "AI agents shipped to production across BFSI, government, and healthcare since 2019."
     },
     "stats": {
       "yearsExperience": "ஆண்டுகள் அனுபவம்",

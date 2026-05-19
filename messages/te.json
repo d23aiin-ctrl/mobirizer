@@ -58,12 +58,13 @@
   },
   "home": {
     "hero": {
-      "badge": "2019 నుండి AI సొల్యూషన్‌లు",
-      "title": "మీ వ్యాపారాన్ని మార్చండి",
-      "titleHighlight": "సమర్థవంతమైన AI సొల్యూషన్‌లతో",
-      "description": "మీ బడ్జెట్‌ను ప్రభావితం చేయకుండా సామర్థ్యం మరియు వృద్ధిని పెంచడానికి రూపొందించబడిన, వ్యూహం నుండి అమలు వరకు అనుకూలీకరించిన AI సేవలను మేము అందిస్తాము.",
-      "cta": "ఉచిత సంప్రదింపు పొందండి",
-      "ctaSecondary": "ప్రొడక్ట్‌లను అన్వేషించండి"
+      "status": "Mobirizer // Shipping AI since 2019",
+      "headlinePrefix": "Ship AI that actually works",
+      "headlineAccent": "in production.",
+      "subhead": "Agents, RAG, and fine-tuned models for teams that need them in the wild — not in a slide deck. Boring-tech discipline, measurable outcomes, a decade of shipping.",
+      "ctaPrimary": "Start a project",
+      "ctaSecondary": "See how we build",
+      "anchorMetric": "AI agents shipped to production across BFSI, government, and healthcare since 2019."
     },
     "stats": {
       "yearsExperience": "సంవత్సరాల అనుభవం",
