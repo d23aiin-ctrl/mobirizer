@@ -6,7 +6,6 @@ import { useTranslations } from 'next-intl';
 import { useMobileNav } from '@/hooks';
 import { MobileNav } from './MobileNav';
 import { LanguageSwitcher } from './LanguageSwitcher';
-import { ThemeToggle } from '../ThemeToggle';
 import { Button } from '@/components/ui';
 import { cn } from '@/lib/cn';
 
@@ -277,7 +276,6 @@ export function Header({ activePage }: HeaderProps) {
 
           {/* Actions */}
           <div className="flex items-center gap-3">
-            <ThemeToggle />
             <LanguageSwitcher />
             <Button asChild variant="cta" size="default" className="hidden sm:inline-flex">
               <Link href="/contact">

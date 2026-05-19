@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import { ThemeToggle } from '../ThemeToggle';
 import { cn } from '@/lib/cn';
 
 interface FooterProps {
@@ -217,10 +218,13 @@ export function Footer({ variant = 'default' }: FooterProps) {
         </div>
 
         {/* Footer Bottom */}
-        <div className="pt-8 mt-8 border-t border-white/10 text-center">
-          <p className="text-white/60 text-sm">
+        <div className="pt-8 mt-8 border-t border-white/10 flex items-center justify-between gap-4 flex-wrap">
+          <p className="text-white/60 text-sm m-0">
             {t('copyright')}
           </p>
+          <div className="text-white/60 [&_button]:text-white/60 [&_button:hover]:text-white [&_button]:hover:bg-white/10">
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </footer>

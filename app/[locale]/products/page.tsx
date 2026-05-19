@@ -399,7 +399,7 @@ export default function ProductsPage() {
                 >
                   <Button variant="ctaWhite" asChild>
                     <Link href="/contact">
-                      <span>Start a Conversation</span>
+                      <span>Start a project</span>
                       <i className="ri-arrow-right-line" aria-hidden="true" />
                     </Link>
                   </Button>

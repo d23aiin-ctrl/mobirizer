@@ -151,8 +151,34 @@ export function HomePageContent() {
 
       {/* Main Content */}
       <main id="main-content" role="main">
+        {/* Deployed-at sector strip — named proof, anonymized by sector */}
+        <section className="py-8 border-y border-border bg-bg-white">
+          <div className="container">
+            <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
+              <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-text-muted whitespace-nowrap">
+                Deployed at
+              </span>
+              {[
+                'Govt of Bihar',
+                'Sri Lanka MoH',
+                'Top-5 Indian Bank',
+                'NSE-listed retailer',
+                'Multi-state grievance program',
+                'Edtech · K-12 India',
+              ].map((label) => (
+                <span
+                  key={label}
+                  className="font-mono text-xs uppercase tracking-[0.15em] text-text-dark whitespace-nowrap"
+                >
+                  {label}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Marquee strip — stack ticker */}
-        <section className="py-6 border-y border-border bg-bg-light">
+        <section className="py-6 border-b border-border bg-bg-light">
           <Marquee speed={48}>
             {[
               'CLAUDE 4', 'GPT-4.1', 'GEMINI 2.5', 'LLAMA 3.3', 'MISTRAL LARGE',
@@ -499,7 +525,7 @@ export function HomePageContent() {
                   <Magnetic strength={0.3}>
                     <Button variant="ctaWhite" asChild>
                       <Link href="/contact">
-                        <span>Start a conversation</span>
+                        <span>Start a project</span>
                         <i className="ri-arrow-right-line" aria-hidden="true" />
                       </Link>
                     </Button>

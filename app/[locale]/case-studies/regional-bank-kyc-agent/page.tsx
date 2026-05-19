@@ -149,7 +149,7 @@ export default function KYCCaseStudy() {
                 href="/contact"
                 className="text-white font-semibold inline-flex items-center gap-2 border-b border-white/40 pb-0.5"
               >
-                Start a conversation <i className="ri-arrow-right-line" aria-hidden="true" />
+                Start a project <i className="ri-arrow-right-line" aria-hidden="true" />
               </Link>
             </div>
           </div>
