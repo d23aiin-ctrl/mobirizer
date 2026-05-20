@@ -13,6 +13,9 @@ node_modules/
 # Logs
 *.log
 
+# TypeScript incremental build cache
+*.tsbuildinfo
+
 # Coverage
 coverage/
 
