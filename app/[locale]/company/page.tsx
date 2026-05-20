@@ -9,6 +9,7 @@ import { COMPANY_STATS } from '@/lib/companyStats';
 export default function CompanyPage() {
   const t = useTranslations('company');
   const tBreadcrumb = useTranslations('breadcrumb');
+  const tCommon = useTranslations('common');
   return (
     <>
       <Header activePage="company" />
@@ -49,58 +50,46 @@ export default function CompanyPage() {
             <div className="two-col-section">
               <div className="col-left">
                 <Animated animation="fadeInUp">
-                  <Badge icon="ri-history-line" className="mb-4">Our Story</Badge>
+                  <Badge icon="ri-history-line" className="mb-4">{t('story.badge')}</Badge>
                 </Animated>
                 <Animated animation="fadeInUp" delay={0.1}>
                   <h2 className="text-3xl md:text-4xl font-bold text-text-dark mb-6">
-                    From Mobile Apps to AI-First
+                    {t('story.title')}
                   </h2>
                 </Animated>
                 <Animated animation="fadeInUp" delay={0.2}>
-                  <p className="text-text-muted leading-relaxed mb-4">
-                    Mobirizer was founded in 2014 as a mobile application development company in New
-                    Delhi, India. We built apps for startups, enterprises, and everything in between,
-                    learning what it takes to ship software that users love.
-                  </p>
+                  <p className="text-text-muted leading-relaxed mb-4">{t('story.paragraph1')}</p>
                 </Animated>
                 <Animated animation="fadeInUp" delay={0.3}>
-                  <p className="text-text-muted leading-relaxed mb-4">
-                    In 2019, we started experimenting with AI and machine learning. What began as small
-                    experiments quickly became our core focus as we saw the transformative potential of
-                    AI for our clients.
-                  </p>
+                  <p className="text-text-muted leading-relaxed mb-4">{t('story.paragraph2')}</p>
                 </Animated>
                 <Animated animation="fadeInUp" delay={0.4}>
-                  <p className="text-text-muted leading-relaxed">
-                    In 2024, we made the full pivot to become an AI-first company. Today, we build
-                    production-grade AI solutions that serve millions of users across government,
-                    education, healthcare, and enterprise sectors.
-                  </p>
+                  <p className="text-text-muted leading-relaxed">{t('story.paragraph3')}</p>
                 </Animated>
               </div>
               <div className="col-right">
                 <Animated animation="fadeInRight" delay={0.2}>
                   <div className="timeline">
-                    {[
-                      { year: '2014', title: 'Company Founded', desc: 'Started as a mobile app development company in New Delhi.' },
-                      { year: '2019', title: 'AI Experiments Begin', desc: 'First AI projects launched, exploring conversational interfaces.' },
-                      { year: '2021', title: 'D23.ai Launched', desc: 'Government AI platform goes live, serving millions of citizens.' },
-                      { year: '2024', title: 'AI-First Pivot', desc: 'Full transition to AI-focused development studio.' },
-                      { year: 'Today', title: `${COMPANY_STATS.clientsServed}+ clients, ${COMPANY_STATS.agentsInProduction} agents in production`, desc: `${COMPANY_STATS.projectsDelivered}+ projects delivered, ${(COMPANY_STATS.usersImpacted / 1_000_000).toFixed(0)}M+ users impacted across AI products.`, last: true },
-                    ].map((item, i) => (
-                      <motion.div
-                        key={i}
-                        className={`timeline-item ${item.last ? 'pb-0' : ''}`}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: i * 0.15, duration: 0.5 }}
-                      >
-                        <div className="timeline-year">{item.year}</div>
-                        <div className="timeline-title">{item.title}</div>
-                        <div className="timeline-desc">{item.desc}</div>
-                      </motion.div>
-                    ))}
+                    {(['2014', '2019', '2021', '2024', 'today'] as const).map((yearKey, i, arr) => {
+                      const displayYear = yearKey === 'today' ? t('timeline.today.title').split(' ')[0] === 'Today' ? 'Today' : yearKey : yearKey;
+                      // Render the year as the raw label for non-today entries; for today use literal "Today"
+                      const year = yearKey === 'today' ? 'Today' : yearKey;
+                      const isLast = i === arr.length - 1;
+                      return (
+                        <motion.div
+                          key={yearKey}
+                          className={`timeline-item ${isLast ? 'pb-0' : ''}`}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: i * 0.15, duration: 0.5 }}
+                        >
+                          <div className="timeline-year">{year}</div>
+                          <div className="timeline-title">{t(`timeline.${yearKey}.title`)}</div>
+                          <div className="timeline-desc">{t(`timeline.${yearKey}.description`)}</div>
+                        </motion.div>
+                      );
+                    })}
                   </div>
                 </Animated>
               </div>
@@ -113,33 +102,25 @@ export default function CompanyPage() {
           <div className="container">
             <div className="section-header">
               <Animated animation="fadeInUp">
-                <Badge icon="ri-team-line">Leadership</Badge>
+                <Badge icon="ri-team-line">{t('leadership.badge')}</Badge>
               </Animated>
               <Animated animation="fadeInUp" delay={0.1}>
-                <h2 className="section-title">Our Leadership Team</h2>
+                <h2 className="section-title">{t('leadership.title')}</h2>
               </Animated>
               <Animated animation="fadeInUp" delay={0.2}>
-                <p className="section-subtitle">The people driving our AI vision forward.</p>
+                <p className="section-subtitle">{t('leadership.subtitle')}</p>
               </Animated>
             </div>
             <Stagger className="grid-3-col" staggerDelay={0.15}>
-              {[
-                { name: 'Naseer Ahmad', role: 'Chief Executive Officer', gradient: 'bg-gradient-primary', color: 'text-primary-blue', desc: "Leading the company's vision and strategy for AI-first transformation. Driving business development and partnerships." },
-                { name: 'Pawan Singh', role: 'Chief Product Officer', gradient: 'bg-gradient-green', color: 'text-accent-green', desc: 'Overseeing product strategy and user experience across all AI products. Building products users love.' },
-                { name: 'Rishi', role: 'Chief Technology Officer', gradient: 'bg-gradient-purple', color: 'text-accent-purple', desc: 'Leading the engineering team and technical architecture. Ensuring scalability and reliability of AI systems.' },
-              ].map((person, i) => (
-                <StaggerItem key={i} className="grid-item">
-                  <HoverCard className="service-card text-center p-8 h-full">
-                    <motion.div
-                      className={`w-24 h-24 ${person.gradient} rounded-full flex items-center justify-center mx-auto mb-5`}
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ type: 'spring', stiffness: 300 }}
-                    >
-                      <i className="ri-user-line text-4xl text-white" aria-hidden="true" />
-                    </motion.div>
-                    <h3 className="text-xl mb-1">{person.name}</h3>
-                    <p className={`${person.color} font-semibold mb-3`}>{person.role}</p>
-                    <p className="text-text-muted text-sm">{person.desc}</p>
+              {(['naseer', 'pawan', 'rishi'] as const).map((personKey) => (
+                <StaggerItem key={personKey} className="grid-item">
+                  <HoverCard className="card card-hover text-center p-8 h-full">
+                    <div className="w-24 h-24 rounded-full bg-primary-blue/10 flex items-center justify-center mx-auto mb-5">
+                      <i className="ri-user-line text-4xl text-primary-blue" aria-hidden="true" />
+                    </div>
+                    <h3 className="text-xl mb-1">{t(`leadership.${personKey}.name`)}</h3>
+                    <p className="text-primary-blue font-semibold mb-3">{t(`leadership.${personKey}.role`)}</p>
+                    <p className="text-text-muted text-sm">{t(`leadership.${personKey}.description`)}</p>
                   </HoverCard>
                 </StaggerItem>
               ))}
@@ -152,32 +133,33 @@ export default function CompanyPage() {
           <div className="container">
             <div className="section-header">
               <Animated animation="fadeInUp">
-                <Badge icon="ri-heart-line">Our Values</Badge>
+                <Badge icon="ri-heart-line">{t('values.badge')}</Badge>
               </Animated>
               <Animated animation="fadeInUp" delay={0.1}>
-                <h2 className="section-title">What We Believe In</h2>
+                <h2 className="section-title">{t('values.title')}</h2>
               </Animated>
               <Animated animation="fadeInUp" delay={0.2}>
-                <p className="section-subtitle">The principles that guide everything we do.</p>
+                <p className="section-subtitle">{t('values.subtitle')}</p>
               </Animated>
             </div>
             <Stagger className="values-grid" staggerDelay={0.1}>
-              {[
-                { icon: 'ri-rocket-line', title: 'Ship > Slide', desc: "We believe in working demos over presentations. Every week, we ship. Every month, we ship more. Slides don't change the world - working software does." },
-                { icon: 'ri-shield-check-line', title: 'Boring Tech is Good Tech', desc: 'We choose reliability over novelty. Our systems run on proven technologies that let us focus on solving real problems instead of fighting infrastructure.' },
-                { icon: 'ri-eye-off-line', title: 'AI Should Feel Invisible', desc: "The best AI is the AI you don't notice. We build systems that integrate seamlessly into existing workflows, making technology feel natural and effortless." },
-                { icon: 'ri-team-line', title: 'Build With, Not For', desc: "We're partners, not vendors. We build alongside our clients, understanding their context deeply and creating solutions that truly fit their needs." },
-              ].map((value, i) => (
-                <StaggerItem key={i}>
+              {([
+                { key: 'shipOverSlide', icon: 'ri-rocket-line' },
+                { key: 'boringTech', icon: 'ri-shield-check-line' },
+                { key: 'invisibleAi', icon: 'ri-eye-off-line' },
+                { key: 'buildWith', icon: 'ri-team-line' },
+              ] as const).map((value) => (
+                <StaggerItem key={value.key}>
                   <HoverCard className="value-card h-full">
                     <h3>
                       <motion.i
                         className={`${value.icon} mr-2`}
                         whileHover={{ scale: 1.2, rotate: 10 }}
+                        aria-hidden="true"
                       />
-                      {value.title}
+                      {t(`values.${value.key}.title`)}
                     </h3>
-                    <p>{value.desc}</p>
+                    <p>{t(`values.${value.key}.description`)}</p>
                   </HoverCard>
                 </StaggerItem>
               ))}
@@ -190,13 +172,13 @@ export default function CompanyPage() {
           <div className="container">
             <Stagger className="stats-grid" staggerDelay={0.1}>
               <StaggerItem>
-                <StatCard value={String(COMPANY_STATS.foundedYear)} label="Founded" />
+                <StatCard value={String(COMPANY_STATS.foundedYear)} label={t('statsSection.founded')} />
               </StaggerItem>
               <StaggerItem>
-                <StatCard value={`${COMPANY_STATS.clientsServed}+`} label="Clients Served" />
+                <StatCard value={`${COMPANY_STATS.clientsServed}+`} label={t('statsSection.clientsWorldwide')} />
               </StaggerItem>
               <StaggerItem>
-                <StatCard value={`${COMPANY_STATS.projectsDelivered}+`} label="Projects Delivered" />
+                <StatCard value={`${COMPANY_STATS.projectsDelivered}+`} label={t('statsSection.projectsCompleted')} />
               </StaggerItem>
               <StaggerItem>
                 <StatCard value={`${COMPANY_STATS.agentsInProduction}`} label="Agents in Production" />
@@ -211,23 +193,17 @@ export default function CompanyPage() {
             <div className="flex justify-center">
               <div className="max-w-2xl text-center">
                 <Animated animation="fadeInUp">
-                  <Badge icon="ri-map-pin-line" className="mb-4">Our Office</Badge>
+                  <Badge icon="ri-map-pin-line" className="mb-4">{t('office.badge')}</Badge>
                 </Animated>
                 <Animated animation="fadeInUp" delay={0.1}>
-                  <h2 className="text-3xl font-bold text-text-dark mb-6">Based in Vaishali, Bihar, India</h2>
+                  <h2 className="text-3xl font-bold text-text-dark mb-6">{t('office.title')}</h2>
                 </Animated>
                 <Animated animation="scaleIn" delay={0.2}>
                   <HoverCard className="info-card max-w-lg mx-auto text-left">
                     <h4>
-                      <i className="ri-building-line mr-2 text-primary-blue" aria-hidden="true" /> Mobirizer Services Pvt. Ltd.
+                      <i className="ri-building-line mr-2 text-primary-blue" aria-hidden="true" /> {t('office.companyName')}
                     </h4>
-                    <p className="mb-4">
-                      At- Bihari Gadh, Post- Bithauli,
-                      <br />
-                      P.S.- Bhagwanpur, Hajipur,
-                      <br />
-                      Dist.- Vaishali, Bihar 844114, India
-                    </p>
+                    <p className="mb-4">{t('office.address')}</p>
                     <p className="mb-2">
                       <i className="ri-mail-line mr-2 text-primary-blue" aria-hidden="true" />
                       <a href="mailto:info@mobirizer.com" className="text-primary-blue hover:text-primary-dark transition-colors">info@mobirizer.com</a>
@@ -254,7 +230,7 @@ export default function CompanyPage() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
                 >
-                  Want to Join Our Journey?
+                  {t('cta.title')}
                 </motion.h2>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
@@ -262,8 +238,7 @@ export default function CompanyPage() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 }}
                 >
-                  We&apos;re always looking for talented people who share our passion for building
-                  great software.
+                  {t('cta.description')}
                 </motion.p>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -273,7 +248,7 @@ export default function CompanyPage() {
                 >
                   <Button variant="ctaWhite" asChild>
                     <Link href="/contact">
-                      <span>Start a project</span>
+                      <span>{tCommon('startProject')}</span>
                       <i className="ri-arrow-right-line" aria-hidden="true" />
                     </Link>
                   </Button>
