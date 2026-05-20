@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Header, Footer, Badge, Button } from '@/components';
+import { Header, Footer, EnglishOnlyNotice, Badge, Button } from '@/components';
 import { Animated, Stagger, StaggerItem, HoverCard, Counter, motion } from '@/components/ui';
 
 const features = [
@@ -80,6 +80,7 @@ export default function WhatsAppCommercePage() {
   return (
     <>
       <Header activePage="products" />
+      <EnglishOnlyNotice />
 
       {/* Page Header */}
       <section className="page-header bg-gradient-hero">

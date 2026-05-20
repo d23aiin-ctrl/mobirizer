@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Header, Footer, Badge, Button } from '@/components';
+import { Header, Footer, EnglishOnlyNotice, Badge, Button } from '@/components';
 import { Animated, Stagger, StaggerItem, HoverCard, Counter, motion , PageHeroBackground } from '@/components/ui';
 
 const features = [
@@ -33,6 +33,7 @@ export default function ConversationalAIPage() {
   return (
     <>
       <Header activePage="solutions" />
+      <EnglishOnlyNotice />
 
       {/* Page Header */}
       <section className="page-header" style={{ background: 'linear-gradient(135deg, #16a34a 0%, #22c55e 50%, #4ade80 100%)' }}><PageHeroBackground />

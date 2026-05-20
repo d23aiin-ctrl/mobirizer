@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Header, Footer, Badge, Button } from '@/components';
+import { Header, Footer, EnglishOnlyNotice, Badge, Button } from '@/components';
 import { Animated, Stagger, StaggerItem, HoverCard, Counter, motion , PageHeroBackground } from '@/components/ui';
 
 const features = [
@@ -40,6 +40,7 @@ export default function CustomDevelopmentPage() {
   return (
     <>
       <Header activePage="solutions" />
+      <EnglishOnlyNotice />
 
       {/* Page Header */}
       <section className="page-header" style={{ background: 'linear-gradient(135deg, #d97706 0%, #f59e0b 50%, #fbbf24 100%)' }}><PageHeroBackground />
