@@ -27,6 +27,9 @@
 
   html {
     scroll-behavior: smooth;
+    /* Clip horizontal overflow from off-screen below-the-fold animations
+       (Framer Motion fadeInRight starts at translateX(40px) before whileInView fires). */
+    overflow-x: clip;
   }
 
   body {

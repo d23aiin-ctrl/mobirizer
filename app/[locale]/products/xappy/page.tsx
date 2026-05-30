@@ -203,7 +203,7 @@ export default function XappyPage() {
               <div className="max-w-xl mx-auto">
                 <HoverCard className="service-card text-center p-10">
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Flag_of_Sri_Lanka.svg/320px-Flag_of_Sri_Lanka.svg.png"
+                    src="https://flagcdn.com/w320/lk.png"
                     alt="Sri Lanka Flag"
                     width={320}
                     height={160}
